@@ -19,14 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="thunks.asm">
+    <MASM Include="src\thunks.asm">
       <MakeAllSymbolsPublic Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </MakeAllSymbolsPublic>
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\rangers-api\bootstrap.h" />
-    <ClInclude Include="include\rangers-api\rangers-api.h" />
+    <ClInclude Include="include\rangers-sdk.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

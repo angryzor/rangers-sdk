@@ -2,6 +2,7 @@
 
 #define EXPORTING_TYPES
 
+class ID3D11Device;
 typedef struct _RTL_CRITICAL_SECTION {
     void* DebugInfo;
     int LockCount;
@@ -115,7 +116,7 @@ namespace csl::math
 	};
 }
 
-#include "include/rangers-api/rangers-api.h"
+#include "include/rangers-api/rangers-api/rangers-api.h"
 
 // template class csl::ut::MoveArray<csl::fnd::IAllocator*>;
 template class csl::fnd::Delegate<void ()>;
@@ -132,3 +133,5 @@ template class csl::ut::Pair<SurfRide::ReferenceCast*, hh::ui::UIListViewElement
 template class hh::fnd::Reference<hh::ui::UIListViewElement::Cursor>;
 template class hh::fnd::Reference<hh::ui::UIElement>;
 template class hh::fnd::Reference<hh::ui::UIElementBase>;
+template class hh::fnd::ResReflection<app::player::GOCPlayerParameter::CharacterParameters>;
+template class hh::fnd::ResReflection<app::rfl::PlayerCameraSetParameters>;

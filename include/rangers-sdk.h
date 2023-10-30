@@ -1,13 +1,14 @@
 #pragma once
 
 #include <cstdlib>
+#include "rangers-api/rangers-api/rangers-api.h"
 
-extern "C" void RangersAPI_SetBaseAddress(void* address);
-extern "C" void* RangersAPI_GetAddress(void* address);
+extern "C" void RangersSDK_SetBaseAddress(void* address);
+extern "C" void* RangersSDK_GetAddress(void* address);
 
-namespace rangersapi::bootstrap {
+namespace rangerssdk::bootstrap {
 	inline void SetBaseAddress(void* address) {
-		RangersAPI_SetBaseAddress(address);
+		RangersSDK_SetBaseAddress(address);
 	}
 
 	//namespace internal {
@@ -45,7 +46,7 @@ namespace rangersapi::bootstrap {
 
 	template<typename T>
 	T GetAddress(T target) {
-		void* r = RangersAPI_GetAddress((void*&)target);
+		void* r = RangersSDK_GetAddress((void*&)target);
 		return (T&)r;
 	}
 }

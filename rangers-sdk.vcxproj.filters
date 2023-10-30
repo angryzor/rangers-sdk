@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="thunks.asm">
+    <MASM Include="src\thunks.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\rangers-api\rangers-api.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\rangers-sdk\bootstrap.h">
+    <ClInclude Include="include\rangers-sdk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
