@@ -3,6 +3,8 @@
 #define EXPORTING_TYPES
 
 class ID3D11Device;
+class ID3D11Texture2D;
+class ID3D11ShaderResourceView;
 typedef struct _RTL_CRITICAL_SECTION {
     void* DebugInfo;
     int LockCount;
@@ -29,6 +31,7 @@ namespace csl::math
 	public:
 		float x; float y; float z; float w;
 		void SetRotationBetweenVectors(const Vector4& a, const Vector4& b, const Vector4& fallback);
+		static Vector4 RotateVector(const Quaternion& quaternion, const Vector4& vector);
 	};
 	class alignas(16) Matrix44 {
 		Vector4 t; Vector4 u; Vector4 v; Vector4 w;
@@ -37,7 +40,10 @@ namespace csl::math
 		static Matrix44 CreateOrthogonalProjectionMatrix(float top, float bottom, float left, float right, float nearClip, float farClip);
 		static Matrix44 CreatePerspectiveProjectionMatrix(float fov, float aspectRatio, float nearClip, float farClip);
 	};
-	class alignas(16) Matrix34 : Matrix44 {};
+	class alignas(16) Matrix34 {
+		Vector4 t; Vector4 u; Vector4 v;
+	public:
+	};
 
 	class Segment3
 	{
@@ -63,10 +69,11 @@ namespace csl::math
 	class Transform
 	{
 	public:
-		Vector3 m_Position;
-		Quaternion m_Rotation;
-		Vector3 m_Scale;
-		bool m_IsDirty;
+		Vector4 position;
+		Quaternion rotation;
+		Vector4 scale;
+
+		Transform(const Transform& parent, const Transform& child);
 	};
 
 	class CalculatedTransform
@@ -135,3 +142,8 @@ template class hh::fnd::Reference<hh::ui::UIElement>;
 template class hh::fnd::Reference<hh::ui::UIElementBase>;
 template class hh::fnd::ResReflection<app::player::GOCPlayerParameter::CharacterParameters>;
 template class hh::fnd::ResReflection<app::rfl::PlayerCameraSetParameters>;
+template class hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D,hh::needle::ImplDX11::SViewTexture2D>;
+// template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Texture,hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D,hh::needle::ImplDX11::SViewTexture2D>>;
+template class csl::ut::MoveArray<const hh::fnd::ResourceTypeInfo*>;
+template class csl::ut::Pair<hh::fnd::HFrame*, bool>;
+template class csl::ut::InplaceMoveArray<csl::ut::Pair<hh::fnd::HFrame*, bool>, 10>;
