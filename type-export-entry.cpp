@@ -5,6 +5,10 @@
 class ID3D11Device;
 class ID3D11Texture2D;
 class ID3D11ShaderResourceView;
+class ID3D11RenderTargetView;
+class ID3D11UnorderedAccessView;
+class ID3D11DepthStencilView;
+class ID3D11Buffer;
 typedef struct _RTL_CRITICAL_SECTION {
     void* DebugInfo;
     int LockCount;
@@ -41,7 +45,7 @@ namespace csl::math
 		static Matrix44 CreatePerspectiveProjectionMatrix(float fov, float aspectRatio, float nearClip, float farClip);
 	};
 	class alignas(16) Matrix34 {
-		Vector4 t; Vector4 u; Vector4 v;
+		Vector4 t; Vector4 u; Vector4 v; Vector4 w;
 	public:
 	};
 
@@ -69,9 +73,9 @@ namespace csl::math
 	class Transform
 	{
 	public:
-		Vector4 position;
+		Vector3 position;
 		Quaternion rotation;
-		Vector4 scale;
+		Vector3 scale;
 
 		Transform(const Transform& parent, const Transform& child);
 	};
@@ -142,8 +146,62 @@ template class hh::fnd::Reference<hh::ui::UIElement>;
 template class hh::fnd::Reference<hh::ui::UIElementBase>;
 template class hh::fnd::ResReflection<app::player::GOCPlayerParameter::CharacterParameters>;
 template class hh::fnd::ResReflection<app::rfl::PlayerCameraSetParameters>;
-template class hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D,hh::needle::ImplDX11::SViewTexture2D>;
-// template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Texture,hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D,hh::needle::ImplDX11::SViewTexture2D>>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Texture, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewTexture2D, NEEDLE_RESOURCE_DX11_TEXTURE_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::RenderTarget, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewRenderTarget, NEEDLE_RESOURCE_DX11_RENDER_TARGET_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::UnorderedAccessView, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewUnorderedAccess, NEEDLE_RESOURCE_DX11_UNORDERED_ACCESS_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::DepthStencil, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewDepthStencil, NEEDLE_RESOURCE_DX11_DEPTH_STENCIL_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::VertexShader, hh::needle::ImplDX11::SShaderContext2, NEEDLE_RESOURCE_DX11_VERTEX_SHADER_OBJECT, hh::needle::ImplDX11::SQueryTypeSelf, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::PixelShader, hh::needle::ImplDX11::SShaderContext2, NEEDLE_RESOURCE_DX11_PIXEL_SHADER_OBJECT, hh::needle::ImplDX11::SQueryTypeSelf, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::ComputeShader, hh::needle::ImplDX11::SShaderContext2, NEEDLE_RESOURCE_DX11_COMPUTE_SHADER_OBJECT, hh::needle::ImplDX11::SQueryTypeSelf, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Buffer, hh::needle::ImplDX11::BufferDX11Impl<hh::needle::ImplDX11::SBufferObject, NEEDLE_RESOURCE_DX11_CONSTANT_BUFFER_OBJECT>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
+template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Buffer, hh::needle::ImplDX11::BufferDX11Impl<hh::needle::ImplDX11::SBufferObject, NEEDLE_RESOURCE_DX11_VERTEX_BUFFER_OBJECT>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
 template class csl::ut::MoveArray<const hh::fnd::ResourceTypeInfo*>;
 template class csl::ut::Pair<hh::fnd::HFrame*, bool>;
 template class csl::ut::InplaceMoveArray<csl::ut::Pair<hh::fnd::HFrame*, bool>, 10>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxBloomParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDOFParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxColorContrastParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxToneMapParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxCameraControlParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxShadowMapParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxShadowHeightMapParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxVolumetricShadowParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxScreenBlurParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSSAOParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSHLightFieldParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxLightScatteringParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxRLRParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSSGIParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxPlanarReflectionParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxOcclusionCapsuleParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxGodrayParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxScreenSpaceGodrayParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxHeatHazeParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSceneEnvironmentParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxRenderOption>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSGGIParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxTAAParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxEffectParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxAtmosphereParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDensityParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxWindComputeParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxGpuEnvironmentParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxInteractiveWaveParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxChromaticAberrationParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxVignetteParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxTerrainMaterialBlendingParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxWeatherParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxColorAccessibilityFilterParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxCyberNoiseEffectParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxCyberSpaceStartNoiseParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxCyberNPCSSEffectRenderParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDentParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxFieldScanEffectRenderParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxSeparableSSSParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxRenderTargetSetting>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxAntiAliasing>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::StageCommonAtmosphereParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxLODParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDetailParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDynamicResolutionParameter>;
+template class app::gfx::FxParamManager::Interpolator<app::rfl::StageCommonTimeProgressParameter>;
