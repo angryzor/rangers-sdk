@@ -1,7 +1,9 @@
 #include <stdint.h>
 
 #define EXPORTING_TYPES
+#define RESOLVE_STATIC_VARIABLE(x) x
 
+typedef size_t HANDLE;
 class ID3D11Device;
 class ID3D11Texture2D;
 class ID3D11ShaderResourceView;

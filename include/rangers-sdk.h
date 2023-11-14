@@ -1,12 +1,11 @@
 #pragma once
 
 #include <cstdlib>
-#include "rangers-api/rangers-api/rangers-api.h"
 
 extern "C" void RangersSDK_SetBaseAddress(void* address);
 extern "C" void* RangersSDK_GetAddress(void* address);
 
-namespace rangerssdk::bootstrap {
+namespace rangerssdk {
 	inline void SetBaseAddress(void* address) {
 		RangersSDK_SetBaseAddress(address);
 	}
@@ -50,3 +49,7 @@ namespace rangerssdk::bootstrap {
 		return (T&)r;
 	}
 }
+
+#define RESOLVE_STATIC_VARIABLE(x) *(rangerssdk::GetAddress(&x))
+
+#include "rangers-api/rangers-api/rangers-api.h"
