@@ -51,6 +51,10 @@ namespace csl::math
 	public:
 	};
 
+	Matrix34 Matrix34Multiply(const Matrix34& x, const Matrix34& y);
+	Matrix34 Matrix34AffineTransformation(const Vector3& position, const Quaternion& rotation);
+	void Matrix34Scale(const Matrix34& mat, const Vector3& scale, Matrix34* result);
+
 	class Segment3
 	{
 	public:
@@ -63,13 +67,6 @@ namespace csl::math
 	public:
 		Segment3 m_Segment{};
 		float m_Radius{};
-	};
-	
-	class Aabb
-	{
-	public:
-		Vector3 m_Min{};
-		Vector3 m_Max{};
 	};
 
 	class Transform
@@ -126,6 +123,16 @@ namespace csl::math
 		inline static const Vector2 Vector2Zero{ 0, 0 };
 		inline static const Vector3 Vector3Zero{ 0, 0, 0 };
 		inline static const Quaternion QuaternionIdentity{ 0, 0, 0, 1 };
+	};
+}
+
+namespace csl::geom {
+	class Aabb
+	{
+	public:
+		math::Vector3 m_Min{};
+		math::Vector3 m_Max{};
+		static Aabb Transform(const math::Matrix34& matrix, const Aabb& aabb);
 	};
 }
 
@@ -207,3 +214,6 @@ template class app::gfx::FxParamManager::Interpolator<app::rfl::FxLODParameter>;
 template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDetailParameter>;
 template class app::gfx::FxParamManager::Interpolator<app::rfl::FxDynamicResolutionParameter>;
 template class app::gfx::FxParamManager::Interpolator<app::rfl::StageCommonTimeProgressParameter>;
+template class csl::ut::PointerMap<hh::game::GameObjectClass*, csl::ut::MoveArray<hh::game::GameObject*>*>;
+template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
+template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
