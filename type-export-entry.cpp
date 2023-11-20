@@ -51,6 +51,8 @@ namespace csl::math
 	public:
 	};
 
+	class Position { public: float x; float y; float z; };
+
 	Matrix34 Matrix34Multiply(const Matrix34& x, const Matrix34& y);
 	Matrix34 Matrix34AffineTransformation(const Vector3& position, const Quaternion& rotation);
 	void Matrix34Scale(const Matrix34& mat, const Vector3& scale, Matrix34* result);
@@ -217,3 +219,4 @@ template class app::gfx::FxParamManager::Interpolator<app::rfl::StageCommonTimeP
 template class csl::ut::PointerMap<hh::game::GameObjectClass*, csl::ut::MoveArray<hh::game::GameObject*>*>;
 template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
 template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
+template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
