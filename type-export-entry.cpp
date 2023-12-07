@@ -27,6 +27,10 @@ void* sigScan(const char* signature, const char* mask, size_t sigSize, void* mem
 void* sigScan(const char* signature, const char* mask, void* hint);
 int strcmp(const char* x, const char* y);
 
+namespace std {
+	typedef size_t align_val_t;
+}
+
 namespace csl::math 
 {
 	class Vector2 { public: float x; float y; };
