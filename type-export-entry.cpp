@@ -142,7 +142,7 @@ namespace csl::geom {
 	};
 }
 
-#include "include/rangers-api/rangers-api/rangers-api.h"
+#include "rangers-api/rangers-api/rangers-api.h"
 
 // template class csl::ut::MoveArray<csl::fnd::IAllocator*>;
 template class csl::fnd::Delegate<void ()>;

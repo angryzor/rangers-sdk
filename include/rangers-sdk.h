@@ -52,4 +52,4 @@ namespace rangerssdk {
 
 #define RESOLVE_STATIC_VARIABLE(x) *(rangerssdk::GetAddress(&x))
 
-#include "rangers-api/rangers-api/rangers-api.h"
+#include <rangers-api/rangers-api.h>
