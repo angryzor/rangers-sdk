@@ -224,3 +224,4 @@ template class csl::ut::PointerMap<hh::game::GameObjectClass*, csl::ut::MoveArra
 template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
 template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
 template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
+template class hh::fnd::Handle<hh::game::GameObject>;
