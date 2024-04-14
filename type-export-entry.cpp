@@ -31,6 +31,10 @@ namespace std {
 	typedef size_t align_val_t;
 }
 
+namespace csl::geom {
+	class Aabb;
+}
+
 namespace csl::math 
 {
 	class Vector2 { public: float x; float y; };
@@ -122,7 +126,9 @@ namespace csl::math
 
 		return min;
 	}
-	
+
+	bool Intersection(const Vector3& point, geom::Aabb aabb);
+
 	class Constants
 	{
 	public:
@@ -139,6 +145,8 @@ namespace csl::geom {
 		math::Vector3 m_Min{};
 		math::Vector3 m_Max{};
 		static Aabb Transform(const math::Matrix34& matrix, const Aabb& aabb);
+		math::Vector3 Center() const;
+		bool Intersect(const Aabb& aabb) const;
 	};
 }
 
@@ -225,3 +233,5 @@ template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
 template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
 template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
 template class hh::fnd::Handle<hh::game::GameObject>;
+template class hh::fnd::Handle<hh::game::GOComponent>;
+template class hh::fnd::Handle<hh::physics::GOCCollider>;
