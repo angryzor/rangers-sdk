@@ -41410,14 +41410,14 @@ PUBLIC ?PerformMessages@GameManager@game@hh@@QEAAXXZ
     add rax, 0d348b0h
     jmp rax
 
-PUBLIC ?ResourceReloadedCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z
-?ResourceReloadedCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z:
+PUBLIC ?PostResourceReloadCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z
+?PostResourceReloadCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z:
     mov rax, moduleOffset
     add rax, 0d348d0h
     jmp rax
 
-PUBLIC ?UnknownThingReloadedCallback@GameManager@game@hh@@UEAAXPEAX@Z
-?UnknownThingReloadedCallback@GameManager@game@hh@@UEAAXPEAX@Z:
+PUBLIC ?PreResourceReloadCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z
+?PreResourceReloadCallback@GameManager@game@hh@@UEAAXPEAVManagedResource@fnd@3@@Z:
     mov rax, moduleOffset
     add rax, 0d34970h
     jmp rax
@@ -42820,10 +42820,46 @@ PUBLIC ?GetClass@GOCParticleLocator@gocs@heur@@SAPEBVGOComponentClass@game@hh@@X
     add rax, 0e8aeb0h
     jmp rax
 
-PUBLIC ?SetAnimation@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z
-?SetAnimation@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z:
+PUBLIC ?BuildLayerBlendTree@AnimationStateMachine@anim@hh@@QEAAPEAVBlendNodeBase@23@AEBUBlendNodeData@23@@Z
+?BuildLayerBlendTree@AnimationStateMachine@anim@hh@@QEAAPEAVBlendNodeBase@23@AEBUBlendNodeData@23@@Z:
+    mov rax, moduleOffset
+    add rax, 0e8ceb0h
+    jmp rax
+
+PUBLIC ?ChangeState@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z
+?ChangeState@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z:
     mov rax, moduleOffset
     add rax, 0e8d130h
+    jmp rax
+
+PUBLIC ?ChangeStateWithoutTransition@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z
+?ChangeStateWithoutTransition@AnimationStateMachine@anim@hh@@QEAA_NPEBD@Z:
+    mov rax, moduleOffset
+    add rax, 0e8d240h
+    jmp rax
+
+PUBLIC ?ChangeToNull@AnimationStateMachine@anim@hh@@QEAA_NH@Z
+?ChangeToNull@AnimationStateMachine@anim@hh@@QEAA_NH@Z:
+    mov rax, moduleOffset
+    add rax, 0e8d2c0h
+    jmp rax
+
+PUBLIC ?DoTransit@AnimationStateMachine@anim@hh@@QEAAXAEBUTransitionData@23@H@Z
+?DoTransit@AnimationStateMachine@anim@hh@@QEAAXAEBUTransitionData@23@H@Z:
+    mov rax, moduleOffset
+    add rax, 0e8dcd0h
+    jmp rax
+
+PUBLIC ?LoadResource@AnimationStateMachine@anim@hh@@QEAAXPEAVManagedResource@fnd@3@@Z
+?LoadResource@AnimationStateMachine@anim@hh@@QEAAXPEAVManagedResource@fnd@3@@Z:
+    mov rax, moduleOffset
+    add rax, 0e8f1d0h
+    jmp rax
+
+PUBLIC ?UnloadResource@AnimationStateMachine@anim@hh@@QEAAXPEAVManagedResource@fnd@3@@Z
+?UnloadResource@AnimationStateMachine@anim@hh@@QEAAXPEAVManagedResource@fnd@3@@Z:
+    mov rax, moduleOffset
+    add rax, 0e8f340h
     jmp rax
 
 PUBLIC ?Setup@AsmResourceManager@anim@hh@@QEAAXAEBUConfig@123@@Z
@@ -42832,10 +42868,40 @@ PUBLIC ?Setup@AsmResourceManager@anim@hh@@QEAAXAEBUConfig@123@@Z
     add rax, 0e92150h
     jmp rax
 
-PUBLIC ?SetAnimation@GOCAnimator@anim@hh@@QEAAXPEBD@Z
-?SetAnimation@GOCAnimator@anim@hh@@QEAAXPEBD@Z:
+PUBLIC ?ShouldReloadResource@AsmResourceManager@anim@hh@@QEAA_NPEAVManagedResource@fnd@3@@Z
+?ShouldReloadResource@AsmResourceManager@anim@hh@@QEAA_NPEAVManagedResource@fnd@3@@Z:
+    mov rax, moduleOffset
+    add rax, 0e923f0h
+    jmp rax
+
+PUBLIC ?GetNumBones@AsmResourceManager@anim@hh@@QEAAIXZ
+?GetNumBones@AsmResourceManager@anim@hh@@QEAAIXZ:
+    mov rax, moduleOffset
+    add rax, 0e925a0h
+    jmp rax
+
+PUBLIC ??_DAnimationStateListener@anim@hh@@QEAAXXZ
+??_DAnimationStateListener@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0e929e8h
+    jmp rax
+
+PUBLIC ?ChangeState@GOCAnimator@anim@hh@@QEAA_NPEBD@Z
+?ChangeState@GOCAnimator@anim@hh@@QEAA_NPEBD@Z:
     mov rax, moduleOffset
     add rax, 0e92b00h
+    jmp rax
+
+PUBLIC ?ChangeStateWithoutTransition@GOCAnimator@anim@hh@@QEAA_NPEBD@Z
+?ChangeStateWithoutTransition@GOCAnimator@anim@hh@@QEAA_NPEBD@Z:
+    mov rax, moduleOffset
+    add rax, 0e92b30h
+    jmp rax
+
+PUBLIC ?ChangeToNull@GOCAnimator@anim@hh@@QEAA_NH@Z
+?ChangeToNull@GOCAnimator@anim@hh@@QEAA_NH@Z:
+    mov rax, moduleOffset
+    add rax, 0e92b60h
     jmp rax
 
 PUBLIC ?UnkFunc1@GOCAnimator@anim@hh@@UEAA_NAEAVTransform@math@csl@@@Z
@@ -42844,10 +42910,28 @@ PUBLIC ?UnkFunc1@GOCAnimator@anim@hh@@UEAA_NAEAVTransform@math@csl@@@Z
     add rax, 0e92d10h
     jmp rax
 
+PUBLIC ?GetClassId@GOCAnimator@anim@hh@@UEAAPEAXXZ
+?GetClassId@GOCAnimator@anim@hh@@UEAAPEAXXZ:
+    mov rax, moduleOffset
+    add rax, 0e92de0h
+    jmp rax
+
+PUBLIC ?UnkFunc2@GOCAnimator@anim@hh@@UEAAXXZ
+?UnkFunc2@GOCAnimator@anim@hh@@UEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0e93130h
+    jmp rax
+
 PUBLIC ?UnkFunc3@GOCAnimator@anim@hh@@UEAAXXZ
 ?UnkFunc3@GOCAnimator@anim@hh@@UEAAXXZ:
     mov rax, moduleOffset
     add rax, 0e931c0h
+    jmp rax
+
+PUBLIC ?GetClass@GOCAnimator@anim@hh@@SAPEBVGOComponentClass@game@3@XZ
+?GetClass@GOCAnimator@anim@hh@@SAPEBVGOComponentClass@game@3@XZ:
+    mov rax, moduleOffset
+    add rax, 0e93340h
     jmp rax
 
 PUBLIC ?UnkFunc4@GOCAnimator@anim@hh@@UEAA_KXZ
@@ -42860,6 +42944,18 @@ PUBLIC ?Create@AsmViewerObject@gameobjects@heur@@CAPEAV123@PEAVIAllocator@fnd@cs
 ?Create@AsmViewerObject@gameobjects@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, moduleOffset
     add rax, 0e957e0h
+    jmp rax
+
+PUBLIC ?GetStateId@ResAnimator@anim@hh@@QEAAHPEBD@Z
+?GetStateId@ResAnimator@anim@hh@@QEAAHPEBD@Z:
+    mov rax, moduleOffset
+    add rax, 0e98110h
+    jmp rax
+
+PUBLIC ?GetTransitionData@TransitionArray@anim@hh@@QEBAAEBUTransitionData@23@H@Z
+?GetTransitionData@TransitionArray@anim@hh@@QEBAAEBUTransitionData@23@H@Z:
+    mov rax, moduleOffset
+    add rax, 0e981f0h
     jmp rax
 
 PUBLIC ?GetTypeInfo@ResAnimator@resources@heur@@SAPEBUResourceTypeInfo@fnd@hh@@XZ
@@ -42892,6 +42988,12 @@ PUBLIC ??_DGOCAnimationSingle@anim@hh@@QEAAXXZ
     add rax, 0e9c080h
     jmp rax
 
+PUBLIC ?GetClassId@GOCAnimationSingle@anim@hh@@UEAAPEAXXZ
+?GetClassId@GOCAnimationSingle@anim@hh@@UEAAPEAXXZ:
+    mov rax, moduleOffset
+    add rax, 0e9c5c0h
+    jmp rax
+
 PUBLIC ?OnGOCEvent@GOCAnimationSingle@anim@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z
 ?OnGOCEvent@GOCAnimationSingle@anim@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z:
     mov rax, moduleOffset
@@ -42914,6 +43016,108 @@ PUBLIC ?GetClass@AnimationManager@services@heur@@SAPEBVGameServiceClass@game@hh@
 ?GetClass@AnimationManager@services@heur@@SAPEBVGameServiceClass@game@hh@@XZ:
     mov rax, moduleOffset
     add rax, 0ea0e70h
+    jmp rax
+
+PUBLIC ??_DBlendNodeBase@anim@hh@@QEAAXXZ
+??_DBlendNodeBase@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0ea9900h
+    jmp rax
+
+PUBLIC ??_DBranchBlendNode@anim@hh@@QEAAXXZ
+??_DBranchBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0ea9a10h
+    jmp rax
+
+PUBLIC ??_DClipNode@anim@hh@@QEAAXXZ
+??_DClipNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0ea9a70h
+    jmp rax
+
+PUBLIC ??_DTwoPointLerpBlendNode@anim@hh@@QEAAXXZ
+??_DTwoPointLerpBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0ea9cf0h
+    jmp rax
+
+PUBLIC ?Accept@BlendNodeBase@anim@hh@@UEAA_NXZ
+?Accept@BlendNodeBase@anim@hh@@UEAA_NXZ:
+    mov rax, moduleOffset
+    add rax, 0ea9e20h
+    jmp rax
+
+PUBLIC ?AddChild@BlendNodeBase@anim@hh@@QEAAXPEAV123@@Z
+?AddChild@BlendNodeBase@anim@hh@@QEAAXPEAV123@@Z:
+    mov rax, moduleOffset
+    add rax, 0ea9e30h
+    jmp rax
+
+PUBLIC ?ClearChildren@BlendNodeBase@anim@hh@@QEAAXXZ
+?ClearChildren@BlendNodeBase@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0eaa110h
+    jmp rax
+
+PUBLIC ?Create@AdditiveBlendNode@anim@hh@@SAPEAV123@PEAVIAllocator@fnd@csl@@PEAVBlendNodeBase@23@1H@Z
+?Create@AdditiveBlendNode@anim@hh@@SAPEAV123@PEAVIAllocator@fnd@csl@@PEAVBlendNodeBase@23@1H@Z:
+    mov rax, moduleOffset
+    add rax, 0eaa240h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@BlendNodeBase@anim@hh@@UEBAPEAXXZ
+?GetRuntimeTypeInfo@BlendNodeBase@anim@hh@@UEBAPEAXXZ:
+    mov rax, moduleOffset
+    add rax, 0eaace0h
+    jmp rax
+
+PUBLIC ?UnkFunc11@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc11@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 0eab230h
+    jmp rax
+
+PUBLIC ?always_false@BlendNodeBase@anim@hh@@UEAA_NXZ
+?always_false@BlendNodeBase@anim@hh@@UEAA_NXZ:
+    mov rax, moduleOffset
+    add rax, 0eab510h
+    jmp rax
+
+PUBLIC ?UnkFunc13@BlendNodeBase@anim@hh@@UEAAXXZ
+?UnkFunc13@BlendNodeBase@anim@hh@@UEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0eab540h
+    jmp rax
+
+PUBLIC ?UnkFunc4@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc4@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 0eabb60h
+    jmp rax
+
+PUBLIC ?UnkFunc9@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc9@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 0eac160h
+    jmp rax
+
+PUBLIC ?SetHierarchyRoot@BlendNodeBase@anim@hh@@QEAAXPEAV123@@Z
+?SetHierarchyRoot@BlendNodeBase@anim@hh@@QEAAXPEAV123@@Z:
+    mov rax, moduleOffset
+    add rax, 0eac1d0h
+    jmp rax
+
+PUBLIC ?SetTargetNode@LayerBlendNode@anim@hh@@QEAAXPEAVBlendNodeBase@23@@Z
+?SetTargetNode@LayerBlendNode@anim@hh@@QEAAXPEAVBlendNodeBase@23@@Z:
+    mov rax, moduleOffset
+    add rax, 0eac420h
+    jmp rax
+
+PUBLIC ?UnkFunc5@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc5@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 0eadca0h
     jmp rax
 
 PUBLIC ??_DMessenger@fnd@hh@@QEAAXXZ
@@ -83812,6 +84016,18 @@ PUBLIC ?componentClass@GOCParticleLocator@gocs@heur@@0VGOComponentClass@game@hh@
     add rax, 03cf1bf0h
     jmp rax
 
+PUBLIC ?classId@GOCAnimator@anim@hh@@0PEBXEB
+?classId@GOCAnimator@anim@hh@@0PEBXEB:
+    mov rax, moduleOffset
+    add rax, 03cf1c30h
+    jmp rax
+
+PUBLIC ?componentClass@GOCAnimator@anim@hh@@0VGOComponentClass@game@3@B
+?componentClass@GOCAnimator@anim@hh@@0VGOComponentClass@game@3@B:
+    mov rax, moduleOffset
+    add rax, 03cf1c40h
+    jmp rax
+
 PUBLIC ?gameObjectClass@AsmViewerObject@gameobjects@heur@@0VGameObjectClass@game@hh@@B
 ?gameObjectClass@AsmViewerObject@gameobjects@heur@@0VGameObjectClass@game@hh@@B:
     mov rax, moduleOffset
@@ -105580,6 +105796,12 @@ PUBLIC ?BroadcastMessage@GameObject@game@hh@@IEAA_NAEAVMessage@fnd@3@@Z
     add rax, 06ab0780h
     jmp rax
 
+PUBLIC ?Load@AsmResourceManager@anim@hh@@SAPEAV123@PEBD0PEAVIAllocator@fnd@csl@@@Z
+?Load@AsmResourceManager@anim@hh@@SAPEAV123@PEBD0PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, moduleOffset
+    add rax, 06ad7cf0h
+    jmp rax
+
 PUBLIC ?fUnk1@GameService@game@hh@@UEAAXXZ
 ?fUnk1@GameService@game@hh@@UEAAXXZ:
     mov rax, moduleOffset
@@ -107836,6 +108058,12 @@ PUBLIC ?AttachComponent@GameObject@game@hh@@IEAAXAEAVGOComponent@23@@Z
     add rax, 0100fb440h
     jmp rax
 
+PUBLIC ?RegisterNamedObject@GameManager@game@hh@@QEAAXPEAVGameObject@23@PEBD_NPEAUWorldPosition@fnd@3@0@Z
+?RegisterNamedObject@GameManager@game@hh@@QEAAXPEAVGameObject@23@PEBD_NPEAUWorldPosition@fnd@3@0@Z:
+    mov rax, moduleOffset
+    add rax, 0101068d0h
+    jmp rax
+
 PUBLIC ?GetEditorStatus@GameObject@game@hh@@QEBA_NXZ
 ?GetEditorStatus@GameObject@game@hh@@QEBA_NXZ:
     mov rax, moduleOffset
@@ -108514,10 +108742,34 @@ PUBLIC ?Create@GOCParticleLocator@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@
     add rax, 011ff2680h
     jmp rax
 
+PUBLIC ??0AnimationStateMachine@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
+??0AnimationStateMachine@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, moduleOffset
+    add rax, 012005e50h
+    jmp rax
+
 PUBLIC ??_DAnimationStateMachine@anim@hh@@QEAAXXZ
 ??_DAnimationStateMachine@anim@hh@@QEAAXXZ:
     mov rax, moduleOffset
     add rax, 01201fc90h
+    jmp rax
+
+PUBLIC ?AddListener@AnimationStateMachine@anim@hh@@QEAAXPEAVAnimationStateListener@23@@Z
+?AddListener@AnimationStateMachine@anim@hh@@QEAAXPEAVAnimationStateListener@23@@Z:
+    mov rax, moduleOffset
+    add rax, 0120302b0h
+    jmp rax
+
+PUBLIC ?RemoveListener@AnimationStateMachine@anim@hh@@QEAAXPEAVAnimationStateListener@23@@Z
+?RemoveListener@AnimationStateMachine@anim@hh@@QEAAXPEAVAnimationStateListener@23@@Z:
+    mov rax, moduleOffset
+    add rax, 012058f00h
+    jmp rax
+
+PUBLIC ?Setup@AnimationStateMachine@anim@hh@@QEAAXPEAVAsmResourceManager@23@PEAVSkeletonBlender@23@@Z
+?Setup@AnimationStateMachine@anim@hh@@QEAAXPEAVAsmResourceManager@23@PEAVSkeletonBlender@23@@Z:
+    mov rax, moduleOffset
+    add rax, 01205c100h
     jmp rax
 
 PUBLIC ??0AsmResourceManager@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -108526,14 +108778,44 @@ PUBLIC ??0AsmResourceManager@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
     add rax, 012087fc0h
     jmp rax
 
+PUBLIC ??_DGOCAnimator@anim@hh@@QEAAXXZ
+??_DGOCAnimator@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0120ab9f0h
+    jmp rax
+
 PUBLIC ?TL_MaybeOnTrigger@GOCAnimator@anim@hh@@UEAAXXZ
 ?TL_MaybeOnTrigger@GOCAnimator@anim@hh@@UEAAXXZ:
     mov rax, moduleOffset
     add rax, 0120c3c70h
     jmp rax
 
-PUBLIC ?Create@ResAnimator@resources@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
-?Create@ResAnimator@resources@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
+PUBLIC ?Create@GOCAnimator@anim@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
+?Create@GOCAnimator@anim@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, moduleOffset
+    add rax, 0120c4f90h
+    jmp rax
+
+PUBLIC ?ASL_MaybeOnStateChange@GOCAnimator@anim@hh@@UEAAXXZ
+?ASL_MaybeOnStateChange@GOCAnimator@anim@hh@@UEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0120e9eb0h
+    jmp rax
+
+PUBLIC ?OnGOCEvent@GOCAnimator@anim@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z
+?OnGOCEvent@GOCAnimator@anim@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z:
+    mov rax, moduleOffset
+    add rax, 0120ec860h
+    jmp rax
+
+PUBLIC ?Setup@GOCAnimator@anim@hh@@QEAAXAEBUSetupInfo@123@@Z
+?Setup@GOCAnimator@anim@hh@@QEAAXAEBUSetupInfo@123@@Z:
+    mov rax, moduleOffset
+    add rax, 0120f5f30h
+    jmp rax
+
+PUBLIC ?Create@ResAnimator@anim@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
+?Create@ResAnimator@anim@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, moduleOffset
     add rax, 012101fc0h
     jmp rax
@@ -108548,6 +108830,24 @@ PUBLIC ?Create@ResSkeleton@resources@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 ?Create@ResSkeleton@resources@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, moduleOffset
     add rax, 012164790h
+    jmp rax
+
+PUBLIC ??0GOCAnimationSingle@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
+??0GOCAnimationSingle@anim@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, moduleOffset
+    add rax, 0121b1d40h
+    jmp rax
+
+PUBLIC ?SetModel@GOCAnimationSingle@anim@hh@@QEAAXPEAVGOCVisualModel@gfx@3@@Z
+?SetModel@GOCAnimationSingle@anim@hh@@QEAAXPEAVGOCVisualModel@gfx@3@@Z:
+    mov rax, moduleOffset
+    add rax, 0121cdc20h
+    jmp rax
+
+PUBLIC ?Setup@GOCAnimationSingle@anim@hh@@QEAAXAEBUSetupInfo@123@@Z
+?Setup@GOCAnimationSingle@anim@hh@@QEAAXAEBUSetupInfo@123@@Z:
+    mov rax, moduleOffset
+    add rax, 0121ec370h
     jmp rax
 
 PUBLIC ?Create@GOCAnimationBlend@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
@@ -108572,6 +108872,72 @@ PUBLIC ?Create@AnimationManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@
 ?Create@AnimationManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, moduleOffset
     add rax, 0123221b0h
+    jmp rax
+
+PUBLIC ??_DOverrideBlendNode@anim@hh@@QEAAXXZ
+??_DOverrideBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0123f0080h
+    jmp rax
+
+PUBLIC ??_DBlendSpaceNode@anim@hh@@QEAAXXZ
+??_DBlendSpaceNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0123fa7e0h
+    jmp rax
+
+PUBLIC ??_DLayerBlendNode@anim@hh@@QEAAXXZ
+??_DLayerBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0123fddd0h
+    jmp rax
+
+PUBLIC ??_DLerpBlendNode@anim@hh@@QEAAXXZ
+??_DLerpBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 012404890h
+    jmp rax
+
+PUBLIC ??_DMulBlendNode@anim@hh@@QEAAXXZ
+??_DMulBlendNode@anim@hh@@QEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 0124158a0h
+    jmp rax
+
+PUBLIC ?Create@LayerBlendNode@anim@hh@@SAPEAV123@PEAVIAllocator@fnd@csl@@AEBVAsmResourceManager@23@PEAULayerData@23@@Z
+?Create@LayerBlendNode@anim@hh@@SAPEAV123@PEAVIAllocator@fnd@csl@@AEBVAsmResourceManager@23@PEAULayerData@23@@Z:
+    mov rax, moduleOffset
+    add rax, 012432fd0h
+    jmp rax
+
+PUBLIC ?Create@OverrideBlendNode@anim@hh@@SAPEAVAdditiveBlendNode@23@PEAVIAllocator@fnd@csl@@PEAVBlendNodeBase@23@1H@Z
+?Create@OverrideBlendNode@anim@hh@@SAPEAVAdditiveBlendNode@23@PEAVIAllocator@fnd@csl@@PEAVBlendNodeBase@23@1H@Z:
+    mov rax, moduleOffset
+    add rax, 01243e0c0h
+    jmp rax
+
+PUBLIC ?UnkFunc10@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc10@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 012450930h
+    jmp rax
+
+PUBLIC ?UnkFunc12@BlendNodeBase@anim@hh@@UEAAXXZ
+?UnkFunc12@BlendNodeBase@anim@hh@@UEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 01245b060h
+    jmp rax
+
+PUBLIC ?UnkFunc8@BlendNodeBase@anim@hh@@UEAAXXZ
+?UnkFunc8@BlendNodeBase@anim@hh@@UEAAXXZ:
+    mov rax, moduleOffset
+    add rax, 01247f7a0h
+    jmp rax
+
+PUBLIC ?UnkFunc6@BlendNodeBase@anim@hh@@UEAA_KXZ
+?UnkFunc6@BlendNodeBase@anim@hh@@UEAA_KXZ:
+    mov rax, moduleOffset
+    add rax, 01249bda0h
     jmp rax
 
 PUBLIC ??0Messenger@fnd@hh@@QEAA@PEAVIAllocator@1csl@@@Z

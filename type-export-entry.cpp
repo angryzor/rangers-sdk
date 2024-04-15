@@ -235,3 +235,4 @@ template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
 template class hh::fnd::Handle<hh::game::GameObject>;
 template class hh::fnd::Handle<hh::game::GOComponent>;
 template class hh::fnd::Handle<hh::physics::GOCCollider>;
+template class csl::ut::InplaceMoveArray<hh::anim::BlendNodeBase*, 2>;
