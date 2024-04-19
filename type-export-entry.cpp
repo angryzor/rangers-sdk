@@ -236,3 +236,8 @@ template class hh::fnd::Handle<hh::game::GameObject>;
 template class hh::fnd::Handle<hh::game::GOComponent>;
 template class hh::fnd::Handle<hh::physics::GOCCollider>;
 template class csl::ut::InplaceMoveArray<hh::anim::BlendNodeBase*, 2>;
+template class hh::fnd::Reference<app::level::StageData>;
+template class hh::fnd::Reference<app::game::GameModeResourceModule>;
+template class hh::needle::MaterialParamData<float>;
+template class hh::needle::MaterialParamData<int>;
+template class hh::needle::MaterialParamData<bool>;
