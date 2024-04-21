@@ -42130,8 +42130,8 @@ PUBLIC ?GetGameObjectClassByName@GameObjectRegistry@game@hh@@QEAAPEBVGameObjectC
     add rax, 0d4cad0h
     jmp rax
 
-PUBLIC ?AddObject@GameObjectRegistry@game@hh@@QEAAXPEAVGameObjectClass@23@@Z
-?AddObject@GameObjectRegistry@game@hh@@QEAAXPEAVGameObjectClass@23@@Z:
+PUBLIC ?AddObject@GameObjectRegistry@game@hh@@QEAAXPEBVGameObjectClass@23@@Z
+?AddObject@GameObjectRegistry@game@hh@@QEAAXPEBVGameObjectClass@23@@Z:
     mov rax, moduleOffset
     add rax, 0d4cb60h
     jmp rax
@@ -45716,6 +45716,12 @@ PUBLIC ?SetDuplicate@NeedleRefcountResource@needle@hh@@UEAA_NPEBV123@@Z
 ?SetDuplicate@NeedleRefcountResource@needle@hh@@UEAA_NPEBV123@@Z:
     mov rax, moduleOffset
     add rax, 01103bb0h
+    jmp rax
+
+PUBLIC ?ExecuteChunk@needle@hh@@YAXAEAUSCheckexec@12@PEBUParameterInfo@MaterialChunkBuilder@12@IPEAX_N@Z
+?ExecuteChunk@needle@hh@@YAXAEAUSCheckexec@12@PEBUParameterInfo@MaterialChunkBuilder@12@IPEAX_N@Z:
+    mov rax, moduleOffset
+    add rax, 01115760h
     jmp rax
 
 PUBLIC ?GetMaterialTextureNameType@mirageresourceimage@needle@hh@@YAPEAXXZ
