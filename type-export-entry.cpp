@@ -241,3 +241,4 @@ template class hh::fnd::Reference<app::game::GameModeResourceModule>;
 template class hh::needle::MaterialParamData<float>;
 template class hh::needle::MaterialParamData<int>;
 template class hh::needle::MaterialParamData<bool>;
+template class app::player::StatePluginManager<app::player::PlayerHsmContext>;
