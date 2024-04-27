@@ -20950,8 +20950,8 @@ PUBLIC ?GetRuntimeTypeInfo@GOCEventCollision@game@app@@UEAAPEAXXZ
     mov rax, 01401804b0h
     jmp rax
 
-PUBLIC ?GOCCL_UnkFunc3@CollisionListener@GOCEventCollision@game@app@@EEAAXPEAVGOCCollider@physics@hh@@@Z
-?GOCCL_UnkFunc3@CollisionListener@GOCEventCollision@game@app@@EEAAXPEAVGOCCollider@physics@hh@@@Z:
+PUBLIC ?GOCCL_UnkFunc3@CollisionListener@GOCEventCollision@game@app@@UEAAXPEAVGOCCollider@physics@hh@@@Z
+?GOCCL_UnkFunc3@CollisionListener@GOCEventCollision@game@app@@UEAAXPEAVGOCCollider@physics@hh@@@Z:
     mov rax, 0140180670h
     jmp rax
 
@@ -23375,9 +23375,39 @@ PUBLIC ?PostStepCallback@FxParamManager@gfx@app@@UEAAXPEAVGameManager@game@hh@@A
     mov rax, 0140225a70h
     jmp rax
 
+PUBLIC ?AddNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAX_KPEAUNeedleFxParameter@rfl@3@IM@Z
+?AddNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAX_KPEAUNeedleFxParameter@rfl@3@IM@Z:
+    mov rax, 0140225ee0h
+    jmp rax
+
 PUBLIC ?OnAddedToGame@FxParamManager@gfx@app@@UEAAXXZ
 ?OnAddedToGame@FxParamManager@gfx@app@@UEAAXXZ:
     mov rax, 014022fd60h
+    jmp rax
+
+PUBLIC ?UpdateNeedleFxSceneConfigInterpolators@FxParamManager@gfx@app@@IEAA_NXZ
+?UpdateNeedleFxSceneConfigInterpolators@FxParamManager@gfx@app@@IEAA_NXZ:
+    mov rax, 014023a400h
+    jmp rax
+
+PUBLIC ?UpdateDefaultNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxParameter@rfl@3@@Z
+?UpdateDefaultNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxParameter@rfl@3@@Z:
+    mov rax, 014023a4b0h
+    jmp rax
+
+PUBLIC ?UpdateDefaultNeedleFxSceneConfigInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxSceneConfig@rfl@3@@Z
+?UpdateDefaultNeedleFxSceneConfigInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxSceneConfig@rfl@3@@Z:
+    mov rax, 014023a510h
+    jmp rax
+
+PUBLIC ?UpdateNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAX_KPEAUNeedleFxParameter@rfl@3@@Z
+?UpdateNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAX_KPEAUNeedleFxParameter@rfl@3@@Z:
+    mov rax, 014023a620h
+    jmp rax
+
+PUBLIC ?UpdateNeedleFxParameterInterpolators@FxParamManager@gfx@app@@IEAA_NXZ
+?UpdateNeedleFxParameterInterpolators@FxParamManager@gfx@app@@IEAA_NXZ:
+    mov rax, 014023bfb0h
     jmp rax
 
 PUBLIC ?Create@FxParamManager@gfx@app@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
@@ -42610,6 +42640,11 @@ PUBLIC ?GetClass@GOCPlayerCollider@player@app@@SAPEBVGOComponentClass@game@hh@@X
     mov rax, 01408979f0h
     jmp rax
 
+PUBLIC ??0Unk4@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk4@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 014089a500h
+    jmp rax
+
 PUBLIC ?Create@GOCPlayerEffect@player@app@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 ?Create@GOCPlayerEffect@player@app@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 01408a1590h
@@ -42708,6 +42743,16 @@ PUBLIC ?GetClass@GOCPlayerKinematicParams@player@app@@SAPEBVGOComponentClass@gam
 PUBLIC ?Update@GOCPlayerKinematicParams@player@app@@UEAAXW4UpdatingPhase@fnd@hh@@AEBUSUpdateInfo@56@@Z
 ?Update@GOCPlayerKinematicParams@player@app@@UEAAXW4UpdatingPhase@fnd@hh@@AEBUSUpdateInfo@56@@Z:
     mov rax, 01408aff80h
+    jmp rax
+
+PUBLIC ??0Unk1@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk1@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 01408b0a40h
+    jmp rax
+
+PUBLIC ??0Unk5@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk5@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 01408b20d0h
     jmp rax
 
 PUBLIC ?GetAirBoostParameters@GOCPlayerParameter@player@app@@QEBAAEAUPlayerParamAirBoost@rfl@3@XZ
@@ -108585,8 +108630,8 @@ PUBLIC ??_DGOCEventCollision@game@app@@QEAAXXZ
     mov rax, 0146ecd8f0h
     jmp rax
 
-PUBLIC ?GOCCL_UnkFunc2@CollisionListener@GOCEventCollision@game@app@@EEAAXPEAVGOCCollider@physics@hh@@@Z
-?GOCCL_UnkFunc2@CollisionListener@GOCEventCollision@game@app@@EEAAXPEAVGOCCollider@physics@hh@@@Z:
+PUBLIC ?GOCCL_UnkFunc2@CollisionListener@GOCEventCollision@game@app@@UEAAXPEAVGOCCollider@physics@hh@@@Z
+?GOCCL_UnkFunc2@CollisionListener@GOCEventCollision@game@app@@UEAAXPEAVGOCCollider@physics@hh@@@Z:
     mov rax, 0146ed0fa0h
     jmp rax
 
@@ -109283,6 +109328,16 @@ PUBLIC ?Construct@StageCommonTimeProgressParameter@rfl@app@@CAXPEAU123@PEAVIAllo
 PUBLIC ??_DFxParamManager@gfx@app@@QEAAXXZ
 ??_DFxParamManager@gfx@app@@QEAAXXZ:
     mov rax, 01482d42a0h
+    jmp rax
+
+PUBLIC ?AddDefaultNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxParameter@rfl@3@I@Z
+?AddDefaultNeedleFxParameterInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxParameter@rfl@3@I@Z:
+    mov rax, 01482dd390h
+    jmp rax
+
+PUBLIC ?AddDefaultNeedleFxSceneConfigInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxSceneConfig@rfl@3@I@Z
+?AddDefaultNeedleFxSceneConfigInterpolationJob@FxParamManager@gfx@app@@QEAAXPEAUNeedleFxSceneConfig@rfl@3@I@Z:
+    mov rax, 01482e0f40h
     jmp rax
 
 PUBLIC ?OnRemovedFromGame@FxParamManager@gfx@app@@UEAAXXZ
@@ -111573,6 +111628,21 @@ PUBLIC ??_DGOCPlayerKinematicParams@player@app@@QEAAXXZ
 PUBLIC ?OnGOCEvent@GOCPlayerKinematicParams@player@app@@UEAAXW4GOCEvent@GOComponent@game@hh@@AEAVGameObject@67@PEAX@Z
 ?OnGOCEvent@GOCPlayerKinematicParams@player@app@@UEAAXW4GOCEvent@GOComponent@game@hh@@AEAVGameObject@67@PEAX@Z:
     mov rax, 014afaca70h
+    jmp rax
+
+PUBLIC ??0Unk2@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk2@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 014afc95a0h
+    jmp rax
+
+PUBLIC ??0Unk6@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk6@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 014afde4a0h
+    jmp rax
+
+PUBLIC ??0Unk3@GOCPlayerKinematicParams@player@app@@QEAA@XZ
+??0Unk3@GOCPlayerKinematicParams@player@app@@QEAA@XZ:
+    mov rax, 014b02d950h
     jmp rax
 
 PUBLIC ?GetAcceleComboParameters@GOCPlayerParameter@player@app@@QEBAAEAUPlayerParamAcceleCombo@rfl@3@XZ
