@@ -242,3 +242,5 @@ template class hh::needle::MaterialParamData<float>;
 template class hh::needle::MaterialParamData<int>;
 template class hh::needle::MaterialParamData<bool>;
 template class app::player::StatePluginManager<app::player::PlayerHsmContext>;
+template class csl::ut::MoveArray<csl::ut::MoveArray<void*>>;
+template class csl::fnd::Delegate<void (uint64_t, const float&)>;

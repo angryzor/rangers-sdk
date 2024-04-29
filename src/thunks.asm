@@ -55,6 +55,11 @@ PUBLIC ??_DKeyEventHandler@fw@hh@@QEAAXXZ
     mov rax, 014008a448h
     jmp rax
 
+PUBLIC ?AddBucket@SetupInfo@BucketedGameUpdater@game@hh@@QEAAXW4GameStepPhase@34@IPEBD@Z
+?AddBucket@SetupInfo@BucketedGameUpdater@game@hh@@QEAAXW4GameStepPhase@34@IPEBD@Z:
+    mov rax, 014008a560h
+    jmp rax
+
 PUBLIC ?AddExtension@MyApplication@app@@QEAAXPEAVApplicationExtension@game@2@@Z
 ?AddExtension@MyApplication@app@@QEAAXPEAVApplicationExtension@game@2@@Z:
     mov rax, 014008a6c0h
@@ -20700,6 +20705,11 @@ PUBLIC ??_GApplicationInputMapExtension@game@app@@QEAAXXZ
     mov rax, 014016cc80h
     jmp rax
 
+PUBLIC ??_DUIManagerListener@ui@hh@@QEAAXXZ
+??_DUIManagerListener@ui@hh@@QEAAXXZ:
+    mov rax, 014016cce0h
+    jmp rax
+
 PUBLIC ??_DUserInfoEventListener@user@fnd@hh@@QEAAXXZ
 ??_DUserInfoEventListener@user@fnd@hh@@QEAAXXZ:
     mov rax, 014016d400h
@@ -22283,6 +22293,16 @@ PUBLIC ??0GameModeHackingExtension@game@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 PUBLIC ??0GameModeInputExtension@game@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 ??0GameModeInputExtension@game@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 01401cda20h
+    jmp rax
+
+PUBLIC ?GetNameHash@GameModeLayerStatusExtension@game@app@@UEAAIXZ
+?GetNameHash@GameModeLayerStatusExtension@game@app@@UEAAIXZ:
+    mov rax, 01401cfb50h
+    jmp rax
+
+PUBLIC ?Update@GameModeLayerStatusExtension@game@app@@UEAAXW4UpdatingPhase@fnd@hh@@AEBUSUpdateInfo@56@@Z
+?Update@GameModeLayerStatusExtension@game@app@@UEAAXW4UpdatingPhase@fnd@hh@@AEBUSUpdateInfo@56@@Z:
+    mov rax, 01401d0110h
     jmp rax
 
 PUBLIC ??0GameModeMasterTrialExtension@game@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -48915,9 +48935,19 @@ PUBLIC ?GetClass@UICollisionWorld@services@heur@@SAPEBVGameServiceClass@game@hh@
     mov rax, 0140b85140h
     jmp rax
 
-PUBLIC ??0UIManager@services@heur@@QEAA@PEAVIAllocator@fnd@csl@@@Z
-??0UIManager@services@heur@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+PUBLIC ??0UIManager@ui@hh@@AEAA@PEAVIAllocator@fnd@csl@@@Z
+??0UIManager@ui@hh@@AEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 0140b851f0h
+    jmp rax
+
+PUBLIC ?PreStepCallback@UIManager@ui@hh@@UEAAXPEAVGameManager@game@3@AEBUGameStepInfo@53@@Z
+?PreStepCallback@UIManager@ui@hh@@UEAAXPEAVGameManager@game@3@AEBUGameStepInfo@53@@Z:
+    mov rax, 0140b858e0h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@UIManager@ui@hh@@UEAAPEAXXZ
+?GetRuntimeTypeInfo@UIManager@ui@hh@@UEAAPEAXXZ:
+    mov rax, 0140b85a50h
     jmp rax
 
 PUBLIC ?Initialize@UIManager@ui@hh@@QEAAXAEBUConfig@123@@Z
@@ -48925,8 +48955,8 @@ PUBLIC ?Initialize@UIManager@ui@hh@@QEAAXAEBUConfig@123@@Z
     mov rax, 0140b85bb0h
     jmp rax
 
-PUBLIC ?GetClass@UIManager@services@heur@@SAPEBVGameServiceClass@game@hh@@XZ
-?GetClass@UIManager@services@heur@@SAPEBVGameServiceClass@game@hh@@XZ:
+PUBLIC ?GetClass@UIManager@ui@hh@@SAPEBVGameServiceClass@game@3@XZ
+?GetClass@UIManager@ui@hh@@SAPEBVGameServiceClass@game@3@XZ:
     mov rax, 0140b85fb0h
     jmp rax
 
@@ -49040,6 +49070,11 @@ PUBLIC ?GetLayerController@GOCSprite@ui@hh@@QEAAPEAVLayerController@23@PEBD0G@Z
     mov rax, 0140b93420h
     jmp rax
 
+PUBLIC ?GetRuntimeTypeInfo@GOCSprite@ui@hh@@UEAAPEAXXZ
+?GetRuntimeTypeInfo@GOCSprite@ui@hh@@UEAAPEAXXZ:
+    mov rax, 0140b938e0h
+    jmp rax
+
 PUBLIC ?GetCastHandle@GOCSprite@ui@hh@@AEAA?AV?$Handle@VSurfRideCastHandle@ui@hh@@@fnd@3@PEAVCast@SurfRide@@@Z
 ?GetCastHandle@GOCSprite@ui@hh@@AEAA?AV?$Handle@VSurfRideCastHandle@ui@hh@@@fnd@3@PEAVCast@SurfRide@@@Z:
     mov rax, 0140b93e10h
@@ -49050,18 +49085,18 @@ PUBLIC ?GetLayerHandle@GOCSprite@ui@hh@@AEAA?AV?$Handle@VSurfRideLayerHandle@ui@
     mov rax, 0140b94030h
     jmp rax
 
-PUBLIC ?UnkFunc1@Renderable@GOCSprite@ui@hh@@UEAAXXZ
-?UnkFunc1@Renderable@GOCSprite@ui@hh@@UEAAXXZ:
+PUBLIC ?Render@Renderable@GOCSprite@ui@hh@@UEAAXPEBVRenderableParameter@gfnd@4@@Z
+?Render@Renderable@GOCSprite@ui@hh@@UEAAXPEBVRenderableParameter@gfnd@4@@Z:
     mov rax, 0140b94490h
     jmp rax
 
-PUBLIC ?GetClass@GOCSprite@gocs@heur@@SAPEBVGOComponentClass@game@hh@@XZ
-?GetClass@GOCSprite@gocs@heur@@SAPEBVGOComponentClass@game@hh@@XZ:
+PUBLIC ?GetClass@GOCSprite@ui@hh@@SAPEBVGOComponentClass@game@3@XZ
+?GetClass@GOCSprite@ui@hh@@SAPEBVGOComponentClass@game@3@XZ:
     mov rax, 0140b947f0h
     jmp rax
 
-PUBLIC ?Update@GOCSprite@ui@hh@@UEAAXXZ
-?Update@GOCSprite@ui@hh@@UEAAXXZ:
+PUBLIC ?Update@GOCSprite@ui@hh@@UEAAXW4UpdatingPhase@fnd@3@AEBUSUpdateInfo@53@@Z
+?Update@GOCSprite@ui@hh@@UEAAXW4UpdatingPhase@fnd@3@AEBUSUpdateInfo@53@@Z:
     mov rax, 0140b94800h
     jmp rax
 
@@ -51290,6 +51325,11 @@ PUBLIC ?CIL_UnkFunc2@CaptureIBLListener@SupportFX@needle@hh@@UEAAXXZ
     mov rax, 0140d11c20h
     jmp rax
 
+PUBLIC ?SetGlobalTimeScale@GameUpdater@game@hh@@QEAAXM@Z
+?SetGlobalTimeScale@GameUpdater@game@hh@@QEAAXM@Z:
+    mov rax, 0140d18af0h
+    jmp rax
+
 PUBLIC ?OnGOCVisualEvent@GOCVisualModelImpl@gfx@hh@@QEAA_KPEAVGOCVisualModel@23@HIPEAX@Z
 ?OnGOCVisualEvent@GOCVisualModelImpl@gfx@hh@@QEAA_KPEAVGOCVisualModel@23@HIPEAX@Z:
     mov rax, 0140d19580h
@@ -51508,6 +51548,21 @@ PUBLIC ?GetInstance@GameApplication@game@hh@@SAPEAV123@XZ
 PUBLIC ?UnkFunc9@GameApplication@game@hh@@UEAA_KXZ
 ?UnkFunc9@GameApplication@game@hh@@UEAA_KXZ:
     mov rax, 0140d36f60h
+    jmp rax
+
+PUBLIC ??0BucketedGameUpdater@game@hh@@QEAA@PEAVIAllocator@fnd@csl@@AEBUSetupInfo@012@@Z
+??0BucketedGameUpdater@game@hh@@QEAA@PEAVIAllocator@fnd@csl@@AEBUSetupInfo@012@@Z:
+    mov rax, 0140d37630h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@BucketedGameUpdater@game@hh@@UEAAPEAXXZ
+?GetRuntimeTypeInfo@BucketedGameUpdater@game@hh@@UEAAPEAXXZ:
+    mov rax, 0140d37f20h
+    jmp rax
+
+PUBLIC ?DoStep@BucketedGameUpdater@game@hh@@UEAAPEAXAEBUGameStepInfo@23@@Z
+?DoStep@BucketedGameUpdater@game@hh@@UEAAPEAXAEBUGameStepInfo@23@@Z:
+    mov rax, 0140d38250h
     jmp rax
 
 PUBLIC ?Construct@StatsDataValue@rfl@app@@CAXPEAU123@PEAVIAllocator@fnd@csl@@@Z
@@ -51785,6 +51840,11 @@ PUBLIC ?GetRuntimeTypeInfo@GOComponent@game@hh@@UEAAPEAXXZ
     mov rax, 0140d43930h
     jmp rax
 
+PUBLIC ?SetUpdatePriority@GOComponent@game@hh@@QEAAXW4UpdatingPhase@fnd@3@E@Z
+?SetUpdatePriority@GOComponent@game@hh@@QEAAXW4UpdatingPhase@fnd@3@E@Z:
+    mov rax, 0140d43a10h
+    jmp rax
+
 PUBLIC ?GetDebugInfoMaybe@GOComponent@game@hh@@UEAAXXZ
 ?GetDebugInfoMaybe@GOComponent@game@hh@@UEAAXXZ:
     mov rax, 0140d43a20h
@@ -51973,6 +52033,11 @@ PUBLIC ??_DGameUpdater@game@hh@@QEAAXXZ
 PUBLIC ?GetRuntimeTypeInfo@GameUpdater@game@hh@@UEAAPEAXXZ
 ?GetRuntimeTypeInfo@GameUpdater@game@hh@@UEAAPEAXXZ:
     mov rax, 0140d4d420h
+    jmp rax
+
+PUBLIC ?SetLayerTimeScale@GameUpdater@game@hh@@QEAAXIM@Z
+?SetLayerTimeScale@GameUpdater@game@hh@@QEAAXIM@Z:
+    mov rax, 0140d4d460h
     jmp rax
 
 PUBLIC ?GetClass@VibrationManager@services@heur@@SAPEBVGameServiceClass@game@hh@@XZ
@@ -88495,13 +88560,13 @@ PUBLIC ?componentClass@GOCMotorToPoints@gocs@heur@@0VGOComponentClass@game@hh@@B
     mov rax, 0143ce6330h
     jmp rax
 
-PUBLIC ?classId@GOCSprite@gocs@heur@@0PEBXEB
-?classId@GOCSprite@gocs@heur@@0PEBXEB:
+PUBLIC ?classId@GOCSprite@ui@hh@@0PEBXEB
+?classId@GOCSprite@ui@hh@@0PEBXEB:
     mov rax, 0143ce6578h
     jmp rax
 
-PUBLIC ?componentClass@GOCSprite@gocs@heur@@0VGOComponentClass@game@hh@@B
-?componentClass@GOCSprite@gocs@heur@@0VGOComponentClass@game@hh@@B:
+PUBLIC ?componentClass@GOCSprite@ui@hh@@0VGOComponentClass@game@3@B
+?componentClass@GOCSprite@ui@hh@@0VGOComponentClass@game@3@B:
     mov rax, 0143ce6580h
     jmp rax
 
@@ -89933,6 +89998,11 @@ PUBLIC ?handleManager@GameObjectSystem@game@hh@@2PEAVHandleManager@fnd@3@EA
 PUBLIC ?instance@JobQueue@fnd@hh@@0PEAV123@EA
 ?instance@JobQueue@fnd@hh@@0PEAV123@EA:
     mov rax, 0143d90790h
+    jmp rax
+
+PUBLIC ?instance@SyncTimer@hh@@0PEAV12@EA
+?instance@SyncTimer@hh@@0PEAV12@EA:
+    mov rax, 0143d907a0h
     jmp rax
 
 PUBLIC ?instance@?$Singleton@VGameObjectSystem@game@hh@@@fnd@csl@@2PEAVGameObjectSystem@game@hh@@EA
@@ -106875,8 +106945,8 @@ PUBLIC ?gameServiceClass@UICollisionWorld@services@heur@@0VGameServiceClass@game
     mov rax, 0143dc30b0h
     jmp rax
 
-PUBLIC ?gameServiceClass@UIManager@services@heur@@0VGameServiceClass@game@hh@@B
-?gameServiceClass@UIManager@services@heur@@0VGameServiceClass@game@hh@@B:
+PUBLIC ?gameServiceClass@UIManager@ui@hh@@0VGameServiceClass@game@3@B
+?gameServiceClass@UIManager@ui@hh@@0VGameServiceClass@game@3@B:
     mov rax, 0143dc30c8h
     jmp rax
 
@@ -107885,8 +107955,8 @@ PUBLIC ??_DSoundDirector@snd@app@@QEAAXXZ
     mov rax, 0145f9f0c0h
     jmp rax
 
-PUBLIC ??0MyApplication@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
-??0MyApplication@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+PUBLIC ?CreateMyApp@app@@YAPEAVApplication@fw@hh@@VFrameworkEnvironment@34@PEAVIAllocator@fnd@csl@@@Z
+?CreateMyApp@app@@YAPEAVApplication@fw@hh@@VFrameworkEnvironment@34@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 0145fa8ca0h
     jmp rax
 
@@ -108700,8 +108770,8 @@ PUBLIC ??_GGOCHealth@game@app@@QEAAXXZ
     mov rax, 0146ffb590h
     jmp rax
 
-PUBLIC ?AddListener@GameObject@game@hh@@QEAAXPEAVGameObjectListener@23@@Z
-?AddListener@GameObject@game@hh@@QEAAXPEAVGameObjectListener@23@@Z:
+PUBLIC ?AddListener@GOCHealth@game@hh@@QEAAXPEAVGameObjectListener@23@@Z
+?AddListener@GOCHealth@game@hh@@QEAAXPEAVGameObjectListener@23@@Z:
     mov rax, 0147000a10h
     jmp rax
 
@@ -108923,6 +108993,11 @@ PUBLIC ??0GameModeLayerStatusExtension@game@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 PUBLIC ??_DGameModeLayerStatusExtension@game@app@@QEAAXXZ
 ??_DGameModeLayerStatusExtension@game@app@@QEAAXXZ:
     mov rax, 0147618a20h
+    jmp rax
+
+PUBLIC ?UnkFunc1@GameModeLayerStatusExtension@game@app@@UEAA_KXZ
+?UnkFunc1@GameModeLayerStatusExtension@game@app@@UEAA_KXZ:
+    mov rax, 0147657a70h
     jmp rax
 
 PUBLIC ??_DUIBombTimeCounterContext@ui@app@@QEAAXXZ
@@ -112890,6 +112965,11 @@ PUBLIC ??_GGOCHsm2@gocs@heur@@QEAAXXZ
     mov rax, 014d4818b0h
     jmp rax
 
+PUBLIC ?AddListener@GameObject@game@hh@@QEAAXPEAVGameObjectListener@23@@Z
+?AddListener@GameObject@game@hh@@QEAAXPEAVGameObjectListener@23@@Z:
+    mov rax, 014d490a80h
+    jmp rax
+
 PUBLIC ?Create@GOCHsm2@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 ?Create@GOCHsm2@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 014d499b70h
@@ -112910,18 +112990,28 @@ PUBLIC ?OnAddedToGame@ObjectWorld@game@hh@@UEAAXXZ
     mov rax, 014d537150h
     jmp rax
 
-PUBLIC ??_GUIManager@services@heur@@QEAAXXZ
-??_GUIManager@services@heur@@QEAAXXZ:
+PUBLIC ??_DUIManager@ui@hh@@QEAAXXZ
+??_DUIManager@ui@hh@@QEAAXXZ:
     mov rax, 014d549290h
     jmp rax
 
-PUBLIC ?RegisterTextObjectUpdater@UIManager@ui@hh@@QEAAXPEAVTextObjectUpdater@23@@Z
-?RegisterTextObjectUpdater@UIManager@ui@hh@@QEAAXPEAVTextObjectUpdater@23@@Z:
+PUBLIC ?AddGOCSprite@UIManager@ui@hh@@QEAAXPEAVGOCSprite@23@@Z
+?AddGOCSprite@UIManager@ui@hh@@QEAAXPEAVGOCSprite@23@@Z:
+    mov rax, 014d55d0b0h
+    jmp rax
+
+PUBLIC ?AddTextObjectUpdater@UIManager@ui@hh@@QEAAXPEAVTextObjectUpdater@23@@Z
+?AddTextObjectUpdater@UIManager@ui@hh@@QEAAXPEAVTextObjectUpdater@23@@Z:
     mov rax, 014d5615b0h
     jmp rax
 
-PUBLIC ?Create@UIManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
-?Create@UIManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
+PUBLIC ?RemoveGOCSprite@UIManager@ui@hh@@QEAAXPEAVGOCSprite@23@@Z
+?RemoveGOCSprite@UIManager@ui@hh@@QEAAXPEAVGOCSprite@23@@Z:
+    mov rax, 014d56d4d0h
+    jmp rax
+
+PUBLIC ?Create@UIManager@ui@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
+?Create@UIManager@ui@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 014d585860h
     jmp rax
 
@@ -112975,9 +113065,19 @@ PUBLIC ?GetLayerControllerWithNextId@GOCSprite@ui@hh@@QEAAPEAVLayerController@23
     mov rax, 014d73bec0h
     jmp rax
 
-PUBLIC ?Create@GOCSprite@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
-?Create@GOCSprite@gocs@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
+PUBLIC ?Create@GOCSprite@ui@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
+?Create@GOCSprite@ui@hh@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 014d749890h
+    jmp rax
+
+PUBLIC ?OnGOCEvent@GOCSprite@ui@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z
+?OnGOCEvent@GOCSprite@ui@hh@@UEAAXW4GOCEvent@GOComponent@game@3@AEAVGameObject@63@PEAX@Z:
+    mov rax, 014d762c60h
+    jmp rax
+
+PUBLIC ?Setup@GOCSprite@ui@hh@@QEAAXAEBUSetupInfo@123@@Z
+?Setup@GOCSprite@ui@hh@@QEAAXAEBUSetupInfo@123@@Z:
+    mov rax, 014d764180h
     jmp rax
 
 PUBLIC ?GetChildLayer@LayerController@ui@hh@@QEAAPEAV123@PEBDG@Z
@@ -113023,6 +113123,16 @@ PUBLIC ?Initialize@GOCUIComposition@ui@hh@@QEAAXAEBUConfig@123@@Z
 PUBLIC ?DoSomething@GOCUIComposition@ui@hh@@QEAAXXZ
 ?DoSomething@GOCUIComposition@ui@hh@@QEAAXXZ:
     mov rax, 014da60640h
+    jmp rax
+
+PUBLIC ??0TextObjectUpdater@ui@hh@@QEAA@PEAVIAllocator@fnd@csl@@PEAVUITextInterface@12@PEAVGOCSprite@12@PEAVCast@SurfRide@@PEAX@Z
+??0TextObjectUpdater@ui@hh@@QEAA@PEAVIAllocator@fnd@csl@@PEAVUITextInterface@12@PEAVGOCSprite@12@PEAVCast@SurfRide@@PEAX@Z:
+    mov rax, 014da7df10h
+    jmp rax
+
+PUBLIC ??_DTextObjectUpdater@ui@hh@@QEAAXXZ
+??_DTextObjectUpdater@ui@hh@@QEAAXXZ:
+    mov rax, 014da85e20h
     jmp rax
 
 PUBLIC ?GetTranslation@AppUITextInterface@ui@app@@UEAA?AUUnicodeString@text@hh@@PEBDI@Z
@@ -113890,6 +114000,11 @@ PUBLIC ??_DGameManager@game@hh@@QEAAXXZ
     mov rax, 015006a1f0h
     jmp rax
 
+PUBLIC ?AddGameObjectListener@GameManager@game@hh@@QEAAXPEAVGameObjectListener@23@@Z
+?AddGameObjectListener@GameManager@game@hh@@QEAAXPEAVGameObjectListener@23@@Z:
+    mov rax, 01500845a0h
+    jmp rax
+
 PUBLIC ?RegisterGameStepListener@GameManager@game@hh@@QEAAXAEAVGameStepListener@23@@Z
 ?RegisterGameStepListener@GameManager@game@hh@@QEAAXAEAVGameStepListener@23@@Z:
     mov rax, 0150088720h
@@ -113995,8 +114110,8 @@ PUBLIC ?NotifyDestroy@GameObject@game@hh@@QEAAXXZ
     mov rax, 0150129990h
     jmp rax
 
-PUBLIC ?SetUpdateFlags@GameObject@game@hh@@AEAAXW4Type@GOComponent@23@@Z
-?SetUpdateFlags@GameObject@game@hh@@AEAAXW4Type@GOComponent@23@@Z:
+PUBLIC ?SetUpdateFlags@GameObject@game@hh@@AEAAXW4UpdatingPhase@fnd@3@@Z
+?SetUpdateFlags@GameObject@game@hh@@AEAAXW4UpdatingPhase@fnd@3@@Z:
     mov rax, 0150138380h
     jmp rax
 
@@ -114025,9 +114140,14 @@ PUBLIC ?SetLayer@GameObject@game@hh@@IEAAXD@Z
     mov rax, 0150165890h
     jmp rax
 
-PUBLIC ?SetUpdateFlag@GameObject@game@hh@@IEAAXW4Type@GOComponent@23@_N@Z
-?SetUpdateFlag@GameObject@game@hh@@IEAAXW4Type@GOComponent@23@_N@Z:
+PUBLIC ?SetUpdateFlag@GameObject@game@hh@@IEAAXW4UpdatingPhase@fnd@3@_N@Z
+?SetUpdateFlag@GameObject@game@hh@@IEAAXW4UpdatingPhase@fnd@3@_N@Z:
     mov rax, 0150180f00h
+    jmp rax
+
+PUBLIC ?SetComponentLengths@GameObject@game@hh@@IEAAXW4UpdatingPhase@fnd@3@@Z
+?SetComponentLengths@GameObject@game@hh@@IEAAXW4UpdatingPhase@fnd@3@@Z:
+    mov rax, 0150185d00h
     jmp rax
 
 PUBLIC ??0GameApplication@game@hh@@QEAA@PEAVIAllocator@fnd@csl@@PEAX@Z
@@ -114043,6 +114163,21 @@ PUBLIC ?Shutdown@Application@fw@hh@@UEAAXXZ
 PUBLIC ?Reset@Application@fw@hh@@UEAAXXZ
 ?Reset@Application@fw@hh@@UEAAXXZ:
     mov rax, 01501a41f0h
+    jmp rax
+
+PUBLIC ??_DBucketedGameUpdater@game@hh@@QEAAXXZ
+??_DBucketedGameUpdater@game@hh@@QEAAXXZ:
+    mov rax, 01501c3080h
+    jmp rax
+
+PUBLIC ?ObjectAddedToLayerCallback@BucketedGameUpdater@game@hh@@UEAAXPEAVGameObject@23@H@Z
+?ObjectAddedToLayerCallback@BucketedGameUpdater@game@hh@@UEAAXPEAVGameObject@23@H@Z:
+    mov rax, 01501c57f0h
+    jmp rax
+
+PUBLIC ?ObjectRemovedFromLayerCallback@BucketedGameUpdater@game@hh@@UEAAXPEAVGameObject@23@H@Z
+?ObjectRemovedFromLayerCallback@BucketedGameUpdater@game@hh@@UEAAXPEAVGameObject@23@H@Z:
+    mov rax, 01501cfc30h
     jmp rax
 
 PUBLIC ?LoadGameObjectClasses@GameObjectSystem@game@hh@@SAXXZ
@@ -114270,8 +114405,8 @@ PUBLIC ?SetNameHash@GOComponent@game@hh@@QEAAXPEBD@Z
     mov rax, 015048fe60h
     jmp rax
 
-PUBLIC ?SetComponentTypeFlag@GOComponent@game@hh@@QEAAXW4Type@123@_N@Z
-?SetComponentTypeFlag@GOComponent@game@hh@@QEAAXW4Type@123@_N@Z:
+PUBLIC ?SetUpdateFlag@GOComponent@game@hh@@QEAAXW4UpdatingPhase@fnd@3@_N@Z
+?SetUpdateFlag@GOComponent@game@hh@@QEAAXW4UpdatingPhase@fnd@3@_N@Z:
     mov rax, 0150494e10h
     jmp rax
 
@@ -114450,6 +114585,11 @@ PUBLIC ?Create@GOCActivator@game@hh@@SAPEAV123@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 0150765370h
     jmp rax
 
+PUBLIC ??0GameUpdater@game@hh@@QEAA@PEAVIAllocator@fnd@csl@@AEBUSetupInfo@012@@Z
+??0GameUpdater@game@hh@@QEAA@PEAVIAllocator@fnd@csl@@AEBUSetupInfo@012@@Z:
+    mov rax, 0150782150h
+    jmp rax
+
 PUBLIC ?Create@VibrationManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 ?Create@VibrationManager@services@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 01507b0c70h
@@ -114483,6 +114623,11 @@ PUBLIC ?FireMessageProcessed@GameManagerCallbackUtil@game@hh@@CAXPEAVGameManager
 PUBLIC ?FireObjectLayerSet@GameManagerCallbackUtil@game@hh@@CAXPEAVGameManager@23@PEAVGameObject@23@@Z
 ?FireObjectLayerSet@GameManagerCallbackUtil@game@hh@@CAXPEAVGameManager@23@PEAVGameObject@23@@Z:
     mov rax, 01508d0c60h
+    jmp rax
+
+PUBLIC ?FireObjectAddedToLayer@GameManagerCallbackUtil@game@hh@@CAXPEAVGameManager@23@PEAVGameObject@23@H@Z
+?FireObjectAddedToLayer@GameManagerCallbackUtil@game@hh@@CAXPEAVGameManager@23@PEAVGameObject@23@H@Z:
+    mov rax, 01508e51f0h
     jmp rax
 
 PUBLIC ?FireComponentAdded@GameObjectCallbackUtil@game@hh@@CAXPEAVGameObject@23@PEAVGOComponent@23@@Z
@@ -114580,6 +114725,11 @@ PUBLIC ??0CriSystemThing@FrameworkEnvironment@fw@hh@@QEAA@XZ
     mov rax, 0150b52c60h
     jmp rax
 
+PUBLIC ??0EventStack@fw@hh@@QEAA@PEAVIAllocator@fnd@csl@@PEAX1@Z
+??0EventStack@fw@hh@@QEAA@PEAVIAllocator@fnd@csl@@PEAX1@Z:
+    mov rax, 0150b943c0h
+    jmp rax
+
 PUBLIC ?FireOnKeyUp@EventStack@fw@hh@@QEAAXAEAUKeyEventArgs@23@AEAE@Z
 ?FireOnKeyUp@EventStack@fw@hh@@QEAAXAEAUKeyEventArgs@23@AEAE@Z:
     mov rax, 0150b9b610h
@@ -114593,6 +114743,11 @@ PUBLIC ??0LocalHeap@heap@fw@hh@@QEAA@PEAX_K@Z
 PUBLIC ?AllocBottom@?$FreeListHeapTemplate@VMutex@fnd@csl@@@fnd@csl@@EEAAPEAX_K0@Z
 ?AllocBottom@?$FreeListHeapTemplate@VMutex@fnd@csl@@@fnd@csl@@EEAAPEAX_K0@Z:
     mov rax, 0150c08130h
+    jmp rax
+
+PUBLIC ??0FrameworkEnvironment@fw@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
+??0FrameworkEnvironment@fw@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, 0150c08d50h
     jmp rax
 
 PUBLIC ??0Window@fw@hh@@QEAA@PEAVIAllocator@fnd@csl@@@Z
