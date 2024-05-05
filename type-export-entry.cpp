@@ -20,6 +20,15 @@ typedef struct _RTL_CRITICAL_SECTION {
     void* SpinCount;        // force size on 64-bit systems when packed
 } RTL_CRITICAL_SECTION, *PRTL_CRITICAL_SECTION;
 typedef RTL_CRITICAL_SECTION CRITICAL_SECTION;
+typedef struct _SLIST_ENTRY {
+  struct _SLIST_ENTRY *Next;
+} SLIST_ENTRY, *PSLIST_ENTRY;
+typedef union alignas(16) _SLIST_HEADER {
+    struct {  // original struct
+        unsigned long long Alignment;
+        unsigned long long Region;
+    } DUMMYSTRUCTNAME;
+} SLIST_HEADER, *PSLIST_HEADER;
 
 long InterlockedExchangeAdd(long volatile* Addend, long value);
 
@@ -244,3 +253,4 @@ template class hh::needle::MaterialParamData<bool>;
 template class app::player::StatePluginManager<app::player::PlayerHsmContext>;
 template class csl::ut::MoveArray<csl::ut::MoveArray<void*>>;
 template class csl::fnd::Delegate<void (uint64_t, const float&)>;
+template class csl::ut::MoveArray<app_cmn::camera::CameraFrame::BlendNode*>;
