@@ -160,8 +160,8 @@ PUBLIC ?GetCameraFrame@CameraService@camera@app@@QEAA?AV?$Handle@VMessenger@fnd@
     mov rax, 014008d660h
     jmp rax
 
-PUBLIC ?UnkFunc2@StageTerrainModule@game@app@@UEAAIXZ
-?UnkFunc2@StageTerrainModule@game@app@@UEAAIXZ:
+PUBLIC ?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ
+?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ:
     mov rax, 014008d680h
     jmp rax
 
@@ -333,6 +333,11 @@ PUBLIC ??_DUISkillTreePanel@ui@app@@QEAAXXZ
 PUBLIC ??_GBossDragonChaseCamera@camera@app@@QEAAXXZ
 ??_GBossDragonChaseCamera@camera@app@@QEAAXXZ:
     mov rax, 0140099170h
+    jmp rax
+
+PUBLIC ??_DMsgRevertGlobalTimeScale@game@app@@QEAAXXZ
+??_DMsgRevertGlobalTimeScale@game@app@@QEAAXXZ:
+    mov rax, 0140099280h
     jmp rax
 
 PUBLIC ??0BossDragonParryCamera@camera@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -805,8 +810,8 @@ PUBLIC ??_GStandardCameraContext@camera@app@@QEAAXXZ
     mov rax, 01400ba3a0h
     jmp rax
 
-PUBLIC ??_GQuit@UIMainMenuState@ui@app@@QEAAXXZ
-??_GQuit@UIMainMenuState@ui@app@@QEAAXXZ:
+PUBLIC ??_DStatePluginCyberStart@player@app@@QEAAXXZ
+??_DStatePluginCyberStart@player@app@@QEAAXXZ:
     mov rax, 01400ba7c0h
     jmp rax
 
@@ -19380,6 +19385,11 @@ PUBLIC ??_DPhysicsWorld@physics@hh@@QEAAXXZ
     mov rax, 014011a910h
     jmp rax
 
+PUBLIC ??_DMsgChangeLayerTimeScale@game@app@@QEAAXXZ
+??_DMsgChangeLayerTimeScale@game@app@@QEAAXXZ:
+    mov rax, 014011a9f0h
+    jmp rax
+
 PUBLIC ??_GChartViewService@dbg@app@@QEAAXXZ
 ??_GChartViewService@dbg@app@@QEAAXXZ:
     mov rax, 014011d030h
@@ -19533,6 +19543,16 @@ PUBLIC ?Create@DvElementCaption@dv@app@@SAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 PUBLIC ??_GDvElementChangeTimeScale@dv@app@@QEAAXXZ
 ??_GDvElementChangeTimeScale@dv@app@@QEAAXXZ:
     mov rax, 0140123430h
+    jmp rax
+
+PUBLIC ?CreateAsyncHandler@MsgChangeLayerTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ
+?CreateAsyncHandler@MsgChangeLayerTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ:
+    mov rax, 0140123490h
+    jmp rax
+
+PUBLIC ?CreateAsyncHandler@MsgRevertLayerTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ
+?CreateAsyncHandler@MsgRevertLayerTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ:
+    mov rax, 0140123560h
     jmp rax
 
 PUBLIC ?Create@DvElementChangeTimeScale@dv@app@@SAPEAV123@PEAVIAllocator@fnd@csl@@@Z
@@ -19983,6 +20003,11 @@ PUBLIC ??_DGameUpdateListener@game@hh@@QEAAXXZ
 PUBLIC ??_DSuperSonicEffectAura@player@app@@QEAAXXZ
 ??_DSuperSonicEffectAura@player@app@@QEAAXXZ:
     mov rax, 0140135d20h
+    jmp rax
+
+PUBLIC ?GetPlugin@?$StatePluginManager@VPlayerHsmContext@player@app@@@player@app@@QEAAPEAV?$StatePlugin@VPlayerHsmContext@player@app@@@23@I@Z
+?GetPlugin@?$StatePluginManager@VPlayerHsmContext@player@app@@@player@app@@QEAAPEAV?$StatePlugin@VPlayerHsmContext@player@app@@@23@I@Z:
+    mov rax, 01401365b0h
     jmp rax
 
 PUBLIC ??0EventListenerHelper@evt@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -42465,9 +42490,24 @@ PUBLIC ?Kill@Player@player@app@@SAXPEAVGameManager@game@hh@@E@Z
     mov rax, 0140884280h
     jmp rax
 
+PUBLIC ?GetContent@Blackboard@player@app@@QEAAPEAVBlackboardContent@23@I@Z
+?GetContent@Blackboard@player@app@@QEAAPEAVBlackboardContent@23@I@Z:
+    mov rax, 0140884470h
+    jmp rax
+
 PUBLIC ??0BlackboardAmy@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 ??0BlackboardAmy@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 0140884580h
+    jmp rax
+
+PUBLIC ??_DBlackboardAmy@player@app@@QEAAXXZ
+??_DBlackboardAmy@player@app@@QEAAXXZ:
+    mov rax, 01408845b0h
+    jmp rax
+
+PUBLIC ?GetNameHash@BlackboardAmy@player@app@@UEBAIXZ
+?GetNameHash@BlackboardAmy@player@app@@UEBAIXZ:
+    mov rax, 0140884610h
     jmp rax
 
 PUBLIC ??_DBlackboardBattle@player@app@@QEAAXXZ
@@ -42475,9 +42515,19 @@ PUBLIC ??_DBlackboardBattle@player@app@@QEAAXXZ
     mov rax, 01408847b0h
     jmp rax
 
-PUBLIC ??_GBlackboardItem@player@app@@QEAAXXZ
-??_GBlackboardItem@player@app@@QEAAXXZ:
+PUBLIC ?GetNameHash@BlackboardBattle@player@app@@UEBAIXZ
+?GetNameHash@BlackboardBattle@player@app@@UEBAIXZ:
+    mov rax, 0140884ab0h
+    jmp rax
+
+PUBLIC ??_DBlackboardItem@player@app@@QEAAXXZ
+??_DBlackboardItem@player@app@@QEAAXXZ:
     mov rax, 0140885240h
+    jmp rax
+
+PUBLIC ?GetNameHash@BlackboardItem@player@app@@UEBAIXZ
+?GetNameHash@BlackboardItem@player@app@@UEBAIXZ:
+    mov rax, 01408852b0h
     jmp rax
 
 PUBLIC ?Create@PlayerBlackboardService@player@app@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
@@ -42485,9 +42535,24 @@ PUBLIC ?Create@PlayerBlackboardService@player@app@@CAPEAV123@PEAVIAllocator@fnd@
     mov rax, 0140885510h
     jmp rax
 
+PUBLIC ?GetNameHash@BlackboardSpeed@player@app@@UEBAIXZ
+?GetNameHash@BlackboardSpeed@player@app@@UEBAIXZ:
+    mov rax, 0140885630h
+    jmp rax
+
 PUBLIC ??_DBlackboardStatus@player@app@@QEAAXXZ
 ??_DBlackboardStatus@player@app@@QEAAXXZ:
     mov rax, 0140885810h
+    jmp rax
+
+PUBLIC ?GetNameHash@BlackboardStatus@player@app@@UEBAIXZ
+?GetNameHash@BlackboardStatus@player@app@@UEBAIXZ:
+    mov rax, 0140885eb0h
+    jmp rax
+
+PUBLIC ?SetWorldFlag@BlackboardStatus@player@app@@QEAAXW4WorldFlag@123@_N@Z
+?SetWorldFlag@BlackboardStatus@player@app@@QEAAXW4WorldFlag@123@_N@Z:
+    mov rax, 01408863b0h
     jmp rax
 
 PUBLIC ??0BlackboardTails@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -42495,13 +42560,18 @@ PUBLIC ??0BlackboardTails@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 0140886470h
     jmp rax
 
-PUBLIC ??_GBlackboardTails@player@app@@QEAAXXZ
-??_GBlackboardTails@player@app@@QEAAXXZ:
+PUBLIC ??_DBlackboardTails@player@app@@QEAAXXZ
+??_DBlackboardTails@player@app@@QEAAXXZ:
     mov rax, 01408864c0h
     jmp rax
 
-PUBLIC ??_GAmy@player@app@@QEAAXXZ
-??_GAmy@player@app@@QEAAXXZ:
+PUBLIC ?GetNameHash@BlackboardTails@player@app@@UEBAIXZ
+?GetNameHash@BlackboardTails@player@app@@UEBAIXZ:
+    mov rax, 0140886520h
+    jmp rax
+
+PUBLIC ??_DAmy@player@app@@QEAAXXZ
+??_DAmy@player@app@@QEAAXXZ:
     mov rax, 0140886540h
     jmp rax
 
@@ -42545,8 +42615,8 @@ PUBLIC ??_GAmyContext@player@app@@QEAAXXZ
     mov rax, 0140888840h
     jmp rax
 
-PUBLIC ??_GKnuckles@player@app@@QEAAXXZ
-??_GKnuckles@player@app@@QEAAXXZ:
+PUBLIC ??_DKnuckles@player@app@@QEAAXXZ
+??_DKnuckles@player@app@@QEAAXXZ:
     mov rax, 01408888b0h
     jmp rax
 
@@ -42585,6 +42655,16 @@ PUBLIC ??_GKnucklesContext@player@app@@QEAAXXZ
     mov rax, 014088a870h
     jmp rax
 
+PUBLIC ?CreateAsyncHandler@MsgChangeGlobalTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ
+?CreateAsyncHandler@MsgChangeGlobalTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ:
+    mov rax, 014088a960h
+    jmp rax
+
+PUBLIC ?CreateAsyncHandler@MsgRevertGlobalTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ
+?CreateAsyncHandler@MsgRevertGlobalTimeScale@game@app@@UEAAPEAVMessageAsyncHandler@fnd@hh@@XZ:
+    mov rax, 014088aa20h
+    jmp rax
+
 PUBLIC ?GetClass@Sonic@player@app@@SAPEBVGameObjectClass@game@hh@@XZ
 ?GetClass@Sonic@player@app@@SAPEBVGameObjectClass@game@hh@@XZ:
     mov rax, 014088ce30h
@@ -42595,8 +42675,8 @@ PUBLIC ?Create@Sonic@player@app@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 014088cf60h
     jmp rax
 
-PUBLIC ??_GTails@player@app@@QEAAXXZ
-??_GTails@player@app@@QEAAXXZ:
+PUBLIC ??_DTails@player@app@@QEAAXXZ
+??_DTails@player@app@@QEAAXXZ:
     mov rax, 014088d070h
     jmp rax
 
@@ -42828,6 +42908,11 @@ PUBLIC ?GetPosition@GOCPlayerKinematicParams@player@app@@QEAAAEAVVector4@math@cs
 PUBLIC ?GetRuntimeTypeInfo@GOCPlayerKinematicParams@player@app@@UEAAPEAXXZ
 ?GetRuntimeTypeInfo@GOCPlayerKinematicParams@player@app@@UEAAPEAXXZ:
     mov rax, 01408af1a0h
+    jmp rax
+
+PUBLIC ?SetGravityScale@GOCPlayerKinematicParams@player@app@@QEAAXM@Z
+?SetGravityScale@GOCPlayerKinematicParams@player@app@@QEAAXM@Z:
+    mov rax, 01408af950h
     jmp rax
 
 PUBLIC ?SetPosition@GOCPlayerKinematicParams@player@app@@QEAAXAEBVVector4@math@csl@@@Z
@@ -46098,6 +46183,21 @@ PUBLIC ??0StatePluginAutoRun@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 PUBLIC ??0StatePluginBatterBox@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 ??0StatePluginBatterBox@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 0140991c60h
+    jmp rax
+
+PUBLIC ?SetBoostType@StatePluginBoost@player@app@@QEAAXE@Z
+?SetBoostType@StatePluginBoost@player@app@@QEAAXE@Z:
+    mov rax, 0140998ff0h
+    jmp rax
+
+PUBLIC ?SetUnk1@StatePluginBoost@player@app@@QEAAXE@Z
+?SetUnk1@StatePluginBoost@player@app@@QEAAXE@Z:
+    mov rax, 0140999030h
+    jmp rax
+
+PUBLIC ?SetNitroMode@StatePluginBoost@player@app@@QEAAXXZ
+?SetNitroMode@StatePluginBoost@player@app@@QEAAXXZ:
+    mov rax, 0140999540h
     jmp rax
 
 PUBLIC ??0StatePluginBoostDrill@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
@@ -53615,8 +53715,8 @@ PUBLIC ?GetTypeInfo@ResComputeShader@resources@heur@@SAPEBUResourceTypeInfo@fnd@
     mov rax, 0140edb100h
     jmp rax
 
-PUBLIC ?Clone@Message@fnd@hh@@UEAAPEAV123@XZ
-?Clone@Message@fnd@hh@@UEAAPEAV123@XZ:
+PUBLIC ?CreateAsyncHandler@Message@fnd@hh@@UEAAPEAVMessageAsyncHandler@23@XZ
+?CreateAsyncHandler@Message@fnd@hh@@UEAAPEAVMessageAsyncHandler@23@XZ:
     mov rax, 0140edb350h
     jmp rax
 
@@ -108385,8 +108485,8 @@ PUBLIC ??_GCameraBoostEffectExtension@camera@app@@QEAAXXZ
     mov rax, 01463bd560h
     jmp rax
 
-PUBLIC ??_GIslandSoundExtension@snd@app@@QEAAXXZ
-??_GIslandSoundExtension@snd@app@@QEAAXXZ:
+PUBLIC ??_DBlackboardContent@player@app@@QEAAXXZ
+??_DBlackboardContent@player@app@@QEAAXXZ:
     mov rax, 01463c52c0h
     jmp rax
 
@@ -111690,8 +111790,8 @@ PUBLIC ??0Blackboard@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 014a9d32a0h
     jmp rax
 
-PUBLIC ??_GBlackboard@player@app@@QEAAXXZ
-??_GBlackboard@player@app@@QEAAXXZ:
+PUBLIC ??_DBlackboard@player@app@@QEAAXXZ
+??_DBlackboard@player@app@@QEAAXXZ:
     mov rax, 014a9d72b0h
     jmp rax
 
@@ -111725,8 +111825,8 @@ PUBLIC ??0BlackboardSpeed@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 014aa9beb0h
     jmp rax
 
-PUBLIC ??_GBlackboardSpeed@player@app@@QEAAXXZ
-??_GBlackboardSpeed@player@app@@QEAAXXZ:
+PUBLIC ??_DBlackboardSpeed@player@app@@QEAAXXZ
+??_DBlackboardSpeed@player@app@@QEAAXXZ:
     mov rax, 014aa9f980h
     jmp rax
 
@@ -111740,8 +111840,13 @@ PUBLIC ??_GBlackboardStatus@player@app@@QEAAXXZ
     mov rax, 014aababc0h
     jmp rax
 
-PUBLIC ??_GSonic@player@app@@QEAAXXZ
-??_GSonic@player@app@@QEAAXXZ:
+PUBLIC ?AddPlugin@?$StatePluginManager@VPlayerHsmContext@player@app@@@player@app@@QEAAXPEAV?$StatePlugin@VPlayerHsmContext@player@app@@@23@@Z
+?AddPlugin@?$StatePluginManager@VPlayerHsmContext@player@app@@@player@app@@QEAAXPEAV?$StatePlugin@VPlayerHsmContext@player@app@@@23@@Z:
+    mov rax, 014aaf8b00h
+    jmp rax
+
+PUBLIC ??_DSonic@player@app@@QEAAXXZ
+??_DSonic@player@app@@QEAAXXZ:
     mov rax, 014aafe150h
     jmp rax
 
@@ -111865,8 +111970,8 @@ PUBLIC ??_GSuperSonicEffectShape@player@app@@QEAAXXZ
     mov rax, 014ac4b1d0h
     jmp rax
 
-PUBLIC ??_GGOCPlayerBlackboard@player@app@@QEAAXXZ
-??_GGOCPlayerBlackboard@player@app@@QEAAXXZ:
+PUBLIC ??_DGOCPlayerBlackboard@player@app@@QEAAXXZ
+??_DGOCPlayerBlackboard@player@app@@QEAAXXZ:
     mov rax, 014ac4cef0h
     jmp rax
 
@@ -112410,6 +112515,11 @@ PUBLIC ??_GStatePluginBattle@player@app@@QEAAXXZ
     mov rax, 014b9d6d20h
     jmp rax
 
+PUBLIC ??_DStatePluginBoost@player@app@@QEAAXXZ
+??_DStatePluginBoost@player@app@@QEAAXXZ:
+    mov rax, 014ba18a40h
+    jmp rax
+
 PUBLIC ??0StatePluginCamera@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 ??0StatePluginCamera@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 014ba4ace0h
@@ -112433,6 +112543,11 @@ PUBLIC ??0StatePluginCheckExternalInput@player@app@@QEAA@PEAVIAllocator@fnd@csl@
 PUBLIC ??0StatePluginCyberStart@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
 ??0StatePluginCyberStart@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 014ba80870h
+    jmp rax
+
+PUBLIC ?Setup@StatePluginCyberStart@player@app@@QEAAXXZ
+?Setup@StatePluginCyberStart@player@app@@QEAAXXZ:
+    mov rax, 014ba82590h
     jmp rax
 
 PUBLIC ??0StatePluginCyloop@player@app@@QEAA@PEAVIAllocator@fnd@csl@@@Z
