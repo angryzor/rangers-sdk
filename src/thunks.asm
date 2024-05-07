@@ -160,11 +160,6 @@ PUBLIC ?GetCameraFrame@CameraService@camera@app@@QEAA?AV?$Handle@VMessenger@fnd@
     mov rax, 014008d660h
     jmp rax
 
-PUBLIC ?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ
-?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ:
-    mov rax, 014008d680h
-    jmp rax
-
 PUBLIC ?GetRuntimeTypeInfo@CameraService@camera@app@@UEAAPEAXXZ
 ?GetRuntimeTypeInfo@CameraService@camera@app@@UEAAPEAXXZ:
     mov rax, 014008d6f0h
