@@ -160,6 +160,11 @@ PUBLIC ?GetCameraFrame@CameraService@camera@app@@QEAA?AV?$Handle@VMessenger@fnd@
     mov rax, 014008d660h
     jmp rax
 
+PUBLIC ?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ
+?UnkFunc1@?$AppMessage@VMsgRevertGlobalTimeScale@game@app@@@fnd@app@@UEAAIXZ:
+    mov rax, 014008d680h
+    jmp rax
+
 PUBLIC ?GetRuntimeTypeInfo@CameraService@camera@app@@UEAAPEAXXZ
 ?GetRuntimeTypeInfo@CameraService@camera@app@@UEAAPEAXXZ:
     mov rax, 014008d6f0h
@@ -49525,6 +49530,11 @@ PUBLIC ?GVCL_UnkFunc2@PhysicsViewerBase@physics@hh@@UEAAXXZ
     mov rax, 0140bacdb0h
     jmp rax
 
+PUBLIC ?GetCellProbably@ImageCast@SurfRide@@UEBAPEAXXZ
+?GetCellProbably@ImageCast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0140bae380h
+    jmp rax
+
 PUBLIC ?SetNamedTextElementTextData@CastTextContainer@ui@hh@@QEAAXPEBD0H@Z
 ?SetNamedTextElementTextData@CastTextContainer@ui@hh@@QEAAXPEBD0H@Z:
     mov rax, 0140bb1eb0h
@@ -51545,6 +51555,11 @@ PUBLIC ?CIL_UnkFunc2@CaptureIBLListener@SupportFX@needle@hh@@UEAAXXZ
     mov rax, 0140d11c20h
     jmp rax
 
+PUBLIC ?GetCellCount@ImageCast@SurfRide@@UEBAIXZ
+?GetCellCount@ImageCast@SurfRide@@UEBAIXZ:
+    mov rax, 0140d15bf0h
+    jmp rax
+
 PUBLIC ?SetGlobalTimeScale@GameUpdater@game@hh@@QEAAXM@Z
 ?SetGlobalTimeScale@GameUpdater@game@hh@@QEAAXM@Z:
     mov rax, 0140d18af0h
@@ -53050,6 +53065,11 @@ PUBLIC ?Create@ResEffect@resources@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
     mov rax, 0140dac0c0h
     jmp rax
 
+PUBLIC ?GetCellProbably@SliceCast@SurfRide@@UEBAPEAXXZ
+?GetCellProbably@SliceCast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0140dac330h
+    jmp rax
+
 PUBLIC ?GetTypeInfo@ResEffect@resources@heur@@SAPEBUResourceTypeInfo@fnd@hh@@XZ
 ?GetTypeInfo@ResEffect@resources@heur@@SAPEBUResourceTypeInfo@fnd@hh@@XZ:
     mov rax, 0140dac370h
@@ -54485,6 +54505,11 @@ PUBLIC ?BindInputEx@AxisMapping@hid@hh@@QEAAXIMMH@Z
     mov rax, 0140f39d70h
     jmp rax
 
+PUBLIC ??0SrTexCoord@SurfRide@@QEAA@XZ
+??0SrTexCoord@SurfRide@@QEAA@XZ:
+    mov rax, 0140f3c5f0h
+    jmp rax
+
 PUBLIC ??_DDrawContext@gfnd@hh@@QEAAXXZ
 ??_DDrawContext@gfnd@hh@@QEAAXXZ:
     mov rax, 0140f3e140h
@@ -55585,6 +55610,16 @@ PUBLIC ?StartCurrentAnimation@Layer@SurfRide@@AEAAXXZ
     mov rax, 0141124950h
     jmp rax
 
+PUBLIC ?CreateCast@Layer@SurfRide@@AEAAXHPEAVCast@2@@Z
+?CreateCast@Layer@SurfRide@@AEAAXHPEAVCast@2@@Z:
+    mov rax, 01411249f0h
+    jmp rax
+
+PUBLIC ?Is3D@Layer@SurfRide@@QEAA_NXZ
+?Is3D@Layer@SurfRide@@QEAA_NXZ:
+    mov rax, 0141124bb0h
+    jmp rax
+
 PUBLIC ?SetAnimationFrame@Layer@SurfRide@@QEAAXM@Z
 ?SetAnimationFrame@Layer@SurfRide@@QEAAXM@Z:
     mov rax, 0141124bf0h
@@ -55605,9 +55640,19 @@ PUBLIC ?UpdateAnimation@Layer@SurfRide@@AEAAXM@Z
     mov rax, 0141124fe0h
     jmp rax
 
-PUBLIC ??0Unk2@Layer@SurfRide@@QEAA@PEAV12@@Z
-??0Unk2@Layer@SurfRide@@QEAA@PEAV12@@Z:
+PUBLIC ??0Transform@SurfRide@@QEAA@PEAVLayer@1@@Z
+??0Transform@SurfRide@@QEAA@PEAVLayer@1@@Z:
     mov rax, 01411259e0h
+    jmp rax
+
+PUBLIC ?Initialize2D@Transform@SurfRide@@QEAAXPEAUSRS_TRS2D@2@PEAVCast@2@@Z
+?Initialize2D@Transform@SurfRide@@QEAAXPEAUSRS_TRS2D@2@PEAVCast@2@@Z:
+    mov rax, 0141125a70h
+    jmp rax
+
+PUBLIC ?Initialize3D@Transform@SurfRide@@QEAAXPEAUSRS_TRS3D@2@PEAVCast@2@@Z
+?Initialize3D@Transform@SurfRide@@QEAAXPEAUSRS_TRS3D@2@PEAVCast@2@@Z:
+    mov rax, 0141125b20h
     jmp rax
 
 PUBLIC ?GetIndex@UserData@SurfRide@@QEAAHPEBD@Z
@@ -55615,8 +55660,8 @@ PUBLIC ?GetIndex@UserData@SurfRide@@QEAAHPEBD@Z
     mov rax, 0141126410h
     jmp rax
 
-PUBLIC ??0Cast@SurfRide@@QEAA@AEBUSRS_CASTNODE@1@PEAXPEAVLayer@1@@Z
-??0Cast@SurfRide@@QEAA@AEBUSRS_CASTNODE@1@PEAXPEAVLayer@1@@Z:
+PUBLIC ??0Cast@SurfRide@@QEAA@AEBUSRS_CASTNODE@1@PEAV01@PEAVLayer@1@@Z
+??0Cast@SurfRide@@QEAA@AEBUSRS_CASTNODE@1@PEAV01@PEAVLayer@1@@Z:
     mov rax, 01411265a0h
     jmp rax
 
@@ -55625,13 +55670,33 @@ PUBLIC ??_DCast@SurfRide@@QEAAXXZ
     mov rax, 0141126700h
     jmp rax
 
+PUBLIC ?CreateEffectCast@Cast@SurfRide@@QEAAXPEAX@Z
+?CreateEffectCast@Cast@SurfRide@@QEAAXPEAX@Z:
+    mov rax, 01411275d0h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@Cast@SurfRide@@UEBAPEAXXZ
+?GetRuntimeTypeInfo@Cast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0141127800h
+    jmp rax
+
 PUBLIC ?GetUserData@Cast@SurfRide@@QEAA?AVUserData@2@XZ
 ?GetUserData@Cast@SurfRide@@QEAA?AVUserData@2@XZ:
     mov rax, 0141127890h
     jmp rax
 
-PUBLIC ?UnkFunc2@Cast@SurfRide@@UEAAXXZ
-?UnkFunc2@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?InitializeTransform2D@Cast@SurfRide@@QEAAXPEAVTransform@2@PEAUSRS_TRS2D@2@@Z
+?InitializeTransform2D@Cast@SurfRide@@QEAAXPEAVTransform@2@PEAUSRS_TRS2D@2@@Z:
+    mov rax, 0141127ba0h
+    jmp rax
+
+PUBLIC ?InitializeTransform3D@Cast@SurfRide@@QEAAXPEAVTransform@2@PEAUSRS_TRS3D@2@@Z
+?InitializeTransform3D@Cast@SurfRide@@QEAAXPEAVTransform@2@PEAUSRS_TRS3D@2@@Z:
+    mov rax, 0141127c00h
+    jmp rax
+
+PUBLIC ?UnkFunc2@Cast@SurfRide@@UEAA_NXZ
+?UnkFunc2@Cast@SurfRide@@UEAA_NXZ:
     mov rax, 0141127c60h
     jmp rax
 
@@ -55640,18 +55705,18 @@ PUBLIC ?SetFlag1000@Cast@SurfRide@@QEAAX_N@Z
     mov rax, 0141127d50h
     jmp rax
 
-PUBLIC ?UnkFunc12@Cast@SurfRide@@UEAAXXZ
-?UnkFunc12@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?UnkFunc12@Cast@SurfRide@@UEAA_KXZ
+?UnkFunc12@Cast@SurfRide@@UEAA_KXZ:
     mov rax, 0141127ee0h
     jmp rax
 
-PUBLIC ?UnkFunc11@Cast@SurfRide@@UEAAXXZ
-?UnkFunc11@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?UpdateThis@Cast@SurfRide@@UEAAXMPEBV12@@Z
+?UpdateThis@Cast@SurfRide@@UEAAXMPEBV12@@Z:
     mov rax, 0141128200h
     jmp rax
 
-PUBLIC ??0ImageCast@SurfRide@@QEAA@PEBUSRS_CASTNODE@1@PEAXPEAVLayer@1@@Z
-??0ImageCast@SurfRide@@QEAA@PEBUSRS_CASTNODE@1@PEAXPEAVLayer@1@@Z:
+PUBLIC ??0ImageCast@SurfRide@@QEAA@PEAUSRS_CASTNODE@1@PEAVCast@1@PEAVLayer@1@@Z
+??0ImageCast@SurfRide@@QEAA@PEAUSRS_CASTNODE@1@PEAVCast@1@PEAVLayer@1@@Z:
     mov rax, 0141128660h
     jmp rax
 
@@ -55660,14 +55725,44 @@ PUBLIC ??_DImageCast@SurfRide@@QEAAXXZ
     mov rax, 01411287a0h
     jmp rax
 
-PUBLIC ?UnkFunc7@Cast@SurfRide@@UEAAXXZ
-?UnkFunc7@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?CalcTrackTypeCropIndex1@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeCropIndex1@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
     mov rax, 01411288d0h
     jmp rax
 
-PUBLIC ?UnkFunc3@Cast@SurfRide@@UEAAXXZ
-?UnkFunc3@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?UnkFunc3@ImageCast@SurfRide@@UEAA_KXZ
+?UnkFunc3@ImageCast@SurfRide@@UEAA_KXZ:
     mov rax, 0141128b60h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@ImageCast@SurfRide@@UEBAPEAXXZ
+?GetRuntimeTypeInfo@ImageCast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0141128d00h
+    jmp rax
+
+PUBLIC ?InitializeText@ImageCast@SurfRide@@QEAAXXZ
+?InitializeText@ImageCast@SurfRide@@QEAAXXZ:
+    mov rax, 0141128e10h
+    jmp rax
+
+PUBLIC ?UnkFunc2@ImageCast@SurfRide@@UEAA_NXZ
+?UnkFunc2@ImageCast@SurfRide@@UEAA_NXZ:
+    mov rax, 0141128e80h
+    jmp rax
+
+PUBLIC ?SetCellProbably@ImageCast@SurfRide@@UEAAXPEAX@Z
+?SetCellProbably@ImageCast@SurfRide@@UEAAXPEAX@Z:
+    mov rax, 0141128ed0h
+    jmp rax
+
+PUBLIC ?UnkFunc12@ImageCast@SurfRide@@UEAA_KXZ
+?UnkFunc12@ImageCast@SurfRide@@UEAA_KXZ:
+    mov rax, 0141128f50h
+    jmp rax
+
+PUBLIC ?UpdateThis@ImageCast@SurfRide@@UEAAXMPEBVCast@2@@Z
+?UpdateThis@ImageCast@SurfRide@@UEAAXMPEBVCast@2@@Z:
+    mov rax, 01411293b0h
     jmp rax
 
 PUBLIC ??0ReferenceCast@SurfRide@@QEAA@AEBUSRS_CASTNODE@1@PEAXPEAVLayer@1@@Z
@@ -55680,9 +55775,89 @@ PUBLIC ??_DReferenceCast@SurfRide@@QEAAXXZ
     mov rax, 01411295a0h
     jmp rax
 
+PUBLIC ?UnkFunc3@ReferenceCast@SurfRide@@UEAA_KXZ
+?UnkFunc3@ReferenceCast@SurfRide@@UEAA_KXZ:
+    mov rax, 0141129700h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@ReferenceCast@SurfRide@@UEBAPEAXXZ
+?GetRuntimeTypeInfo@ReferenceCast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0141129790h
+    jmp rax
+
+PUBLIC ?UpdateThis@ReferenceCast@SurfRide@@UEAAXMPEBVCast@2@@Z
+?UpdateThis@ReferenceCast@SurfRide@@UEAAXMPEBVCast@2@@Z:
+    mov rax, 01411297a0h
+    jmp rax
+
+PUBLIC ??0SliceCast@SurfRide@@QEAA@PEAUSRS_CASTNODE@1@PEAVCast@1@PEAVLayer@1@@Z
+??0SliceCast@SurfRide@@QEAA@PEAUSRS_CASTNODE@1@PEAVCast@1@PEAVLayer@1@@Z:
+    mov rax, 01411297f0h
+    jmp rax
+
+PUBLIC ??_DSliceCast@SurfRide@@QEAAXXZ
+??_DSliceCast@SurfRide@@QEAAXXZ:
+    mov rax, 0141129a30h
+    jmp rax
+
+PUBLIC ?UnkFunc3@SliceCast@SurfRide@@UEAA_KXZ
+?UnkFunc3@SliceCast@SurfRide@@UEAA_KXZ:
+    mov rax, 0141129d30h
+    jmp rax
+
+PUBLIC ?GetCellCount@SliceCast@SurfRide@@UEBAIXZ
+?GetCellCount@SliceCast@SurfRide@@UEBAIXZ:
+    mov rax, 0141129e50h
+    jmp rax
+
+PUBLIC ?GetRuntimeTypeInfo@SliceCast@SurfRide@@UEBAPEAXXZ
+?GetRuntimeTypeInfo@SliceCast@SurfRide@@UEBAPEAXXZ:
+    mov rax, 0141129e70h
+    jmp rax
+
+PUBLIC ?UnkFunc2@SliceCast@SurfRide@@UEAA_NXZ
+?UnkFunc2@SliceCast@SurfRide@@UEAA_NXZ:
+    mov rax, 014112a080h
+    jmp rax
+
+PUBLIC ?SetCellProbably@SliceCast@SurfRide@@UEAAXPEAX@Z
+?SetCellProbably@SliceCast@SurfRide@@UEAAXPEAX@Z:
+    mov rax, 014112aac0h
+    jmp rax
+
+PUBLIC ?UnkFunc12@SliceCast@SurfRide@@UEAA_KXZ
+?UnkFunc12@SliceCast@SurfRide@@UEAA_KXZ:
+    mov rax, 014112ab00h
+    jmp rax
+
 PUBLIC ?Free@ReferencedObject@SurfRide@@QEAAXXZ
 ?Free@ReferencedObject@SurfRide@@QEAAXXZ:
     mov rax, 014112b650h
+    jmp rax
+
+PUBLIC ??0Unk1@Cast@SurfRide@@QEAA@PEAVIAllocator@fnd@csl@@@Z
+??0Unk1@Cast@SurfRide@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, 014112b6c0h
+    jmp rax
+
+PUBLIC ??_DCastInstanceBuffer@SurfRide@@QEAAXXZ
+??_DCastInstanceBuffer@SurfRide@@QEAAXXZ:
+    mov rax, 014112bcf0h
+    jmp rax
+
+PUBLIC ?GetCastInstance@CastInstanceBuffer@SurfRide@@QEAAPEATCastInstance@12@I@Z
+?GetCastInstance@CastInstanceBuffer@SurfRide@@QEAAPEATCastInstance@12@I@Z:
+    mov rax, 014112bd70h
+    jmp rax
+
+PUBLIC ??0SRS_CELL3D@SurfRide@@QEAA@XZ
+??0SRS_CELL3D@SurfRide@@QEAA@XZ:
+    mov rax, 014112bd80h
+    jmp rax
+
+PUBLIC ??0SRS_CELLTEXTURE@SurfRide@@QEAA@XZ
+??0SRS_CELLTEXTURE@SurfRide@@QEAA@XZ:
+    mov rax, 014112be30h
     jmp rax
 
 PUBLIC ?CalcTrackConstant@SurfRide@@YA_NMPEBU?$KeyLinear@H@1@IPEAH@Z
@@ -55728,6 +55903,86 @@ PUBLIC ?CalcTrackIndividual@SurfRide@@YA_NMPEBUSRS_TRACK@1@PEAX@Z
 PUBLIC ?CalcTrackLinear@SurfRide@@YA_NMPEBUSRS_TRACK@1@PEAX@Z
 ?CalcTrackLinear@SurfRide@@YA_NMPEBUSRS_TRACK@1@PEAX@Z:
     mov rax, 014112df80h
+    jmp rax
+
+PUBLIC ??0Blur@SurfRide@@QEAA@PEAUSRS_BLUR@1@PEAVCast@1@@Z
+??0Blur@SurfRide@@QEAA@PEAUSRS_BLUR@1@PEAVCast@1@@Z:
+    mov rax, 014112e510h
+    jmp rax
+
+PUBLIC ??_DBlur@SurfRide@@QEAAXXZ
+??_DBlur@SurfRide@@QEAAXXZ:
+    mov rax, 014112e630h
+    jmp rax
+
+PUBLIC ??0BLUR3D_DATA@SurfRide@@QEAA@XZ
+??0BLUR3D_DATA@SurfRide@@QEAA@XZ:
+    mov rax, 014112e710h
+    jmp rax
+
+PUBLIC ??0Blur3D@SurfRide@@QEAA@PEAUSRS_BLUR3D@1@PEAVCast@1@@Z
+??0Blur3D@SurfRide@@QEAA@PEAUSRS_BLUR3D@1@PEAVCast@1@@Z:
+    mov rax, 014112e760h
+    jmp rax
+
+PUBLIC ??_DBlur3D@SurfRide@@QEAAXXZ
+??_DBlur3D@SurfRide@@QEAAXXZ:
+    mov rax, 014112e880h
+    jmp rax
+
+PUBLIC ?UnkFunc2@Blur3D@SurfRide@@UEAA_JXZ
+?UnkFunc2@Blur3D@SurfRide@@UEAA_JXZ:
+    mov rax, 014112eac0h
+    jmp rax
+
+PUBLIC ?UnkFunc3@Blur3D@SurfRide@@UEAA_JXZ
+?UnkFunc3@Blur3D@SurfRide@@UEAA_JXZ:
+    mov rax, 014112eb90h
+    jmp rax
+
+PUBLIC ?UnkFunc1@Blur3D@SurfRide@@UEAA_JXZ
+?UnkFunc1@Blur3D@SurfRide@@UEAA_JXZ:
+    mov rax, 014112ebd0h
+    jmp rax
+
+PUBLIC ??0Reflect@SurfRide@@QEAA@PEAUSRS_REFLECT@1@PEAVCast@1@@Z
+??0Reflect@SurfRide@@QEAA@PEAUSRS_REFLECT@1@PEAVCast@1@@Z:
+    mov rax, 014112f250h
+    jmp rax
+
+PUBLIC ??_DReflect@SurfRide@@QEAAXXZ
+??_DReflect@SurfRide@@QEAAXXZ:
+    mov rax, 014112f400h
+    jmp rax
+
+PUBLIC ??0Reflect3D@SurfRide@@QEAA@PEAUSRS_REFLECT3D@1@PEAVCast@1@@Z
+??0Reflect3D@SurfRide@@QEAA@PEAUSRS_REFLECT3D@1@PEAVCast@1@@Z:
+    mov rax, 014112f4c0h
+    jmp rax
+
+PUBLIC ??_DReflect3D@SurfRide@@QEAAXXZ
+??_DReflect3D@SurfRide@@QEAAXXZ:
+    mov rax, 014112f5e0h
+    jmp rax
+
+PUBLIC ?UnkFunc2@Reflect3D@SurfRide@@UEAA_JXZ
+?UnkFunc2@Reflect3D@SurfRide@@UEAA_JXZ:
+    mov rax, 014112fa20h
+    jmp rax
+
+PUBLIC ?UnkFunc1@Reflect3D@SurfRide@@UEAA_JXZ
+?UnkFunc1@Reflect3D@SurfRide@@UEAA_JXZ:
+    mov rax, 014112faa0h
+    jmp rax
+
+PUBLIC ?Count@Text@SurfRide@@QEAA_KXZ
+?Count@Text@SurfRide@@QEAA_KXZ:
+    mov rax, 014112fd70h
+    jmp rax
+
+PUBLIC ??0Slice@SurfRide@@QEAA@PEAUSRS_SLICE@1@@Z
+??0Slice@SurfRide@@QEAA@PEAUSRS_SLICE@1@@Z:
+    mov rax, 01411311a0h
     jmp rax
 
 PUBLIC ??0FreeListHeapBase@fnd@csl@@QEAA@PEBD@Z
@@ -116260,6 +116515,16 @@ PUBLIC ?GetScene@Project@SurfRide@@QEAAPEAVScene@2@PEBD@Z
     mov rax, 0156010090h
     jmp rax
 
+PUBLIC ??0Scene@SurfRide@@QEAA@AEBUSRS_SCENE@1@PEAVProject@1@@Z
+??0Scene@SurfRide@@QEAA@AEBUSRS_SCENE@1@PEAVProject@1@@Z:
+    mov rax, 0156016be0h
+    jmp rax
+
+PUBLIC ??_DScene@SurfRide@@QEAAXXZ
+??_DScene@SurfRide@@QEAAXXZ:
+    mov rax, 0156017dc0h
+    jmp rax
+
 PUBLIC ?SetAnimation@Layer@SurfRide@@QEAAXI@Z
 ?SetAnimation@Layer@SurfRide@@QEAAXI@Z:
     mov rax, 01560711f0h
@@ -116275,29 +116540,49 @@ PUBLIC ?GetUIntValue@UserData@SurfRide@@QEAAIH@Z
     mov rax, 015610be40h
     jmp rax
 
+PUBLIC ?GetFloatValue@UserData@SurfRide@@QEAAMH@Z
+?GetFloatValue@UserData@SurfRide@@QEAAMH@Z:
+    mov rax, 015610d420h
+    jmp rax
+
+PUBLIC ?GetStringValue@UserData@SurfRide@@QEAAPEBDH@Z
+?GetStringValue@UserData@SurfRide@@QEAAPEBDH@Z:
+    mov rax, 01561149e0h
+    jmp rax
+
 PUBLIC ?GetBoolValue@UserData@SurfRide@@QEAA_NH@Z
 ?GetBoolValue@UserData@SurfRide@@QEAA_NH@Z:
     mov rax, 015611f010h
     jmp rax
 
-PUBLIC ?UnkFunc6@Cast@SurfRide@@UEAAXXZ
-?UnkFunc6@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?CalcTrackTypeCropIndex0@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeCropIndex0@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
     mov rax, 01561410a0h
     jmp rax
 
-PUBLIC ?UnkFunc5@Cast@SurfRide@@UEAAXXZ
-?UnkFunc5@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?CalcTrackTypeHeight@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeHeight@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
     mov rax, 015614ab10h
     jmp rax
 
-PUBLIC ?UnkFunc4@Cast@SurfRide@@UEAAXXZ
-?UnkFunc4@Cast@SurfRide@@UEAAXXZ:
+PUBLIC ?CalcTrackTypeWidth@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeWidth@ImageCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
     mov rax, 015614cc30h
     jmp rax
 
 PUBLIC ?Create@Pause@states@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z
 ?Create@Pause@states@heur@@CAPEAV123@PEAVIAllocator@fnd@csl@@@Z:
     mov rax, 015616b408h
+    jmp rax
+
+PUBLIC ?CalcTrackTypeHeight@SliceCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeHeight@SliceCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
+    mov rax, 0156170a60h
+    jmp rax
+
+PUBLIC ?CalcTrackTypeWidth@SliceCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z
+?CalcTrackTypeWidth@SliceCast@SurfRide@@UEAAXMPEBUSRS_TRACK@2@@Z:
+    mov rax, 0156179bd0h
     jmp rax
 
 PUBLIC ??0Camera@SurfRide@@QEAA@AEBUSRS_CAMERA@1@MM@Z
@@ -116315,6 +116600,11 @@ PUBLIC ??_DBinaryData@SurfRide@@QEAAXXZ
     mov rax, 015625bed0h
     jmp rax
 
+PUBLIC ??0CastInstanceBuffer@SurfRide@@QEAA@PEAVIAllocator@fnd@csl@@@Z
+??0CastInstanceBuffer@SurfRide@@QEAA@PEAVIAllocator@fnd@csl@@@Z:
+    mov rax, 0156280ad0h
+    jmp rax
+
 PUBLIC ?CalcTrackConstant@SurfRide@@YA_NMPEBU?$KeyLinear@_N@1@IPEA_N@Z
 ?CalcTrackConstant@SurfRide@@YA_NMPEBU?$KeyLinear@_N@1@IPEA_N@Z:
     mov rax, 01562844a0h
@@ -116323,6 +116613,11 @@ PUBLIC ?CalcTrackConstant@SurfRide@@YA_NMPEBU?$KeyLinear@_N@1@IPEA_N@Z
 PUBLIC ?CalcTrackLinear@SurfRide@@YA_NMPEBU?$KeyLinear@H@1@IPEAH@Z
 ?CalcTrackLinear@SurfRide@@YA_NMPEBU?$KeyLinear@H@1@IPEAH@Z:
     mov rax, 01562a76a0h
+    jmp rax
+
+PUBLIC ??0Text@SurfRide@@QEAA@PEAVImageCast@1@@Z
+??0Text@SurfRide@@QEAA@PEAVImageCast@1@@Z:
+    mov rax, 01562c7d20h
     jmp rax
 
 PUBLIC ?AllocBottom@FreeListHeapBase@fnd@csl@@UEAAPEAX_K0@Z
