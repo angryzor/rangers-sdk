@@ -254,3 +254,4 @@ template class app::player::StatePluginManager<app::player::PlayerHsmContext>;
 template class csl::ut::MoveArray<csl::ut::MoveArray<void*>>;
 template class csl::fnd::Delegate<void (uint64_t, const float&)>;
 template class csl::ut::MoveArray<app_cmn::camera::CameraFrame::BlendNode*>;
+template class csl::ut::MoveArray<hh::needle::intrusive_ptr<hh::needle::SceneContextManager>>;
