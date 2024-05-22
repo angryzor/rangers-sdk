@@ -1,40 +1,41 @@
 #include <stdint.h>
-
+#include <d3d11.h>
 #define EXPORTING_TYPES
 #define RESOLVE_STATIC_VARIABLE(x) x
 
-typedef size_t HANDLE;
-class ID3D11Device;
-class ID3D11Texture2D;
-class ID3D11ShaderResourceView;
-class ID3D11RenderTargetView;
-class ID3D11UnorderedAccessView;
-class ID3D11DepthStencilView;
-class ID3D11Buffer;
-typedef struct _RTL_CRITICAL_SECTION {
-    void* DebugInfo;
-    int LockCount;
-    int RecursionCount;
-    void* OwningThread;        // from the thread's ClientId->UniqueThread
-    void* LockSemaphore;
-    void* SpinCount;        // force size on 64-bit systems when packed
-} RTL_CRITICAL_SECTION, *PRTL_CRITICAL_SECTION;
-typedef RTL_CRITICAL_SECTION CRITICAL_SECTION;
-typedef struct _SLIST_ENTRY {
-  struct _SLIST_ENTRY *Next;
-} SLIST_ENTRY, *PSLIST_ENTRY;
-typedef union alignas(16) _SLIST_HEADER {
-    struct {  // original struct
-        unsigned long long Alignment;
-        unsigned long long Region;
-    } DUMMYSTRUCTNAME;
-} SLIST_HEADER, *PSLIST_HEADER;
+// typedef size_t HANDLE;
+// class ID3D11Device;
+// class ID3D11DeviceContext;
+// class ID3D11Texture2D;
+// class ID3D11ShaderResourceView;
+// class ID3D11RenderTargetView;
+// class ID3D11UnorderedAccessView;
+// class ID3D11DepthStencilView;
+// class ID3D11Buffer;
+// typedef struct _RTL_CRITICAL_SECTION {
+//     void* DebugInfo;
+//     int LockCount;
+//     int RecursionCount;
+//     void* OwningThread;        // from the thread's ClientId->UniqueThread
+//     void* LockSemaphore;
+//     void* SpinCount;        // force size on 64-bit systems when packed
+// } RTL_CRITICAL_SECTION, *PRTL_CRITICAL_SECTION;
+// typedef RTL_CRITICAL_SECTION CRITICAL_SECTION;
+// typedef struct _SLIST_ENTRY {
+//   struct _SLIST_ENTRY *Next;
+// } SLIST_ENTRY, *PSLIST_ENTRY;
+// typedef union alignas(16) _SLIST_HEADER {
+//     struct {  // original struct
+//         unsigned long long Alignment;
+//         unsigned long long Region;
+//     } DUMMYSTRUCTNAME;
+// } SLIST_HEADER, *PSLIST_HEADER;
 
-long InterlockedExchangeAdd(long volatile* Addend, long value);
+// long InterlockedExchangeAdd(long volatile* Addend, long value);
 
-void* sigScan(const char* signature, const char* mask, size_t sigSize, void* memory, const size_t memorySize);
-void* sigScan(const char* signature, const char* mask, void* hint);
-int strcmp(const char* x, const char* y);
+// void* sigScan(const char* signature, const char* mask, size_t sigSize, void* memory, const size_t memorySize);
+// void* sigScan(const char* signature, const char* mask, void* hint);
+// int strcmp(const char* x, const char* y);
 
 namespace std {
 	typedef size_t align_val_t;
