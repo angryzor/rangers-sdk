@@ -178,7 +178,7 @@ template class hh::fnd::Reference<hh::ui::UIListViewElement::Cursor>;
 template class hh::fnd::Reference<hh::ui::UIElement>;
 template class hh::fnd::Reference<hh::ui::UIElementBase>;
 template class hh::fnd::ResReflectionT<app::player::GOCPlayerParameter::CharacterParameters>;
-template class hh::fnd::ResReflectionT<app::rfl::PlayerCameraSetParameters>;
+template class hh::fnd::ResReflectionT<heur::rfl::PlayerCameraSetParameters>;
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Texture, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewTexture2D, NEEDLE_RESOURCE_DX11_TEXTURE_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeSupport>;
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::RenderTarget, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewRenderTarget, NEEDLE_RESOURCE_DX11_RENDER_TARGET_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::UnorderedAccessView, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewUnorderedAccess, NEEDLE_RESOURCE_DX11_UNORDERED_ACCESS_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
