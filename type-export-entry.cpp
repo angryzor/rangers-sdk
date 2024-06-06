@@ -243,7 +243,6 @@ template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
 template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
 template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
 template class hh::fnd::Handle<hh::game::GameObject>;
-template class hh::fnd::Handle<hh::game::GOComponent>;
 template class hh::fnd::Handle<hh::physics::GOCCollider>;
 template class csl::ut::InplaceMoveArray<hh::anim::BlendNodeBase*, 2>;
 template class hh::fnd::Reference<app::level::StageData>;
