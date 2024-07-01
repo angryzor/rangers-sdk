@@ -2,14 +2,9 @@
 
 #include <cstdlib>
 
-extern "C" void RangersSDK_SetBaseAddress(void* address);
 extern "C" void* RangersSDK_GetAddress(void* address);
 
 namespace rangerssdk {
-	inline void SetBaseAddress(void* address) {
-		RangersSDK_SetBaseAddress(address);
-	}
-
 	//namespace internal {
 	//	struct mem_ptr {
 	//		void* address;
