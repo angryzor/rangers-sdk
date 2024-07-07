@@ -1,41 +1,5 @@
-#include <stdint.h>
-#include <d3d11.h>
 #define EXPORTING_TYPES
 #define RESOLVE_STATIC_VARIABLE(x) x
-
-// typedef size_t HANDLE;
-// class ID3D11Device;
-// class ID3D11DeviceContext;
-// class ID3D11Texture2D;
-// class ID3D11ShaderResourceView;
-// class ID3D11RenderTargetView;
-// class ID3D11UnorderedAccessView;
-// class ID3D11DepthStencilView;
-// class ID3D11Buffer;
-// typedef struct _RTL_CRITICAL_SECTION {
-//     void* DebugInfo;
-//     int LockCount;
-//     int RecursionCount;
-//     void* OwningThread;        // from the thread's ClientId->UniqueThread
-//     void* LockSemaphore;
-//     void* SpinCount;        // force size on 64-bit systems when packed
-// } RTL_CRITICAL_SECTION, *PRTL_CRITICAL_SECTION;
-// typedef RTL_CRITICAL_SECTION CRITICAL_SECTION;
-// typedef struct _SLIST_ENTRY {
-//   struct _SLIST_ENTRY *Next;
-// } SLIST_ENTRY, *PSLIST_ENTRY;
-// typedef union alignas(16) _SLIST_HEADER {
-//     struct {  // original struct
-//         unsigned long long Alignment;
-//         unsigned long long Region;
-//     } DUMMYSTRUCTNAME;
-// } SLIST_HEADER, *PSLIST_HEADER;
-
-// long InterlockedExchangeAdd(long volatile* Addend, long value);
-
-// void* sigScan(const char* signature, const char* mask, size_t sigSize, void* memory, const size_t memorySize);
-// void* sigScan(const char* signature, const char* mask, void* hint);
-// int strcmp(const char* x, const char* y);
 
 namespace std {
 	typedef size_t align_val_t;
@@ -43,6 +7,12 @@ namespace std {
 
 namespace csl::geom {
 	class Aabb;
+	class Obb;
+	class Segment3;
+	class Line3;
+	class Ray3;
+	class Sphere;
+	class Cylinder;
 }
 
 namespace csl::math 
@@ -70,24 +40,27 @@ namespace csl::math
 	};
 
 	class Position { public: float x; float y; float z; };
+	class Rotation { public: float x; float y; float z; float w; };
 
+	class Plane {
+	public:
+		Vector3 point;
+		Vector3 normal;
+
+		static Plane FromPointNormal(const Vector3 point, const Vector3 normal);
+		Vector3 ProjectOnNormal(const Vector3& point, float* signedDistance) const;
+	};
+
+	Vector3 Vector3Cross(const Vector3 x, const Vector3 y);
+	float Vector3Distance(const Vector3 x, const Vector3 y);
+	float Vector3DistanceSq(const Vector3 x, const Vector3 y);
+	float Vector3DistanceNormalized(const Vector3 x, const Vector3 y);
+	float Vector3Dot(const Vector3 x, const Vector3 y);
+	Vector3 Vector3NormalBetween(const Vector3 x, const Vector3 y);
 	Matrix34 Matrix34Multiply(const Matrix34& x, const Matrix34& y);
 	Matrix34 Matrix34AffineTransformation(const Vector3& position, const Quaternion& rotation);
 	void Matrix34Scale(const Matrix34& mat, const Vector3& scale, Matrix34* result);
-
-	class Segment3
-	{
-	public:
-		Vector3 m_Start{};
-		Vector3 m_End{};
-	};
-
-	class Capsule
-	{
-	public:
-		Segment3 m_Segment{};
-		float m_Radius{};
-	};
+	Matrix34 Matrix34Rotation(const Quaternion& rotation);
 
 	class Transform
 	{
@@ -137,7 +110,16 @@ namespace csl::math
 		return min;
 	}
 
-	bool Intersection(const Vector3& point, geom::Aabb aabb);
+	bool Intersection(const geom::Line3& line, const Plane& plane, Vector3 intersectionPoint, float* unkParam);
+	bool Intersection(const geom::Ray3& line, const geom::Aabb& aabb, float* unkParam);
+	bool Intersection(const geom::Ray3& line, const Plane& plane, Vector3 intersectionPoint, float* unkParam);
+	bool Intersection(const geom::Segment3& line, const Plane& plane, Vector3 intersectionPoint, float* unkParam);
+	bool Intersection(const geom::Sphere& sphere, const geom::Aabb& aabb);
+	bool Intersection(const geom::Sphere& sphere, const geom::Obb& obb);
+	bool Intersection(const Vector3& point, const geom::Aabb& aabb);
+	bool Intersection(const Vector3& point, const geom::Obb& obb);
+	bool Intersection(const Vector3& point, const geom::Sphere& sphere);
+	bool Intersection(const Vector3& point, const geom::Cylinder& sphere);
 
 	class Constants
 	{
@@ -157,6 +139,43 @@ namespace csl::geom {
 		static Aabb Transform(const math::Matrix34& matrix, const Aabb& aabb);
 		math::Vector3 Center() const;
 		bool Intersect(const Aabb& aabb) const;
+		math::Vector3 Extent() const;
+		float DistanceSq(const math::Vector3& point, math::Vector3* distanceByAxis) const;
+	};
+
+	class Obb
+	{
+	public:
+		math::Vector3 min{};
+		math::Vector3 extentX{};
+		math::Vector3 extentY{};
+		math::Vector3 extentZ{};
+
+		void Set(const math::Vector3& position, const math::Vector3& halfExtents, const math::Quaternion& rotation);
+		float DistanceSq(const math::Vector3& point, math::Vector3* distanceByAxis) const;
+	};
+	
+	class Segment3
+	{
+	public:
+		math::Vector3 start{};
+		math::Vector3 end{};
+	};
+
+	class Sphere
+	{
+	public:
+		math::Vector3 position{};
+		float radius;
+	};
+
+	class Cylinder
+	{
+		Segment3 segment;
+		float radius;
+
+		void Set(float radius, float halfHeight, const math::Vector3& center, const math::Quaternion& rotation);
+		float DistanceSq(const math::Vector3& point, float* scaledHeightFromBase) const;
 	};
 }
 
@@ -255,3 +274,5 @@ template class csl::ut::MoveArray<csl::ut::MoveArray<void*>>;
 template class csl::fnd::Delegate<void (uint64_t, const float&)>;
 template class csl::ut::MoveArray<app_cmn::camera::CameraFrame::BlendNode*>;
 template class csl::ut::MoveArray<hh::needle::intrusive_ptr<hh::needle::SceneContextManager>>;
+template class csl::ut::MoveArray32<hh::ut::BvWorldHandle>;
+template class csl::ut::MoveArray<hh::ut::KdTreeBuilder::InternalObject>;
