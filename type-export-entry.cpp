@@ -102,3 +102,5 @@ template class csl::ut::MoveArray<app_cmn::camera::CameraFrame::BlendNode*>;
 template class csl::ut::MoveArray<hh::needle::intrusive_ptr<hh::needle::SceneContextManager>>;
 template class csl::ut::MoveArray32<hh::ut::BvWorldHandle>;
 template class csl::ut::MoveArray<hh::ut::KdTreeBuilder::InternalObject>;
+template class hh::fnd::InplaceTempUri<>;
+template class hh::ut::TempString<>;
