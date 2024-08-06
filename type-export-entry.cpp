@@ -157,3 +157,10 @@ template class hh::needle::NeedleType<hh::needle::FxCyberNPCSSEffectRenderParame
 template class hh::needle::NeedleType<hh::gfx::FxDentParameter>;
 template class hh::needle::NeedleType<hh::needle::FxFieldScanEffectRenderParameter>;
 template class hh::needle::NeedleType<hh::needle::FxSeparableSSSParameter>;
+template class hh::needle::NeedleType<hh::needle::FxAntiAliasing>;
+template class hh::needle::NeedleType<hh::needle::FxLODParameter>;
+template class hh::needle::NeedleType<hh::needle::FxDetailParameter>;
+template class hh::needle::NeedleType<hh::needle::FxDynamicResolutionParameter>;
+template class hh::needle::NeedleType<hh::needle::FxTerrainParameter>;
+template class hh::needle::NeedleType<hh::needle::FxModelParameter>;
+template class hh::needle::NeedleType<hh::needle::DebugVisualizeParameter>;
