@@ -163,4 +163,72 @@ template class hh::needle::NeedleType<hh::needle::FxDetailParameter>;
 template class hh::needle::NeedleType<hh::needle::FxDynamicResolutionParameter>;
 template class hh::needle::NeedleType<hh::needle::FxTerrainParameter>;
 template class hh::needle::NeedleType<hh::needle::FxModelParameter>;
+
+// these are not in fxparammanager
+template class hh::needle::NeedleType<hh::needle::SmoothnessParameter>;
+template class hh::needle::NeedleType<hh::needle::FxPlanarProjectionShadowParameter>;
+template class hh::needle::NeedleType<hh::needle::FxDirectionalRadialBlurParameter>;
+template class hh::needle::NeedleType<hh::needle::PickColorParameter>;
 template class hh::needle::NeedleType<hh::needle::DebugVisualizeParameter>;
+template class hh::needle::NeedleType<hh::needle::FxSMAAParameter>;
+template class hh::needle::NeedleType<hh::needle::FxFXAAParameter>;
+
+
+
+
+
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxBloomParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxDOFParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxColorContrastParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxToneMapParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxCameraControlParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxShadowMapParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxShadowHeightMapParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxVolumetricShadowParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxScreenBlurParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSSAOParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSHLightFieldParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxLightScatteringParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxRLRParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSSGIParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxPlanarReflectionParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxOcclusionCapsuleParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxGodrayParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxScreenSpaceGodrayParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxHeatHazeParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSceneEnvironmentParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxRenderOption>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSGGIParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxTAAParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxEffectParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxAtmosphereParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxDensityParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxWindComputeParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxGpuEnvironmentParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxInteractiveWaveParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxChromaticAberrationParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxVignetteParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxTerrainMaterialBlendingParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxWeatherParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxColorAccessibilityFilterParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxCyberNoiseEffectParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxCyberSpaceStartNoiseParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxCyberNPCSSEffectRenderParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::gfx::FxDentParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxFieldScanEffectRenderParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSeparableSSSParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxAntiAliasing>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxLODParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxDetailParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxDynamicResolutionParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxTerrainParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxModelParameter>;
+
+// these are not in fxparammanager
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::SmoothnessParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxPlanarProjectionShadowParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxDirectionalRadialBlurParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::PickColorParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::DebugVisualizeParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSMAAParameter>;
+template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxFXAAParameter>;
