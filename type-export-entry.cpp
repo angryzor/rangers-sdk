@@ -232,3 +232,8 @@ template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::PickColo
 template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::DebugVisualizeParameter>;
 template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxSMAAParameter>;
 template class hh::needle::SceneParamContainer::ParamHolder<hh::needle::FxFXAAParameter>;
+
+template class hh::needle::InstanceParameterContainerData::ArrayParamData<hh::needle::uint_vector4>;
+template class hh::needle::InstanceParameterContainerData::ArrayParamData<hh::needle::float_vector4>;
+template class csl::ut::MoveArray<hh::needle::uint_vector4>;
+template class csl::ut::MoveArray<hh::needle::float_vector4>;
