@@ -107,7 +107,7 @@ template class hh::ut::TempString<>;
 template class csl::ut::StringMap<hh::anim::EventData*>;
 template class csl::ut::MoveArray<csl::ut::StringMap<hh::anim::EventData*>>;
 template class csl::ut::InplaceMoveArray<hh::anim::AsmResourceManager::ClipBindInfo, 5>;
-template class csl::ut::InplaceMoveArray<size_t, 4>;
+template class csl::ut::InplaceBitArray<4>;
 
 template class hh::fnd::HandleManager<hh::fnd::Messenger>;
 template class hh::fnd::Handle<hh::fnd::Messenger>;
