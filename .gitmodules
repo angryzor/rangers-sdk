@@ -1,6 +1,3 @@
 [submodule "include/rangers-api"]
 	path = rangers-api
 	url = https://github.com/angryzor/rangers-api.git
-[submodule "vendor/eigen/eigen"]
-	path = vendor/eigen/eigen
-	url = https://gitlab.com/libeigen/eigen.git
