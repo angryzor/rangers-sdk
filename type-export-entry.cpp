@@ -239,6 +239,7 @@ template class hh::needle::InstanceParameterContainerData::ArrayParamData<hh::ne
 template class csl::ut::MoveArray<hh::needle::uint_vector4>;
 template class csl::ut::MoveArray<hh::needle::float_vector4>;
 template class hh::needle::intrusive_ptr<hh::needle::SceneContext, hh::needle::SRefCountAddReleaseNeedleObject, 1>;
+template class hh::needle::intrusive_ptr<hh::needle::Renderable, hh::needle::SRefCountAddReleaseNeedleObject, 1>;
 
 template class app::game::ConditionArgumentFixed<bool>;
 template class app::game::ConditionArgumentFixed<int>;
