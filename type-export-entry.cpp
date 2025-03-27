@@ -80,7 +80,12 @@ template class app::gfx::FxParamManager::Interpolator<hh::needle::FxDetailParame
 template class app::gfx::FxParamManager::Interpolator<hh::needle::FxDynamicResolutionParameter>;
 template class app::gfx::FxParamManager::Interpolator<hh::gfx::StageCommonTimeProgressParameter>;
 template class csl::ut::PointerMap<hh::game::GameObjectClass*, csl::ut::MoveArray<hh::game::GameObject*>*>;
+template class csl::ut::PointerMap<hh::game::GameObjectClass*, csl::ut::MoveArray<hh::game::GameObject*>*>::Elem;
 template class csl::ut::StringMap<hh::game::ObjectWorldChunkLayer*>;
+template class csl::ut::StringMap<hh::game::WorldObjectStatus*>;
+template class csl::ut::StringMap<hh::game::WorldObjectStatus*>::Elem;
+template class hh::game::ObjectMap<int>;
+template class hh::game::ObjectMap<int>::Elem;
 template class csl::ut::HashMap<const char*, hh::game::ObjectWorldChunkLayer*, csl::ut::StringMapOperation>;
 template class csl::ut::InplaceMoveArray<hh::game::GOComponentConfiguration, 5>;
 template class hh::fnd::Handle<hh::game::GameObject>;
