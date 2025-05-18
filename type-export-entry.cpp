@@ -5,6 +5,7 @@
 
 // template class csl::ut::MoveArray<csl::fnd::IAllocator*>;
 template class csl::fnd::Delegate<void ()>;
+template class csl::fnd::Delegate<void (hh::ui::UIElement*, hh::ui::UIElementEventArg&)>;
 template class csl::fnd::Delegate<void (hh::ui::UIListViewElement*, bool)>;
 template class csl::fnd::Delegate<void (hh::ui::UIListViewElement*, hh::ui::ListViewEventArg&)>;
 template class csl::fnd::Delegate<void (hh::ui::GOCSprite*)>;
@@ -15,9 +16,14 @@ template class hh::game::InputComponent::InputMonitor<uint32_t>;
 template class hh::game::InputComponent::InputMonitor<csl::math::Vector4>;
 template class csl::ut::InplaceMoveArray<const char*, 32>;
 template class csl::ut::Pair<SurfRide::ReferenceCast*, hh::ui::UIListViewElement::Cursor*>;
+template class csl::ut::PointerMap<size_t, unsigned int>;
+template class csl::ut::PointerMap<size_t, unsigned int>::Elem;
 template class hh::fnd::Reference<hh::ui::UIListViewElement::Cursor>;
 template class hh::fnd::Reference<hh::ui::UIElement>;
-template class hh::fnd::Reference<hh::ui::UIElementBase>;
+template class hh::fnd::Reference<hh::ui::UIElementGroup>;
+template class hh::fnd::Reference<hh::ui::UIElementGroupContainer>;
+template class hh::fnd::Reference<hh::ui::UIManagerExtension>;
+template class hh::fnd::Reference<hh::ui::TextObjectPage>;
 template class hh::fnd::ResReflectionT<app::player::GOCPlayerParameter::CharacterParameters>;
 template class hh::fnd::ResReflectionT<heur::rfl::PlayerCameraSetParameters>;
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Texture, hh::needle::ImplDX11::TextureDX11Impl<hh::needle::ImplDX11::SBufferTexture2D, hh::needle::ImplDX11::SViewTexture2D, NEEDLE_RESOURCE_DX11_TEXTURE_VIEW>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeSupport>;
@@ -30,6 +36,8 @@ template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Compute
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Buffer, hh::needle::ImplDX11::BufferDX11Impl<hh::needle::ImplDX11::SBufferObject, NEEDLE_RESOURCE_DX11_CONSTANT_BUFFER_OBJECT>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
 template class hh::needle::ImplDX11::NeedleResourceContainer<hh::needle::Buffer, hh::needle::ImplDX11::BufferDX11Impl<hh::needle::ImplDX11::SBufferObject, NEEDLE_RESOURCE_DX11_VERTEX_BUFFER_OBJECT>, NEEDLE_RESOURCE_CONTAINER, hh::needle::ImplDX11::SQueryTypeOwn, hh::needle::ImplDX11::SDupTypeNotSupport>;
 template class csl::ut::MoveArray<const hh::fnd::ResourceTypeInfo*>;
+template class csl::ut::MoveArray<csl::ut::Pair<size_t, size_t>>;
+template class csl::ut::Pair<size_t, size_t>;
 template class csl::ut::Pair<hh::fnd::HFrame*, bool>;
 template class csl::ut::InplaceMoveArray<csl::ut::Pair<hh::fnd::HFrame*, bool>, 10>;
 template class app::gfx::FxParamManager::Interpolator<hh::needle::FxBloomParameter>;
@@ -110,12 +118,30 @@ template class csl::ut::StringMap<hh::anim::EventData*>;
 template class csl::ut::MoveArray<csl::ut::StringMap<hh::anim::EventData*>>;
 template class csl::ut::InplaceMoveArray<hh::anim::AsmResourceManager::ClipBindInfo, 5>;
 template class csl::ut::InplaceBitArray<4>;
+template class hh::fnd::Reference<app::player::PlayerEffect>;
+
+template class hh::animeff::GOCParticleLocator::BoundCollection<hh::eff::EffectHandle>;
+template class hh::animeff::GOCParticleLocator::BoundCollection<hh::snd::SoundHandle>;
 
 template class hh::fnd::HandleManager<hh::fnd::Messenger>;
 template class hh::fnd::Handle<hh::fnd::Messenger>;
 
 template class hh::fnd::HandleManager<hh::game::GOComponent>;
 template class hh::fnd::Handle<hh::game::GOComponent>;
+
+template class hh::fnd::HandleManager<hh::snd::SoundListenerObject>;
+template class hh::fnd::Handle<hh::snd::SoundListenerObject>;
+template class hh::fnd::HandleManager<hh::snd::SoundPlaybackObject>;
+template class hh::fnd::Handle<hh::snd::SoundPlaybackObject>;
+
+template class hh::fnd::HandleManager<hh::ui::SurfRideHandleBase>;
+template class hh::fnd::Handle<hh::ui::SurfRideHandleBase>;
+
+template class hh::needle::intrusive_ptr<hh::needle::ProbeBVH::Impl::Node>;
+template class hh::needle::intrusive_ptr<hh::needle::ProbeNode>;
+template class hh::needle::intrusive_ptr<hh::needle::Texture>;
+template class hh::needle::intrusive_ptr<hh::needle::UnorderedAccessView>;
+template class csl::ut::MoveArray<hh::needle::intrusive_ptr<hh::needle::UnorderedAccessView>>;
 
 template class hh::needle::NeedleResContainer::NeedleResourceHolder<hh::needle::RenderTarget>;
 template class hh::needle::NeedleResContainer::NeedleResourceHolder<hh::needle::DepthStencil>;
@@ -249,3 +275,5 @@ template class hh::needle::intrusive_ptr<hh::needle::Renderable, hh::needle::SRe
 template class app::game::ConditionArgumentFixed<bool>;
 template class app::game::ConditionArgumentFixed<int>;
 template class app::game::ConditionArgumentFixed<float>;
+
+template class hh::fnd::Reference<app::ui::UIMainMenuContext>;
