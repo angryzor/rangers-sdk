@@ -120,6 +120,11 @@ template class csl::ut::InplaceMoveArray<hh::anim::AsmResourceManager::ClipBindI
 template class csl::ut::InplaceBitArray<4>;
 template class hh::fnd::Reference<app::player::PlayerEffect>;
 
+template class hh::fnd::Reference<hh::gfx::TexPatControlHH>;
+template class hh::fnd::Reference<hh::gfx::TexSrtControlHH>;
+template class hh::fnd::Reference<hh::gfx::MatAnimControlHH>;
+template class hh::fnd::Reference<hh::gfx::VisAnimControlHH>;
+
 template class hh::animeff::GOCParticleLocator::BoundCollection<hh::eff::EffectHandle>;
 template class hh::animeff::GOCParticleLocator::BoundCollection<hh::snd::SoundHandle>;
 
