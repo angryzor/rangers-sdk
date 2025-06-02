@@ -33,6 +33,7 @@ namespace std {
 #include <cassert>
 #include <cstring>
 #include <type_traits>
+#include <optional>
 #include <synchapi.h>
 
 #endif
@@ -57,10 +58,10 @@ namespace std {
 #undef GetUserName
 #endif
 
-#include <ucsl/newtype.h>
+#include "cslib/csl/math/math.h"
+#include "cslib/csl/fnd/IAllocator.h"
 
-#include "Sonicteam/math/math.h"
-#include "Sonicteam/System/IAllocator.h"
+#include <ucsl/newtype.h>
 
 namespace rangerssdk::ucsl {
     struct AllocatorSystem {
@@ -70,37 +71,38 @@ namespace rangerssdk::ucsl {
     };
 }
 
-#include "Sonicteam/Utility/collections/Array.h"
-#include "Sonicteam/Utility/collections/FixedArray.h"
-#include "Sonicteam/Utility/collections/HashMap.h"
-#include "Sonicteam/Utility/collections/LinkList.h"
-#include "Sonicteam/Utility/collections/MoveArray.h"
-#include "Sonicteam/Utility/collections/MoveArray32.h"
-#include "Sonicteam/Utility/collections/InPlaceMoveArray.h"
-#include "Sonicteam/Utility/collections/InPlaceMoveArray32.h"
-#include "Sonicteam/Utility/collections/BitArray.h"
-#include "Sonicteam/Utility/collections/InPlaceBitArray.h"
-#include "Sonicteam/Utility/collections/PointerMap.h"
-#include "Sonicteam/Utility/collections/StringMap.h"
-#include "Sonicteam/Utility/Hash.h"
-#include "Sonicteam/Utility/BasicString.h"
-#include "Sonicteam/Utility/Bitset.h"
-#include "Sonicteam/Utility/Color.h"
-#include "Sonicteam/Utility/NonCopyable.h"
-#include "Sonicteam/Utility/Pair.h"
-#include "Sonicteam/Utility/String.h"
-#include "Sonicteam/Utility/VariableString.h"
+#include "cslib/csl/ut/Array.h"
+#include "cslib/csl/ut/FixedArray.h"
+#include "cslib/csl/ut/HashMap.h"
+#include "cslib/csl/ut/LinkList.h"
+#include "cslib/csl/ut/MoveArray.h"
+#include "cslib/csl/ut/MoveArray32.h"
+#include "cslib/csl/ut/InPlaceMoveArray.h"
+#include "cslib/csl/ut/InPlaceMoveArray32.h"
+#include "cslib/csl/ut/BitArray.h"
+#include "cslib/csl/ut/InPlaceBitArray.h"
+#include "cslib/csl/ut/PointerMap.h"
+#include "cslib/csl/ut/StringMap.h"
+#include "cslib/csl/ut/Hash.h"
+#include "cslib/csl/ut/BasicString.h"
+#include "cslib/csl/ut/Bitset.h"
+#include "cslib/csl/ut/Color.h"
+#include "cslib/csl/ut/NonCopyable.h"
+#include "cslib/csl/ut/Pair.h"
+#include "cslib/csl/ut/String.h"
+#include "cslib/csl/ut/VariableString.h"
+#include "cslib/csl/ut/Byteswap.h"
 
-#include "Sonicteam/System/Singleton.h"
-#include "Sonicteam/System/Mutex.h"
-#include "Sonicteam/System/HeapBase.h"
-#include "Sonicteam/System/FreeListLikeHeapBase.h"
-#include "Sonicteam/System/FreeListHeap.h"
-#include "Sonicteam/System/OptimizedFreeListHeap.h"
-#include "Sonicteam/System/TlsfHeap.h"
-#include "Sonicteam/System/Delegate.h"
-#include "Sonicteam/System/Function.h"
-#include "Sonicteam/System/ThreadSleep.h"
+#include "cslib/csl/fnd/Singleton.h"
+#include "cslib/csl/fnd/Mutex.h"
+#include "cslib/csl/fnd/HeapBase.h"
+#include "cslib/csl/fnd/FreeListLikeHeapBase.h"
+#include "cslib/csl/fnd/FreeListHeap.h"
+#include "cslib/csl/fnd/OptimizedFreeListHeap.h"
+#include "cslib/csl/fnd/TlsfHeap.h"
+#include "cslib/csl/fnd/Delegate.h"
+#include "cslib/csl/fnd/Function.h"
+#include "cslib/csl/fnd/ThreadSleep.h"
 
 #include "Hedgehog/rsdx/rsdx_noncopyable.h"
 #include "Hedgehog/rsdx/core/algo/hhrsdxalgomutex.h"
@@ -117,28 +119,28 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/rsdx/os/thread/hhrsdxservicethread.hpp"
 #include "Hedgehog/rsdx/os/thread/hhrsdxthread.hpp"
 
-#include "Hedgehog/System/hhAllocator.h"
-#include "Hedgehog/System/SingletonInitNode.h"
+#include "Hedgehog/Foundation/System/hhAllocator.h"
+#include "Hedgehog/Foundation/System/SingletonInitNode.h"
 
 // Hedgehog Library
-#include "Hedgehog/Base/System/MemoryRouter.h"
-#include "Hedgehog/Base/System/hhBaseObject.h"
-#include "Hedgehog/Base/System/hhReferencedObject.h"
-#include "Hedgehog/Base/System/RefByHandleObject.h"
-#include "Hedgehog/Base/System/hhProperty.h"
-#include "Hedgehog/Base/System/hhCollection.h"
-#include "Hedgehog/Base/System/HFrame.h"
-#include "Hedgehog/Base/System/HandleManager.h"
-#include "Hedgehog/Base/System/hhHandle.h"
-#include "Hedgehog/Base/System/ReloaderListener.h"
-#include "Hedgehog/Base/System/SUpdateInfo.h"
-#include "Hedgehog/Base/System/UpdatingPhase.h"
+#include "Hedgehog/Foundation/System/MemoryRouter.h"
+#include "Hedgehog/Foundation/System/hhBaseObject.h"
+#include "Hedgehog/Foundation/System/hhReferencedObject.h"
+#include "Hedgehog/Foundation/System/RefByHandleObject.h"
+#include "Hedgehog/Foundation/System/hhProperty.h"
+#include "Hedgehog/Foundation/System/hhCollection.h"
+#include "Hedgehog/Foundation/System/HFrame.h"
+#include "Hedgehog/Foundation/System/HandleManager.h"
+#include "Hedgehog/Foundation/System/hhHandle.h"
+#include "Hedgehog/Foundation/System/ReloaderListener.h"
+#include "Hedgehog/Foundation/System/SUpdateInfo.h"
+#include "Hedgehog/Foundation/System/UpdatingPhase.h"
 
 // Hedgehog Universe Library
-#include "Hedgehog/Base/Universe/hhMessenger.h"
-#include "Hedgehog/Base/Universe/hhMessage.h"
-#include "Hedgehog/Base/Universe/MessageQueue.h"
-#include "Hedgehog/Base/Universe/MessageManager.h"
+#include "Hedgehog/Foundation/Universe/hhMessenger.h"
+#include "Hedgehog/Foundation/Universe/hhMessage.h"
+#include "Hedgehog/Foundation/Universe/MessageQueue.h"
+#include "Hedgehog/Foundation/Universe/MessageManager.h"
 
 #include "Gindows/Object.h"
 #include "Gindows/TreeNode.h"
@@ -165,12 +167,12 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Utility/BvWorld.h"
 #include "Hedgehog/Utility/KdTree.h"
 
-#include "Hedgehog/Base/Type/WorldPosition.h"
-#include "Hedgehog/Base/Type/LogData.h"
-#include "Hedgehog/Base/Type/Triangle.h"
-#include "Hedgehog/Base/Type/Geometry.h"
-#include "Hedgehog/Base/Type/WireGeometry.h"
-#include "Hedgehog/Base/Type/ResLightParameter.h"
+#include "Hedgehog/Foundation/Type/WorldPosition.h"
+#include "Hedgehog/Foundation/Type/LogData.h"
+#include "Hedgehog/Foundation/Type/Triangle.h"
+#include "Hedgehog/Foundation/Type/Geometry.h"
+#include "Hedgehog/Foundation/Type/WireGeometry.h"
+#include "Hedgehog/Foundation/Type/ResLightParameter.h"
 
 #include "Hedgehog/Cri/CriSystem.h"
 
