@@ -25,6 +25,10 @@ namespace hh::dv{
         virtual void UnkFunc6(int currentFrame, csl::math::Transform transform) {};
 
         game::GameService* GetService(const game::GameServiceClass* gameServiceClass);
+        template<typename T>
+		T* GetService() {
+			return static_cast<T*>(GetService(T::GetClass()));
+		}
         DvSceneControl* GetDvSceneControl();
         float CalculateCurrentCurve(int dataSize, int currentFrame, float* data, int unk);
         DvStandardCharacter* GetParentCharacterObject() const;
