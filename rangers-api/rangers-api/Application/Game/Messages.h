@@ -56,4 +56,25 @@ namespace app::game {
             strncpy(this->interpolatorId, interpolatorId, sizeof(this->interpolatorId));
         }
     };
+
+    class MsgTransitCyberStage : public app::fnd::AppMessage<MsgTransitCyberStage> {
+    public:
+        const char* stageCode;
+        int64_t unk0{ 0 };
+        char unk1{ 0 };
+        hh::fnd::WorldPosition openZoneSonicPos{};
+        int portalNo{ 0 };
+        char unk2{ 0 };
+
+        MsgTransitCyberStage() : fnd::AppMessage<MsgTransitCyberStage>{ hh::fnd::MessageID::TRANSIT_CYBER_STAGE } {}
+    };
+
+    class MsgTransitIslandStage : public app::fnd::AppMessage<MsgTransitIslandStage> {
+    public:
+        const char* stageCode;
+        int64_t unk0{ 0 };
+        char unk1{ 0 };
+
+        MsgTransitIslandStage() : fnd::AppMessage<MsgTransitIslandStage>{ hh::fnd::MessageID::TRANSIT_ISLAND_STAGE } {}
+    };
 }

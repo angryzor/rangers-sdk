@@ -1,8 +1,12 @@
 #pragma once
 
 namespace app::trr {
+    class TerrainWorld;
+
     class TerrainWorldExtension : public hh::fnd::BaseObject {
     public:
+        TerrainWorld* trrWrld;
+        
         virtual unsigned int GetNameHash() const;
         virtual void UnkFunc2() {}
         virtual void UnkFunc3() {}
@@ -45,11 +49,10 @@ namespace app::trr {
         hh::fnd::Reference<TerrainLoader> terrainLoader;
         hh::fnd::Reference<app::ResSvCol2> svColResource;
         csl::ut::String name2;
-        hh::fnd::Reference<hh::fnd::ReferencedObject> qword98;
-        hh::fnd::Reference<hh::fnd::ReferencedObject> qwordA0;
+        hh::fnd::Reference<TerrainVisualResourceBinder> trrVisResBinders[2];
         hh::fnd::Handle<hh::game::GameObject> objects[2]; // 0 = ground, 1 = sky
         hh::fnd::Reference<SvColTree> svColTree;
-        csl::ut::MoveArray<TerrainWorldExtension> extensions;
+        csl::ut::MoveArray<TerrainWorldExtension*> extensions;
         csl::ut::MoveArray<void*> maybeListeners;
 
         virtual void TLL_UnkFunc1(const char* name) override;

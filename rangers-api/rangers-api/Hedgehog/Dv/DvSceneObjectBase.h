@@ -26,7 +26,7 @@ namespace hh::dv {
         virtual bool UnkTransform(void* a2, float a3, char a4, csl::math::Transform* transform);
         virtual void SetAnimatorState(const char* floatVarName, const char* stateName);
         virtual void* GetUnkGOCAnimator0(void* a2, void* a3, void* a4, int a5); // only a5 is used
-        virtual bool SetUnkGOCAnimator1(const char* unkname, int a3);
+        virtual bool SetAnimatorState(const char* stateName, int layer);
         virtual void* GetGOCAnimatorUnk0(void* a2);
         virtual bool VisualModelIsAcceptingMessages();
         virtual void ShowDebugDraw();

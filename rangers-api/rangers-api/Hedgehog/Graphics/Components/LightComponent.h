@@ -20,7 +20,7 @@ namespace hh::gfx {
         virtual void UnkFunc1() override;
         virtual void UnkFunc2() override;
         virtual void UnkFunc3() override {}
-        virtual int UnkFunc4() override;
+        virtual int GetNameHash() override;
         virtual const char* GetName() override;
     };
 }

@@ -15,11 +15,13 @@ namespace hh::hid{
             virtual void ResourceUnloadedCallback(fnd::ManagedResource* resource) override;
         };
 
-        csl::ut::PointerMap<const char*, ucsl::resources::vibration::v21::Vibration*> vibrations; 
+        csl::ut::StringMap<ucsl::resources::vibration::v21::Vibration*> vibrations; 
         PresetContainerListener* presetContainerListener;
         char unk0;
         void* vibrationHapticListener;
 
         VibrationManager(csl::fnd::IAllocator* allocator);
+
+        static void PlayVibration(int deviceId, const char* vibrationName, VibrationContainer::VibrationType vibrationType, VibrationContainer::VibrationObj* obj);
     };
 }

@@ -26,7 +26,7 @@ namespace hh::gfnd {
         void RemoveFromCurrentContainer();
 
         virtual void Render(const RenderableParameter* renderableParameter) = 0;
-        virtual void UnkFunc2() {}
-        virtual bool UnkFunc3() { return true; }
+        virtual void UnkFunc2() {} //UpdateFrame
+        virtual bool UnkFunc3() { return true; } //CheckEnable
     };
 }

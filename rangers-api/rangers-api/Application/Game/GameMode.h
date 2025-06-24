@@ -34,6 +34,12 @@ namespace app::game {
         T* GetService() const {
             return (T*)GetService(T::GetClass());
         }
+        void AddService(hh::game::GameServiceClass* gameServiceClass);
+        template<typename T>
+        void AddService() {
+            GetService(T::GetClass());
+        }
+        void RegisterService(hh::game::GameService* gameService);
 
         GameModeExtension* GetExtension(unsigned int name) const;
     };

@@ -43,6 +43,8 @@ namespace hh::dv{
         virtual bool UnkFuncBase();
 
         app::dv::AppDvSceneObjectBase* GetDvSceneObject();
+        bool SetAnimatorState(const char* stateName);
+        bool SetFlagsBits(int bits);
 
         DvNodeBaseAnimationModel(csl::fnd::IAllocator* allocator);
     };

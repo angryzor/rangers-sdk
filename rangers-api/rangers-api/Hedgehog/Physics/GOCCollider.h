@@ -9,6 +9,7 @@ namespace hh::physics {
             BOX,
             CAPSULE,
             CYLINDER,
+            SKINNED_MESH = 6
         };
 
         struct SphereParameters {

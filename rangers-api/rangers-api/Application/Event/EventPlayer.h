@@ -5,7 +5,7 @@ namespace app::evt {
     public:
         virtual void EPL_UnkFunc1() {}
         virtual void EPL_UnkFunc2() {}
-        virtual void EPL_UnkFunc3() {}
+        virtual void CutsceneStart(const char* cutsceneName) {}
         virtual void EPL_UnkFunc4() {}
         virtual void EPL_UnkFunc5() {}
         virtual void EPL_UnkFunc6() {}
@@ -66,8 +66,6 @@ namespace app::evt {
         float speed;
         csl::ut::Bitset<PlayFlag> playFlags;
         UnkStr unkStr;
-        long long unk4;
-        char unk5;
         hh::fnd::ReferencedObject* owner0;
         hh::fnd::WorldPosition playerWorldPos;
         csl::ut::Bitset<PlayerFlag> playerFlags;
@@ -157,6 +155,9 @@ namespace app::evt {
     public:
         EventEnvironmentContext* evtEnvCtx;
         csl::ut::MoveArray<EventEnvironment*> evtEnvs;
+
+        EventEnvironment* GetEnvironmentByHash(unsigned int nameHash);
+        void AddEnvironment(EventEnvironment* env);
     };
 
     class EventPlayer : public hh::game::GameService, hh::game::GameStepListener, hh::game::GameManagerListener, hh::dv::DvSceneControlListener {
@@ -211,6 +212,7 @@ namespace app::evt {
         bool IsPlaying();
         bool IsntPlaying();
         bool UnkFadeObjectFSM();
+        void HideObject(hh::fnd::Handle<hh::game::GameObject>& object);
 
         virtual void* GetRuntimeTypeInfo() const override;
         virtual bool ProcessMessage(hh::fnd::Message& message) override;

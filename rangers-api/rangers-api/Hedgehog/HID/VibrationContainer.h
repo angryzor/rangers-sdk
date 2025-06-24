@@ -7,6 +7,22 @@ namespace hh::hid{
         public:
         };
 
+        struct VibrationObj{
+            hh::hid::VibrationContainer* container;
+            int handle;
+
+            VibrationObj();
+            void Initialize();
+            void UnkFunc0();
+            void UnkFunc1();
+        };
+
+        enum class VibrationType : unsigned int {
+            ONESHOT,
+            ALWAYS,
+            AUTO
+        };
+
         GamepadSteam* gamepad;
         int unk0;
         short flags;
@@ -18,5 +34,7 @@ namespace hh::hid{
         VibrationMarge* marge;
 
         VibrationContainer(csl::fnd::IAllocator* allocator, Gamepad* gamepad);
+
+        void PlayVibration(const char* vibrationName, VibrationType vibrationType, VibrationContainer::VibrationObj* obj);
     };
 }

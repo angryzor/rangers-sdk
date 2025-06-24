@@ -15,4 +15,11 @@ namespace app::ui {
 
         MsgUISetGameCockpitVisibility(size_t uiMask, bool visible) : fnd::AppMessage<MsgUISetGameCockpitVisibility>{ hh::fnd::MessageID::UI_SET_GAME_COCKPIT_VISIBILITY }, uiMask{ uiMask }, visible{ visible } {}
     };
+
+    class MsgUINotifyUpdatePosition : public fnd::AppMessage<MsgUINotifyUpdatePosition> {
+    public:
+        char unk0{ 2 };
+
+        MsgUINotifyUpdatePosition() : fnd::AppMessage<MsgUINotifyUpdatePosition>{ hh::fnd::MessageID::UI_NOTIFY_UPDATE_POSITION } {}
+    };
 }

@@ -51,6 +51,8 @@ namespace hh::dv{
 
         char* GetGUID();
         void SetTransform(csl::math::Transform* transform);
+        void SetUnkFlag0(bool enabled);
+        DvNodeBase* GetParent();
 
         DvNodeBase(csl::fnd::IAllocator* allocator);
     };

@@ -32,6 +32,8 @@ namespace app::level {
         csl::ut::MoveArray<hh::fnd::Handle<hh::fnd::Messenger>>& GetUIObjects();
         const char* GetStageName();
         unsigned int GetCyberStageIndex() const;
+        unsigned int GetStageIndex() const;
+        bool IsNonBossStage() const;
 
         GAMESERVICE_CLASS_DECLARATION(LevelInfo)
     };

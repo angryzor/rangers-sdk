@@ -6,6 +6,11 @@ namespace hh::dv{
 
     class DvSceneControlListener {
     public:
+        struct UnkFunc11Info {
+            DvSceneControl* dvSceneControl;
+            int unk;
+        };
+
         virtual bool DSCL_UnkFunc1(void* unk0, void* unk1) { return false; }
         virtual bool DSCL_UnkFunc2(void* unk0, void* unk1) { return false; }
         virtual bool DSCL_UnkFunc3() { return false; }
@@ -16,7 +21,7 @@ namespace hh::dv{
         virtual void DSCL_UnkFunc8() {}
         virtual void DSCL_UnkFunc9() {}
         virtual void DSCL_UnkFunc10() {}
-        virtual void DSCL_UnkFunc11() {}
+        virtual void DSCL_UnkFunc11(UnkFunc11Info info) {}
         virtual void DSCL_UnkFunc12() {}
         virtual bool DSCL_UnkFunc13(void* unk0) { return false; }
         virtual bool DSCL_UnkFunc14() { return false; }

@@ -15,5 +15,11 @@ namespace hh::hid {
 
         DeviceManager(csl::fnd::IAllocator* pAllocator);
         ActiveDeviceManager* GetActiveDeviceManager();
+
+        VibrationManager* GetVibrationManager() const;
+        static VibrationManager* GetVibration();
+
+        Gamepad* GetGamepadByID(unsigned id);
+        static Gamepad* GetGamepad(unsigned id);
     };
 }

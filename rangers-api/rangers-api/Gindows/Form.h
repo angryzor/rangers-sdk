@@ -24,19 +24,18 @@ namespace gindows{
         int64_t qword8A8;
         csl::fnd::IAllocator* qword8B0;
 
-        virtual void* GetInfo() override;
-        virtual Object* UnkFunc(char unk) override;
+        virtual void* GetRuntimeTypeInfo() const override;
 
         virtual void ContUnkFuncNull() override;
         virtual void ContUnkFunc0(int* unk) override;
         virtual void* ContUnkFunc2() override;
-        virtual void* ContSetQWORD688(void* unk) override;
-        virtual void* ContSet2(void* unk) override;
-        virtual char ContUnkFunc6(void* unk) override;
-        virtual char ContUnkFunc7() override;
-        virtual void* ContUnkFunc11() override;
-        virtual void* ContUnkFunc13() override;
-        virtual void* ContUnkFunc16() override;
+        virtual void ContSetQWORD688(void* value) override;
+        virtual int SaveProperty(void* propertyNode) override;
+        virtual int LoadProperty(void* propertyNode) override;
+        virtual char Render() override;
+        virtual int OnLocationChanged() override;
+        virtual int OnGotFocus() override;
+        virtual int OnMouseLeave() override;
         virtual char ContUnkFunc18(void* unk) override;
         virtual char ContUnkFunc19(void* unk) override;
         virtual void* ContUnkFunc20() override;
@@ -53,6 +52,8 @@ namespace gindows{
         virtual void* FormUnkFunc3(void* unk); // something with qword800
         virtual void* FormUnkFunc4(void* unk); // something with qword820
         virtual void* FormUnkFunc5(void* unk); // something with qword840
+
+        void SetMinimized(int unk);
 
         Form();
     };

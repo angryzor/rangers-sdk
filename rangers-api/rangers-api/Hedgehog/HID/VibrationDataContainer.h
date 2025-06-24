@@ -6,7 +6,7 @@ namespace hh::hid{
     public:
         int unk0;
         int unk1;
-        int unk2;
+        char vibrationDataId;
         int unk3;
         float unk4;
         int unk5;
@@ -16,19 +16,21 @@ namespace hh::hid{
     class VibrationDataContainer : public fnd::ReferencedObject{
     public:
         ucsl::resources::vibration::v21::Vibration* vibrationData;
-        int unk1;
+        int handle;
         float unk2;
-        float unk3;
+        float maxPositionX;
         int unk4;
-        csl::ut::MoveArray<void*> unk5;
+        csl::ut::MoveArray<VibrationData*> vibrationDatas;
         int unk6;
         int unk7;
-        int unk8;
+        char flags;
         int unk9;
         float unk10;
         int unk11;
         int64_t unk12;
 
         VibrationDataContainer(csl::fnd::IAllocator* allocator);
+
+        void Initialize(ucsl::resources::vibration::v21::Vibration* vibData);
     };
 }
