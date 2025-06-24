@@ -1,3 +1,0 @@
-[submodule "include/rangers-api"]
-	path = rangers-api
-	url = https://github.com/angryzor/rangers-api.git
