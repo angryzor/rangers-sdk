@@ -2,16 +2,15 @@
 
 namespace hh::fnd {
     struct ResLightParameter {
-        float unk101;
-        float unk102;
-        float unk103;
-        float unk104;
-        csl::math::Position unk105;
+        int lightType;
+        float color[3];
+        csl::math::Position lightPosition;
+        float unk107;
         float unk108;
         float unk109;
         float unk110;
         float unk111;
-        float unk112;
+        char unk112;
         uint32_t unk113;
         uint32_t unk114;
     };

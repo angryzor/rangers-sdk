@@ -39,6 +39,7 @@ namespace app::evt {
         struct UnkStr1 {
         public:
             long long unk7;
+            char unk8;
         };
 
         enum class PlayFlag : unsigned int {
@@ -66,22 +67,21 @@ namespace app::evt {
         float speed;
         csl::ut::Bitset<PlayFlag> playFlags;
         UnkStr unkStr;
-        hh::fnd::ReferencedObject* owner0;
         hh::fnd::WorldPosition playerWorldPos;
         csl::ut::Bitset<PlayerFlag> playerFlags;
         char flags2;
-        hh::fnd::ReferencedObject* owner1;
+        int64_t unk3;
         UnkStr1 unkStr1;
+        csl::math::Vector4 unk4;
 
         void Setup(const char* cutsceneName);
-        static void SetName(char* name, const char* nameValue, long long unk);
-        void SetCutsceneName(const char* name, long long unk){
-            SetName(cutsceneName, name, unk);
+        inline void SetCutsceneName(const char* name){
+            strcpy(cutsceneName, name);
         }
-        void SetSoundName(const char* name, long long unk){
-            SetName(soundName, name, unk);
+        inline void SetSoundName(const char* name){
+            strcpy(soundName, name);
         }
-        void SetTransform(csl::math::Vector4* transform);
+        void SetTransform(csl::math::Transform& transform);
     };
 
     class EventScene : public hh::fnd::BaseObject, hh::dv::DvSceneControlListener {
@@ -103,6 +103,11 @@ namespace app::evt {
         long long unk2;
         float unk3;
         csl::ut::Bitset<Flags> flags;
+
+        EventScene(csl::fnd::IAllocator* allocator, const char* cutsceneName);
+
+        EventSetupData& GetSetupData() const;
+        void SetEventPlayer(EventPlayer* evtPlayer);
     };
 
     class EventSceneManager : public hh::fnd::BaseObject {
@@ -110,6 +115,10 @@ namespace app::evt {
         EventPlayer* evtPlayer;
         csl::ut::MoveArray<EventScene*> evtScenes;
         csl::ut::MoveArray<csl::ut::VariableString> cutsceneNames;
+
+        EventScene* GetEventScene(const char* cutsceneName);
+        bool HasCutscene(const char* cutsceneName);
+        void AddCutscene(const char* cutsceneName, bool addCutsceneName);
     };
 
     class EventEnvironmentContext;
@@ -147,8 +156,8 @@ namespace app::evt {
         app_cmn::camera::CameraParameter camParam;
         bool isPlaying;
 
-        EventSetupData* GetSetupData();
-        hh::game::GameManager* GetGameManager();
+        EventSetupData& GetSetupData() const;
+        hh::game::GameManager* GetGameManager() const;
     };
 
     class EventEnvironmentManager : public hh::fnd::BaseObject {
@@ -156,7 +165,7 @@ namespace app::evt {
         EventEnvironmentContext* evtEnvCtx;
         csl::ut::MoveArray<EventEnvironment*> evtEnvs;
 
-        EventEnvironment* GetEnvironmentByHash(unsigned int nameHash);
+        EventEnvironment* GetEnvironmentByHash(unsigned int nameHash) const;
         void AddEnvironment(EventEnvironment* env);
     };
 
@@ -208,7 +217,7 @@ namespace app::evt {
 
         void AddListener(EventPlayerListener* listener);
         void RemoveListener(EventPlayerListener* listener);
-        void PlayEvent(EventSetupData* setupData);
+        void PlayEvent(EventSetupData& setupData);
         bool IsPlaying();
         bool IsntPlaying();
         bool UnkFadeObjectFSM();
