@@ -32,6 +32,8 @@ namespace hh::dv {
         virtual void ShowDebugDraw();
         virtual void HideDebugDraw();
 
+        hh::dv::DvStandardCharacter* GetCharacterObject() const;
+
         DvSceneObjectBase(csl::fnd::IAllocator* allocator, hh::dv::DvStandardCharacter* character);
     };
 }

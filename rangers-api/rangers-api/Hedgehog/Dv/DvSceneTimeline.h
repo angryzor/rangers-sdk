@@ -24,6 +24,10 @@ namespace hh::dv{
         float* cameraFrameProgressionSpeed;
         int ticksEnabled;
 
+        void Clear();
+        void SetFrameStartEnd(float start, float end);
+        float GetSpeedByFrame(int currentFrame) const;
+
         DvSceneTimeline(csl::fnd::IAllocator* allocator);
     };
 }

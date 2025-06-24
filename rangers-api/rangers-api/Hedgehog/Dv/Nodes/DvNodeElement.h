@@ -6,6 +6,7 @@
 
 namespace hh::dv{
     class DvNodeElement;
+    class DvStandardCharacter;
 
     class DvElementBase : public hh::fnd::ReferencedObject {
     public:
@@ -26,6 +27,7 @@ namespace hh::dv{
         game::GameService* GetService(const game::GameServiceClass* gameServiceClass);
         DvSceneControl* GetDvSceneControl();
         float CalculateCurrentCurve(int dataSize, int currentFrame, float* data, int unk);
+        DvStandardCharacter* GetParentCharacterObject() const;
     };
 
     class DvNodeElement : public DvNodeBase {

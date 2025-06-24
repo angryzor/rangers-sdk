@@ -49,10 +49,17 @@ namespace hh::dv{
         virtual int GetUpdateTiming();
         virtual void UnkFunc6(void* unk0, void* unk1) {};
 
-        char* GetGUID();
-        void SetTransform(csl::math::Transform* transform);
+        char* GetGUID() const;
+        csl::math::Transform& GetTransform() const;
+        void SetTransform(csl::math::Transform& transform);
+        void SetTransformRecursively(csl::math::Transform& transform);
+        void PreStepUpdateRecursively(unsigned int unk0);
         void SetUnkFlag0(bool enabled);
-        DvNodeBase* GetParent();
+        DvNodeBase* GetParent() const;
+        unsigned long long GetChildrenAmount() const;
+        DvNodeBase* GetElement0ByIdx(unsigned long long idx) const;
+        void UpdateChildren(int arrayIdx, int currentFrame);
+        void PostStepUpdateRecursively(int currentFrame);
 
         DvNodeBase(csl::fnd::IAllocator* allocator);
     };

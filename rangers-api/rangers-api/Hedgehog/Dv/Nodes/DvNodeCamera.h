@@ -41,6 +41,9 @@ namespace hh::dv{
         virtual void PostStepUpdate(int currentFrame) override;
         virtual int GetUpdateTiming() override;
 
+        bool Unk3Above0() const;
+        void GetViewportDataByFrame(int currentFrame, hh::gfnd::ViewportData* returnValue);
+
         DV_NODE_DECLARATION_BASE(DvNodeCamera)
     };
 }

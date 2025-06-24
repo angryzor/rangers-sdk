@@ -10,7 +10,8 @@ namespace app::dv{
     class AppDvElementBase : public hh::dv::DvElementBase{
     public:
         enum class Flags : unsigned char {
-            HAS_DATA
+            HAS_DATA,
+            DEALLOCATE_DATA
         };
 
         long elementBinaryDataSize;
@@ -24,7 +25,7 @@ namespace app::dv{
         virtual void AppUnkFunc2() {};
         virtual void* AppUnkFunc3(void* unk0, unsigned int unk1) {};
 
-        const char* GetBinaryData();
+        const char* GetBinaryData() const;
 
         AppDvElementBase(csl::fnd::IAllocator* allocator, hh::dv::DvNodeElement* base);
     };

@@ -29,7 +29,7 @@ namespace hh::dv {
         int unk3;
         int64_t state;
         ResDvScene* resource;
-        bool updateNodeTransforms;
+        char layerTimeScaleIdx;
         float speed;
         bool update;
         bool unkBool0;
@@ -46,6 +46,11 @@ namespace hh::dv {
 
         const char* GetCutsceneName();
         csl::ut::MoveArray<DvSceneControlListener*>& GetListeners();
+        DvSceneNodeTree* GetNodeTree() const;
+        DvSceneTimeline* GetTimeline() const;
+        void SetUnk34(int value);
+        void AddListener(DvSceneControlListener* listener);
+        void RemoveListener(DvSceneControlListener* listener);
 
         GAMEOBJECT_CLASS_DECLARATION(DvSceneControl)
     };
