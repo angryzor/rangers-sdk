@@ -572,6 +572,7 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Graphics/RenderManager.h"
 #include "Hedgehog/Graphics/VertexAnimationTextureController.h"
 #include "Hedgehog/Graphics/ResAnimCameraContainer.h"
+#include "Hedgehog/Graphics/ResAnimLightContainer.h"
 #include "Hedgehog/Graphics/ResDensityPointCloud.h"
 #include "Hedgehog/Graphics/ResDensitySetting.h"
 #include "Hedgehog/Graphics/ResMaterial.h"
@@ -1059,6 +1060,7 @@ namespace rangerssdk::ucsl {
 #include "Application/Physics/Messages.h"
 
 #include "Application/Graphics/ResFxColFile2.h"
+#include "Application/Graphics/ResPointcloudLight.h"
 #include "Application/Graphics/SceneParameters.h"
 #include "Application/Graphics/FxParamManager.h"
 #include "Application/Graphics/FxParamTimeProgressExtension.h"

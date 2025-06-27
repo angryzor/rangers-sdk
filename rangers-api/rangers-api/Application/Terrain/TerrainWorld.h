@@ -59,6 +59,8 @@ namespace app::trr {
         virtual void TLL_UnkFunc2(void* unkParam1) override;
         virtual void TLL_UnkFunc3(void* unkParam1, uint32_t unkParam2) override;
 
+        void Deload();
+
         void Setup(const SetupInfo& setupInfo);
     };
 }

@@ -4,6 +4,7 @@ namespace hh::gfx {
     class ResMirageLight : public fnd::ManagedResource {
     public:
         fnd::ResLightParameter lightParameter;
+        uint32_t unk114;
         uint32_t unk2;
 
         virtual void Load(void* data, size_t size) override;

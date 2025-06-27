@@ -1,4 +1,5 @@
 #pragma once
+#include <ucsl/resources/light/v2.h>
 
 namespace hh::gfx{
     class GOCPointLight : public hh::game::GOComponent {
@@ -9,12 +10,6 @@ namespace hh::gfx{
         };
 
         struct Light{
-            enum class LightType : unsigned int{
-                UNK,
-                POINT,
-                DIRECTIONAL
-            };
-
             struct PointProperties{
                 float radius;
                 float attenuationRadius;
@@ -34,10 +29,10 @@ namespace hh::gfx{
             float color[3];
             int idx;
             hh::fnd::HFrame* hFrame;
-            LightType type;
+            ucsl::resources::light::v2::LightType type;
             float computedColor[3];
-            csl::math::Position position1;
-            csl::math::Position rotation1;
+            csl::math::Position absolutePosition;
+            csl::math::Position absoluteRotation;
             union{
                 PointProperties pointProps;
                 DirectionalProperties directionalProps;
@@ -45,7 +40,7 @@ namespace hh::gfx{
         };
 
         struct LightSetupInfo{
-            Light::LightType type;
+            ucsl::resources::light::v2::LightType type;
             csl::math::Vector3 position;
             float radius;
             float unk4;
@@ -70,9 +65,10 @@ namespace hh::gfx{
         void SetLightIntensity(unsigned int lightIdx, float intensity);
         void SetLightProperties(unsigned int lightIdx, float* colorARGB, float radius, float rotationMultiplier, float attenuationRadius, float innerConeAngle, float outerConeAngle, bool enableShadow);
         void SetLightProperties(unsigned int lightIdx, float* colorARGB, float radius, float rotationMultiplier, float attenuationRadius, float innerConeAngle, float outerConeAngle, csl::math::Vector3& position, csl::math::Quaternion& rotation);
-        void CopyProperties(unsigned int lightIdx);
+        void RemoveLight(unsigned int lightIdx);
         int CreateLight(LightSetupInfo& info);
         int CreateLight(ResMirageLight* resource, hh::fnd::HFrame* hFrame);
+        void ClearLights();
 
         GOCOMPONENT_CLASS_DECLARATION(GOCPointLight)
     };
