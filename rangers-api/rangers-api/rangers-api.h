@@ -358,6 +358,7 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Needle/SceneContexts/SCWindCompute.h"
 #include "Hedgehog/Needle/SceneContexts/SCWorld.h"
 #include "Hedgehog/Needle/IBLParamBuildJob.h"
+#include "Hedgehog/Needle/ClipMapRenderer.h"
 
 #include "Hedgehog/Needle/ImplDX11/Types.h"
 #include "Hedgehog/Needle/ImplDX11/NeedleResourceContainer.h"
@@ -480,6 +481,8 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/HID/InputDevices/VibrationWin32.h"
 
 #include "Hedgehog/HID/ResVibration.h"
+#include "Hedgehog/HID/VibrationPlayer.h"
+#include "Hedgehog/HID/VibrationHapticPlayer.h"
 #include "Hedgehog/HID/VibrationDataContainer.h"
 #include "Hedgehog/HID/VibrationContainer.h"
 #include "Hedgehog/HID/VibrationManager.h"
@@ -564,6 +567,9 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Graphics/Components/CaptureComponent.h"
 #include "Hedgehog/Graphics/Components/ScreenShotComponent.h"
 #include "Hedgehog/Graphics/Components/TerrainComponent.h"
+#include "Hedgehog/Graphics/VirtualTexture.h"
+#include "Hedgehog/Graphics/PageIndexer.h"
+#include "Hedgehog/Graphics/TerrainRenderer.h"
 #include "Hedgehog/Graphics/RenderingEngine.h"
 #include "Hedgehog/Graphics/RenderingEngineNeedle.h"
 #include "Hedgehog/Graphics/RenderingEngineRangers.h"

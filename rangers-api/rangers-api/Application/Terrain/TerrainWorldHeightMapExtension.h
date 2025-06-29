@@ -6,5 +6,7 @@ namespace app::trr{
         virtual unsigned int GetNameHash() const override;
         virtual void Initialize() override;
         virtual void Deinitialize() override;
+
+        TerrainWorldHeightMapExtension(csl::fnd::IAllocator* allocator);
     };
 }

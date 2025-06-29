@@ -13,7 +13,7 @@ namespace hh::hid{
 
             VibrationObj();
             void Initialize();
-            void UnkFunc0();
+            bool NotExists();
             void UnkFunc1();
         };
 
@@ -24,7 +24,7 @@ namespace hh::hid{
         };
 
         GamepadSteam* gamepad;
-        int unk0;
+        int dataContainerAmount;
         short flags;
         csl::ut::MoveArray<VibrationDataContainer*> dataContainers;
         csl::ut::PointerMap<int, VibrationDataContainer*> hashDataContainers;
@@ -36,5 +36,6 @@ namespace hh::hid{
         VibrationContainer(csl::fnd::IAllocator* allocator, Gamepad* gamepad);
 
         void PlayVibration(const char* vibrationName, VibrationType vibrationType, VibrationContainer::VibrationObj* obj);
+        bool NotExists(int handle);
     };
 }

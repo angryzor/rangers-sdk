@@ -4,6 +4,12 @@ namespace hh::needle {
     class SupportFX;
     class RenderManager : public NeedleRefcountObject {
     public:
+        class Listener {
+        public:
+            virtual void RML_UnkFunc0() {}
+            virtual void RML_UnkFunc1() {}
+        };
+
         RenderingDeviceContext* renderingDeviceContext;
         RenderTargetManager* renderTargetManager;
         RenderProperty* renderProperty;

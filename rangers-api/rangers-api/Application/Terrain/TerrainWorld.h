@@ -62,5 +62,7 @@ namespace app::trr {
         void Deload();
 
         void Setup(const SetupInfo& setupInfo);
+
+        void AddExtension(TerrainWorldExtension* ext);
     };
 }

@@ -18,10 +18,11 @@ namespace hh::hid{
         csl::ut::StringMap<ucsl::resources::vibration::v21::Vibration*> vibrations; 
         PresetContainerListener* presetContainerListener;
         char unk0;
-        void* vibrationHapticListener;
+        VibrationHapticPlayerListener* vibrationHapticPlayerListener;
 
         VibrationManager(csl::fnd::IAllocator* allocator);
 
         static void PlayVibration(int deviceId, const char* vibrationName, VibrationContainer::VibrationType vibrationType, VibrationContainer::VibrationObj* obj);
+        VibrationHapticPlayerListener* GetVibrationHapticPlayerListener() const;
     };
 }
