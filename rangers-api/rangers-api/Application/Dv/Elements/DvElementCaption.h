@@ -20,9 +20,16 @@ namespace app::dv{
                 KOREAN
             };
 
+            enum class Style : unsigned int {
+                BOTTOM_POPIN,
+                LEFT_SMOOTHFADE,
+                MIDDLE_SMOOTHFADE,
+                RIGHT_SMOOTHFADE
+            };
+
             char converseName[16];
             LanguageID languageId;
-            int unk0;
+            Style style;
         };
 
         int unk0; // adds +1 whenver it appears

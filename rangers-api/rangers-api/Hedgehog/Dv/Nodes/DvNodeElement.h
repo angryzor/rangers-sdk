@@ -30,8 +30,10 @@ namespace hh::dv{
 			return static_cast<T*>(GetService(T::GetClass()));
 		}
         DvSceneControl* GetDvSceneControl();
+        float CalculateCurrentCurve(int dataSize, int currentFrame, float* data);
         float CalculateCurrentCurve(int dataSize, int currentFrame, float* data, int unk);
         DvStandardCharacter* GetParentCharacterObject() const;
+        game::GameManager* GetGameManager() const;
     };
 
     class DvNodeElement : public DvNodeBase {

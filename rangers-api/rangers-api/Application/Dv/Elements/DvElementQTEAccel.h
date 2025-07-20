@@ -20,7 +20,7 @@ namespace app::dv{
         };
 
         void* unk0;
-        void* unk1;
+        int startFrame;
         void* unk2;
         void* unk3;
         int unk4;

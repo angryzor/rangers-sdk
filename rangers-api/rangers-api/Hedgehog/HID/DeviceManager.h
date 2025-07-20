@@ -21,5 +21,7 @@ namespace hh::hid {
 
         Gamepad* GetGamepadByID(unsigned id);
         static Gamepad* GetGamepad(unsigned id);
+
+        Mouse* GetMouse() const;
     };
 }

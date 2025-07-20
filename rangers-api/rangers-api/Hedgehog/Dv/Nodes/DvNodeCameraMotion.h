@@ -17,7 +17,7 @@ namespace hh::dv{
         };
 
         Description binaryData;
-        csl::ut::MoveArray<void*> unkArray;
+        csl::ut::MoveArray<void*> cameras;
         int unk3;
         int unk4;
 

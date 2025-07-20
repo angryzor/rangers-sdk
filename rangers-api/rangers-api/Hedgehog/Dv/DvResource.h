@@ -6,6 +6,7 @@ namespace hh::dv {
         fnd::ManagedResource* resource;
 
         fnd::ManagedResource* GetResource();
+        void SetResource(hh::fnd::ManagedResource* res);
 
         DvResource(csl::fnd::IAllocator* allocator);
     };

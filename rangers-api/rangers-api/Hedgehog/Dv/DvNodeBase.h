@@ -1,6 +1,7 @@
 #pragma once
 
 namespace hh::dv{
+    class DvSceneControl;
     class DvSceneNodeTree;
 
     class DvNodeBase : public hh::fnd::ReferencedObject{
@@ -60,6 +61,7 @@ namespace hh::dv{
         DvNodeBase* GetElement0ByIdx(unsigned long long idx) const;
         void UpdateChildren(int arrayIdx, int currentFrame);
         void PostStepUpdateRecursively(int currentFrame);
+        DvSceneControl* GetDvSceneControl() const;
 
         DvNodeBase(csl::fnd::IAllocator* allocator);
     };

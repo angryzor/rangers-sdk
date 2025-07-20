@@ -27,6 +27,9 @@ namespace hh::dv{
         void Clear();
         void SetFrameStartEnd(float start, float end);
         float GetSpeedByFrame(int currentFrame) const;
+        void InitializeCuts(int64_t cutCount, float* cuts);
+        void InitializeDisableFrames(int64_t disableFrameCount, DisableFrame* disableFrames);
+        void InitializePages(void* pages, int64_t pageCount, hh::dv::DvSceneControl* dvsc);
 
         DvSceneTimeline(csl::fnd::IAllocator* allocator);
     };

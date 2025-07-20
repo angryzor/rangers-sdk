@@ -14,10 +14,6 @@ namespace app::dv{
             bool curveEnabled;
             Time time;
             Time finishTime;
-            int unk5;
-            int unk6;
-            int unk7;
-            int unk8;
             float curveData[32];
         };
 

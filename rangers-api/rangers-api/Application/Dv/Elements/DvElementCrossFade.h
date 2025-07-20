@@ -6,12 +6,11 @@ namespace app::dv{
         struct Description : hh::dv::DvElementBase::Description {
         public:
             bool curveEnabled;
-            int unk1;
+            int length;
             float curveData[32];
         };
 
-        int unkHandle;
-        int unk0;
+        hh::fnd::Handle<hh::game::GameObject> crossFadeObject;
         void* unk1;
         void* unk2;
 

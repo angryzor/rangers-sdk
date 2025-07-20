@@ -438,6 +438,7 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/GraphicsFoundation/DrawSystemNeedle.h"
 
 #include "Hedgehog/Font/ResBitmapFont.h"
+#include "Hedgehog/Font/ResOpticalKerning.h"
 #include "Hedgehog/Font/ResScalableFontSet.h"
 #include "Hedgehog/Font/TextListener.h"
 #include "Hedgehog/Font/TextTagWriterFeedListener.h"
@@ -1048,10 +1049,12 @@ namespace rangerssdk::ucsl {
 #include "Application/Game/Script.h"
 #include "Application/Game/ReactiveService.h"
 #include "Application/Game/GOCBossActionSelect.h"
+#include "Application/Game/ScreenFadeManager.h"
 
 #include "Application/UI/AppUITextInterface.h"
 #include "Application/UI/UIMusicSelect.h"
 #include "Application/UI/UIMainMenu.h"
+#include "Application/UI/UIMapMenu.h"
 #include "Application/UI/RequestOverlayTagReplace.h"
 #include "Application/UI/RequestOverlayBegin.h"
 #include "Application/UI/RequestOverlayWindow.h"
@@ -1098,6 +1101,7 @@ namespace rangerssdk::ucsl {
 #include "Application/Player/PlayerPosture.h"
 #include "Application/Player/Postures/PostureSliding.h"
 
+#include "Application/Dv/DvTheEndCableObject.h"
 #include "Application/Dv/AppDvElementBase.h"
 #include "Application/Dv/AppDvSceneObjectBase.h"
 #include "Application/Dv/Elements/DvElementBloomParam.h"
@@ -1142,7 +1146,7 @@ namespace rangerssdk::ucsl {
 #include "Application/Dv/Elements/DvElementFxColUpdate.h"
 #include "Application/Dv/Elements/DvElementVAT.h"
 #include "Application/Dv/Elements/DvElementQTEAccel.h"
-#include "Application/Dv/Elements/DvElementTheEndCableObject.h"
+#include "Application/Dv/Elements/DvElementTheEndCable.h"
 #include "Application/Dv/Elements/DvElementRifleBeastLighting.h"
 #include "Application/Dv/DvPageConditionQTE.h"
 
