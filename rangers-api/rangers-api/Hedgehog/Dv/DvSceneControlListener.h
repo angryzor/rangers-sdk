@@ -6,12 +6,19 @@ namespace hh::dv{
 
     class DvSceneControlListener {
     public:
+        struct UnkFunc1Info {
+            DvSceneControl* dvSceneControl;
+            int appElementId;
+            DvNodeBase* nodeElement;
+            csl::fnd::IAllocator* allocator;
+        };
+
         struct UnkFunc11Info {
             DvSceneControl* dvSceneControl;
             int unk;
         };
 
-        virtual bool DSCL_UnkFunc1(void* unk0, void* unk1) { return false; }
+        virtual bool DSCL_UnkFunc1(UnkFunc1Info& info, void** retElement) { return false; }
         virtual bool DSCL_UnkFunc2(void* unk0, void* unk1) { return false; }
         virtual bool DSCL_UnkFunc3() { return false; }
         virtual void DSCL_UnkFunc4() {}

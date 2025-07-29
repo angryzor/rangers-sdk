@@ -26,8 +26,8 @@ namespace hh::fnd {
         inline csl::fnd::IAllocator* GetModule() { return moduleAllocator; }
         inline csl::fnd::IAllocator* GetDebug() { return debugAllocator; }
         static csl::fnd::IAllocator* GetTempAllocator();
-        inline static csl::fnd::IAllocator* GetModuleAllocator() { return GetInstance()->GetModule(); }
-        inline static csl::fnd::IAllocator* GetDebugAllocator() { return GetInstance()->GetDebug(); }
+        static csl::fnd::IAllocator* GetModuleAllocator();
+        static csl::fnd::IAllocator* GetDebugAllocator();
     };
 }
 

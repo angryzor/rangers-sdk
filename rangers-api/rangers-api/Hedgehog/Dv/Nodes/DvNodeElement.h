@@ -21,8 +21,8 @@ namespace hh::dv{
         virtual void RemoveCallback() {};
         virtual void SetData(void* data) {};
         virtual void DeleteData() {};
-        virtual bool UnkFunc5() { return true; };
-        virtual void UnkFunc6(int currentFrame, csl::math::Transform transform) {};
+        virtual bool IsInitialized() { return true; };
+        virtual void UnkUpdate(int currentFrame, csl::math::Transform& transform) {};
 
         game::GameService* GetService(const game::GameServiceClass* gameServiceClass);
         template<typename T>
@@ -156,7 +156,7 @@ namespace hh::dv{
         int isActive;
         DescriptionBase binaryData;
         int unk0;
-        DvElementBase* element;
+        hh::fnd::Reference<DvElementBase> element;
         int start;
         int end;
 
@@ -164,9 +164,9 @@ namespace hh::dv{
         virtual void Start() override;
         virtual void Update(int currentFrame) override;
         virtual void PreStepUpdate(int currentFrame) override;
-        virtual bool IsUnkFlag0() override;
+        virtual bool IsInitialized() override;
         virtual int GetUpdateTiming() override;
-        virtual void UnkFunc6(void* unk0, void* unk1) override;
+        virtual void UnkUpdate(int currentFrame, csl::math::Transform& transform) override;
 
         static const void** elementBaseCreateFuncs[27];
 

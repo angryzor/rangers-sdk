@@ -231,7 +231,7 @@ namespace app::evt {
         virtual void PostStepCallback(hh::game::GameManager* gameManager, const hh::game::GameStepInfo& gameStepInfo) override;
         virtual void GameServiceAddedCallback(hh::game::GameService* gameService) override;
         virtual void GameServiceRemovedCallback(hh::game::GameService* gameService) override;
-        virtual bool DSCL_UnkFunc1(void* unk0, void* unk1) override;
+        virtual bool DSCL_UnkFunc1(UnkFunc1Info& info, void** retElement) override;
         virtual bool DSCL_UnkFunc2(void* unk0, void* unk1) override;
         virtual bool DSCL_UnkFunc3() override;
         virtual void OnCutsceneEnd() override;
@@ -240,6 +240,8 @@ namespace app::evt {
 
         bool PauseCutscene();
         bool UnPauseCutscene();
+
+        static const void*** appDvElementCreateFuncs[44];
 
         GAMESERVICE_CLASS_DECLARATION(EventPlayer)
     };

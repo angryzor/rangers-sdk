@@ -22,6 +22,10 @@ namespace hh::dv{
             ELEMENT
         };
 
+        enum class Flags : uint32_t {
+            INITIALIZED = 29
+        };
+
         uint32_t flags; //prolly a bitset
         NodeType nodeType;
         char guid[16];
@@ -44,18 +48,18 @@ namespace hh::dv{
         virtual void Update(int currentFrame) {};
         virtual void PreStepUpdate(int currentFrame) {};
         virtual void PostStepUpdate(int currentFrame) {};
-        virtual bool IsUnkFlag0();
+        virtual bool IsInitialized();
         virtual bool UnkFunc3() { return true; }
         virtual void UnkFunc4() {};
         virtual int GetUpdateTiming();
-        virtual void UnkFunc6(void* unk0, void* unk1) {};
+        virtual void UnkUpdate(int currentFrame, csl::math::Transform& transform) {};
 
         char* GetGUID() const;
         csl::math::Transform& GetTransform() const;
         void SetTransform(csl::math::Transform& transform);
         void SetTransformRecursively(csl::math::Transform& transform);
         void PreStepUpdateRecursively(unsigned int unk0);
-        void SetUnkFlag0(bool enabled);
+        void SetInitializedFlag(bool enabled);
         DvNodeBase* GetParent() const;
         unsigned long long GetChildrenAmount() const;
         DvNodeBase* GetElement0ByIdx(unsigned long long idx) const;

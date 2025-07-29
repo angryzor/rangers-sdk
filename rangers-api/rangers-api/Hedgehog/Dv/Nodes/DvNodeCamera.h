@@ -43,6 +43,7 @@ namespace hh::dv{
 
         bool Unk3Above0() const;
         void GetViewportDataByFrame(int currentFrame, hh::gfnd::ViewportData* returnValue);
+        hh::game::CameraComponent* GetCameraComponent() const;
 
         DV_NODE_DECLARATION_BASE(DvNodeCamera)
     };

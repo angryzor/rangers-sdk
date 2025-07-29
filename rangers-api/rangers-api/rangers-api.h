@@ -1017,6 +1017,7 @@ namespace rangerssdk::ucsl {
 #include "Application/Game/GameMode.h"
 #include "Application/Game/ApplicationExtension.h"
 #include "Application/Game/ApplicationSequenceExtension.h"
+#include "Application/Game/GameModeBoot.h"
 #include "Application/Game/GameModeStage.h"
 #include "Application/Game/GameModeExtension.h"
 #include "Application/Game/GameModeLayerStatusExtension.h"

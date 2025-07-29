@@ -12,21 +12,21 @@ namespace app::game {
         uint64_t fsm[9]; // tinyfsm
         csl::ut::MoveArray<GameService*> gameServices;
         csl::ut::MoveArray<GameModeExtension*> extensions;
-        void* unk7; // created in the constructor, just not bothering right now
-        uint32_t unk8;
-        bool unk9;
+        hh::game::LevelLoader* levelLoader;
+        uint32_t currentStateHash;
+        char flags; //0x02 - off
 
         void SetState(unsigned int stateId);
 		virtual void* GetRuntimeTypeInfo() const override;
         virtual bool UnkFunc4() { return true; }
-        virtual bool UnkFunc5() {}
-        virtual bool UnkFunc6() {}
+        virtual bool Initialize() {}
+        virtual bool UnkFunc6(bool a2) {}
         virtual bool UnkFunc7() {}
         virtual bool UnkFunc8() {}
         virtual bool UnkFunc9() {}
         virtual bool UnkFunc10() {}
         virtual bool UnkFunc11() {}
-        virtual bool UnkFunc12() {}
+        virtual bool Shutdown() {}
         virtual bool UnkFunc13() {}
 
         hh::game::GameService* GetService(hh::game::GameServiceClass* gameServiceClass) const;
@@ -42,5 +42,8 @@ namespace app::game {
         void RegisterService(hh::game::GameService* gameService);
 
         GameModeExtension* GetExtension(unsigned int name) const;
+        void AddExtension(GameModeExtension* extension);
+
+        GameMode(csl::fnd::IAllocator* allocator);
     };
 }
