@@ -104,4 +104,13 @@ namespace app {
 
         MsgTakeObject() : fnd::AppMessage<MsgTakeObject>{ hh::fnd::MessageID::TAKE_OBJECT } {}
     };
+
+    class MsgGetTargetPosition : public fnd::AppMessage<MsgGetTargetPosition> {
+    public:
+        bool changed;
+        csl::math::Vector3 targetPosition;
+        char unk1;
+
+        MsgGetTargetPosition() : fnd::AppMessage<MsgGetTargetPosition>{ hh::fnd::MessageID::GET_TARGET_POSITION } {}
+    };
 }

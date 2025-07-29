@@ -34,6 +34,7 @@ namespace hh::dv{
         float CalculateCurrentCurve(int dataSize, int currentFrame, float* data, int unk);
         DvStandardCharacter* GetParentCharacterObject() const;
         game::GameManager* GetGameManager() const;
+        DvNodeBaseAnimationModel* GetParentAnimationModel() const;
     };
 
     class DvNodeElement : public DvNodeBase {

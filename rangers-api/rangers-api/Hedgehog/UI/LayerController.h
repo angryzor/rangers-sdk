@@ -42,6 +42,7 @@ namespace hh::ui {
         void ReserveAnimations(const AnimationList& animations);
         void PlayReservedAnimation();
         bool PlayAnimation(const char* name);
+        void PlayReservedAnimations(AnimationList& list);
         void SetCastText(const char* name, const char* text);
         bool GetCastPosition(const char* name, csl::math::Vector3& position);
         void SetCastPosition(const char* name, const csl::math::Vector3& position);

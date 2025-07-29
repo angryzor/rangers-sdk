@@ -4,8 +4,8 @@ namespace hh::dv {
     class DvSceneObjectBase : public fnd::ReferencedObject {
     public:
         fnd::Handle<DvStandardCharacter> dvStandardChar;
-        void* unk0;
-        int visualModelNameHash;
+        void* pose;
+        unsigned int visualModelNameHash;
         int unk2;
 
         virtual void* ReturnA2(void* a2);
@@ -33,6 +33,11 @@ namespace hh::dv {
         virtual void HideDebugDraw();
 
         hh::dv::DvStandardCharacter* GetCharacterObject() const;
+        void DeleteCharacterObject(bool killObject);
+        void SetModelNameHash(unsigned int hash);
+        void SetModelNameHash(const char* name);
+        void InitializeObject(anim::ResAnimator* animator, anim::ResSkeleton* skl);
+        void SetPose(anim::ResSkeleton* skl);
 
         DvSceneObjectBase(csl::fnd::IAllocator* allocator, hh::dv::DvStandardCharacter* character);
     };

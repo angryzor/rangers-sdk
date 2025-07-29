@@ -22,6 +22,7 @@ namespace hh::dv{
 
 		virtual void AddCallback(hh::game::GameManager* gameManager) override;
         void Setup(Description& desc);
+        void Initialize(bool unk0);
 
         GAMEOBJECT_CLASS_DECLARATION(DvStandardCharacter)
     };
