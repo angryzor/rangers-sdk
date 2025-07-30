@@ -47,4 +47,5 @@ namespace app::save {
     ChallengeDataAc GetChallengeDataAccessor(hh::game::GameManager* gameManager);
     GameDataAc GetGameDataAccessor(hh::game::GameObject* gameObject);
     ChallengeDataAc GetChallengeDataAccessor(hh::game::GameObject* gameObject);
+    ExtraFlagAc GetExtraFlagAccessor(hh::game::GameManager* gameManager);
 }

@@ -46,9 +46,12 @@ namespace hh::ui {
         void SetCastText(const char* name, const char* text);
         bool GetCastPosition(const char* name, csl::math::Vector3& position);
         void SetCastPosition(const char* name, const csl::math::Vector3& position);
+        void SetCastMaterialColor(const char* name, const SurfRide::Color& color);
         bool SetAnimationFinishedDelegate(const char* animation, const csl::fnd::Delegate<void (hh::ui::LayerController *, char const *)>& delegate);
         void CopyedFlag(bool enabled);
         void SetPosition(const csl::math::Vector3& position);
         bool ConvertToScreenCoordinates(const csl::math::Vector3& normalized, csl::math::Vector3& out);
+        fnd::Handle<SurfRideLayerHandle> GetLayerHandle() const;
+        void SetCurrentFrame(float frame);
     };
 }

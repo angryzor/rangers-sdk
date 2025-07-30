@@ -14,5 +14,6 @@ namespace hh::game {
         CREATE_FUNC(LevelLoader);
 
         void LoadLevel(const char* name, const Level::LoadInfo& unk1Param = {});
+        void LoadBufferedLevels();
     };
 }

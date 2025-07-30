@@ -3,7 +3,7 @@
 namespace app::game{
     class Script : public hh::fnd::ReferencedObject {
     public:
-        struct UnkStr0{
+        struct LuaWrapper{
         public:
             void* luaState;
             char unk0;
@@ -12,10 +12,10 @@ namespace app::game{
             int unk3;
             csl::fnd::IAllocator* allocator;
 
-            UnkStr0(csl::fnd::IAllocator* allocator);
+            LuaWrapper(csl::fnd::IAllocator* allocator);
         };
 
-        UnkStr0 unkStr0;
+        LuaWrapper luaWrapper;
         csl::ut::MoveArray<hh::fnd::ResLuaData*> resources;
         int64_t unk0;
         csl::ut::String scriptName;
@@ -24,7 +24,7 @@ namespace app::game{
         csl::ut::MoveArray<void*> unk2;
         char unk3;
 
-        UnkStr0* GetUnkStr0();
+        LuaWrapper& GetLuaWrapper() const;
         void SetScriptName(const char* scriptName);
 
         Script(csl::fnd::IAllocator* allocator);

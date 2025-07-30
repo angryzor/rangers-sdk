@@ -53,6 +53,7 @@ namespace hh::dv {
         void RemoveListener(DvSceneControlListener* listener);
         char GetLayer() const;
         bool GetUnkBool0() const;
+        void SetPlay(bool play);
 
         GAMEOBJECT_CLASS_DECLARATION(DvSceneControl)
     };

@@ -1,12 +1,14 @@
 #pragma once
 
 namespace app::save {
+    class SaveManager;
+
     class SaveManagerListener {
     public:
         virtual ~SaveManagerListener() = default;
-        virtual void SML_UnkFunc1() {}
+        virtual void OnSave(SaveManager* saveMgr) {}
         virtual void SML_UnkFunc2() {}
-        virtual void SML_UnkFunc3() {}
+        virtual void OnLoad(SaveManager* saveMgr) {}
     };
 
     class SaveManager
@@ -37,6 +39,11 @@ namespace app::save {
         virtual void PostStepCallback(hh::game::GameManager* gameManager, const hh::game::GameStepInfo& gameStepInfo) override;
         virtual void UIEL_UnkFunc1() override;
         virtual void SL_UnkFunc2() override;
+
+        void AddListener(SaveManagerListener* listener);
+        void RemoveListener(SaveManagerListener* listener);
+
+        GameDataAc GetGameDataAccessor();
 
         GAMESERVICE_CLASS_DECLARATION(SaveManager);
     };

@@ -77,4 +77,25 @@ namespace app::game {
 
         MsgTransitIslandStage() : fnd::AppMessage<MsgTransitIslandStage>{ hh::fnd::MessageID::TRANSIT_ISLAND_STAGE } {}
     };
+
+    class MsgSetMenuEnabled : public app::fnd::AppMessage<MsgSetMenuEnabled> {
+    public:
+        int unk0{ 0 };
+        int nameHash{ 0 };
+        char unk1{ 0 };
+
+        MsgSetMenuEnabled() : fnd::AppMessage<MsgSetMenuEnabled>{ hh::fnd::MessageID::SET_MENU_ENABLED } {}
+    };
+
+    class MsgSetMenuLimitedEnabled : public app::fnd::AppMessage<MsgSetMenuLimitedEnabled> {
+    public:
+        char unk0{ 0 };
+
+        MsgSetMenuLimitedEnabled() : fnd::AppMessage<MsgSetMenuLimitedEnabled>{ hh::fnd::MessageID::SET_MENU_LIMITED_ENABLED } {}
+    };
+
+    class MsgScriptExit : public app::fnd::AppMessage<MsgScriptExit> {
+    public:
+        MsgScriptExit() : fnd::AppMessage<MsgScriptExit>{ hh::fnd::MessageID::SCRIPT_EXIT } {}
+    };
 }

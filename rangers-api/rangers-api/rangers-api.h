@@ -901,6 +901,9 @@ namespace rangerssdk::ucsl {
 #include "ApplicationCommon/Game/GOCMotorOnPath.h"
 #include "ApplicationCommon/Game/GOCMovement.h"
 
+#include "Application/Timer.h"
+#include "Application/ObjNpcBase.h"
+
 #include "Application/Utilities/PriorityList.h"
 #include "Application/Utilities/SendMessage.h"
 #include "Application/Utilities/TransitionValue.h"
@@ -912,6 +915,8 @@ namespace rangerssdk::ucsl {
 #include "Application/FSM/StateContext.h"
 
 #include "Application/Resource/AppResourceManager.h"
+
+#include "Application/Game/Timestamp.h"
 
 #include "Application/Save/SaveDataLock.h"
 #include "Application/Save/SaveDataAccessor.h"
@@ -1021,7 +1026,6 @@ namespace rangerssdk::ucsl {
 #include "Application/Game/GameModeStage.h"
 #include "Application/Game/GameModeExtension.h"
 #include "Application/Game/GameModeLayerStatusExtension.h"
-#include "Application/Game/Timestamp.h"
 #include "Application/Game/TimeService.h"
 #include "Application/Game/WeatherService.h"
 #include "Application/Game/RespawnTimeManager.h"
@@ -1048,8 +1052,14 @@ namespace rangerssdk::ucsl {
 #include "Application/Game/Messages.h"
 #include "Application/Game/Posture.h"
 #include "Application/Game/Script.h"
+
+#include "Application/ScriptSequence.h"
+#include "Application/ScriptSequenceManager.h"
+
+#include "Application/Game/GOCScript.h"
 #include "Application/Game/ReactiveService.h"
 #include "Application/Game/GOCBossActionSelect.h"
+#include "Application/Game/FadeObject.h"
 #include "Application/Game/ScreenFadeManager.h"
 
 #include "Application/UI/AppUITextInterface.h"
@@ -1104,6 +1114,7 @@ namespace rangerssdk::ucsl {
 #include "Application/Player/Postures/PostureSliding.h"
 
 #include "Application/Dv/DvTheEndCableObject.h"
+#include "Application/Dv/DvFadeObject.h"
 #include "Application/Dv/AppDvElementBase.h"
 #include "Application/Dv/AppDvSceneObjectBase.h"
 #include "Application/Dv/Elements/DvElementBloomParam.h"
@@ -1169,6 +1180,7 @@ namespace rangerssdk::ucsl {
 #include "Application/ObjAirWall.h"
 #include "Application/MeteorShowerService.h"
 #include "Application/MeteorShowerEffect.h"
+#include "Application/ObjNpcSonic.h"
 
 namespace rangerssdk::ucsl {
     inline csl::fnd::IAllocator* AllocatorSystem::get_allocator() { return hh::fnd::MemoryRouter::GetModuleAllocator(); }

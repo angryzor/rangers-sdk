@@ -21,6 +21,7 @@ namespace app::dv{
 
         void* unk0;
         int startFrame;
+        int unk1;
         void* unk2;
         void* unk3;
         int unk4;

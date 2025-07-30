@@ -19,7 +19,7 @@ namespace hh::dv{
         Description binaryData;
         csl::ut::MoveArray<void*> cameras;
         int unk3;
-        int unk4;
+        bool cameraEnabled;
 
         virtual void Setup(DvNodeBase::Description& description) override;
         virtual void Start() override;

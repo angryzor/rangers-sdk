@@ -22,4 +22,19 @@ namespace app::ui {
 
         MsgUINotifyUpdatePosition() : fnd::AppMessage<MsgUINotifyUpdatePosition>{ hh::fnd::MessageID::UI_NOTIFY_UPDATE_POSITION } {}
     };
+
+    class MsgUICharacterActionGuide : public fnd::AppMessage<MsgUICharacterActionGuide> {
+    public:
+        char button{ 0 };
+        int64_t unk0{ 0 };
+        int unk1{ 0 };
+        csl::math::Vector4 unk2{};
+        char unk3{ 0 };
+        csl::math::Vector4 unk4{};
+        char unk5{ 0 };
+        int unk6{ 0 };
+        int unk7{ 0 };
+        
+        MsgUICharacterActionGuide() : fnd::AppMessage<MsgUICharacterActionGuide>{ hh::fnd::MessageID::UI_CHARACTER_ACTION_GUIDE } {}
+    };
 }

@@ -43,7 +43,7 @@ namespace app::game {
 		virtual void OnRemovedFromGame() override;
 		virtual void GameServiceAddedCallback(GameService* gameService) override;
 		virtual void GameServiceRemovedCallback(GameService* gameService) override;
-        virtual void SML_UnkFunc1() override;
+        virtual void OnSave(save::SaveManager* saveMgr) override;
         virtual void PreStepCallback(hh::game::GameManager* gameManager, const hh::game::GameStepInfo& gameStepInfo) override;
 
         bool HaveMinutesPassedSinceTimestamp(const Timestamp& timestamp, int minutes) const;
@@ -52,6 +52,8 @@ namespace app::game {
         void AddListener(TimeServiceListener* listener);
         void RemoveListener(TimeServiceListener* listener);
         void SetFixedTime(int hours, int minutes);
+        void AdvanceTime(int days, int hours, int minutes, float seconds);
+        void SetTime(Timestamp& time, bool overwritePrev);
 
     protected:
         void FireNightTimeChangeCallback(bool isNight);

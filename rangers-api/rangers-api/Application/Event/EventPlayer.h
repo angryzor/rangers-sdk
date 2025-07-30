@@ -107,6 +107,7 @@ namespace app::evt {
         EventSetupData& GetSetupData() const;
         void SetEventPlayer(EventPlayer* evtPlayer);
         void SetMovie(bool playing);
+        void SetPlayScene(bool play);
     };
 
     class EventSceneManager : public hh::fnd::BaseObject {
@@ -240,6 +241,7 @@ namespace app::evt {
 
         bool PauseCutscene();
         bool UnPauseCutscene();
+        void SetPlayScene(const char* sceneName, bool play);
 
         static const void*** appDvElementCreateFuncs[44];
 

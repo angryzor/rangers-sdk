@@ -66,6 +66,7 @@ namespace hh::dv{
         void UpdateChildren(int arrayIdx, int currentFrame);
         void PostStepUpdateRecursively(int currentFrame);
         DvSceneControl* GetDvSceneControl() const;
+        void GetNodes(NodeType type, csl::ut::MoveArray<DvNodeBase*>& retValue);
 
         DvNodeBase(csl::fnd::IAllocator* allocator);
     };

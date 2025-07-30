@@ -70,8 +70,8 @@ namespace app::game{
         virtual void HFrameUpdatedCallback(const hh::fnd::HFrame* frame, bool unkParam) override;
 
         void Setup(Description& desc);
-        void SetFirstFlag(bool enabled);
-        bool GetFirstFlag() const;
+        void SetEnabled(bool enabled);
+        bool GetEnabled() const;
         void AddListener(ContactListener* listener);
         void SetFrame(hh::fnd::HFrame* hFrame);
 
