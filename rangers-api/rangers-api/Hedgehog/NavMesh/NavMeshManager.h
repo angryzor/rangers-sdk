@@ -1,5 +1,4 @@
 #pragma once
-#include <ucsl/resources/navmeshconfig/v1.h>
 
 namespace hh::navmesh{
     class NavMeshImpl : public fnd::ReferencedObject {
@@ -11,7 +10,7 @@ namespace hh::navmesh{
 
         ResNavMeshConfig* resConfig;
         csl::ut::MoveArray<Tile> tiles;
-        ucsl::resources::navmeshconfig::v1::Config* config;
+        void* config;
 
         NavMeshImpl(csl::fnd::IAllocator* allocator);
     };

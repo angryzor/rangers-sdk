@@ -1,11 +1,10 @@
 #pragma once
-#include <ucsl/resources/navmeshconfig/v1.h>
 
 namespace hh::navmesh{
     class NavMeshAgent : public fnd::ReferencedObject {
     public:
-        ucsl::resources::navmeshconfig::v1::Config* config;
-        ucsl::resources::navmeshconfig::v1::Config** configs;
+        void* config;
+        void* unk0a;
         void* queryFilter;
         csl::math::Vector4 unk0;
         int64_t unk1;
@@ -17,7 +16,7 @@ namespace hh::navmesh{
         int unk6;
         char unk7;
 
-        void Setup(ucsl::resources::navmeshconfig::v1::Config* setupInfo);
+        void Setup(void* setupInfo); //setupInfo being a direct pointer to ResNavMeshConfig data
         void SetIncludeFlag(unsigned char bit);
 
         NavMeshAgent(csl::fnd::IAllocator* allocator, int unk4Count);
