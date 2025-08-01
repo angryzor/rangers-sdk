@@ -107,9 +107,16 @@ namespace app {
 
     class MsgGetTargetPosition : public fnd::AppMessage<MsgGetTargetPosition> {
     public:
+        enum class Position : unsigned char {
+            ROOT,
+            NECK,
+            HEAD,
+            SPINE
+        };
+
         bool changed;
         csl::math::Vector3 targetPosition;
-        char unk1;
+        Position position;
 
         MsgGetTargetPosition() : fnd::AppMessage<MsgGetTargetPosition>{ hh::fnd::MessageID::GET_TARGET_POSITION } {}
     };

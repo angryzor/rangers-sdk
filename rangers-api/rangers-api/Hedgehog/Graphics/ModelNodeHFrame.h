@@ -10,5 +10,6 @@ namespace hh::gfx {
         ModelNodeHFrame(csl::fnd::IAllocator* allocator, GOCVisualModel* gocVisualModel, int nodeIndex);
         virtual void* GetRuntimeTypeInfo() const;
         virtual void OnSync(const csl::math::Transform& parentTransform, csl::math::Transform* targetTransform);
+        int GetNodeIndex() const;
     };
 }

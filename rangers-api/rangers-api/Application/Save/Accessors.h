@@ -144,7 +144,7 @@ namespace app::save {
 
     class OptionGamePlayAc : public SaveDataAccessor<OptionGamePlayData> {
     public:
-
+        uint8_t GetDLCSonicCostume() const;
     };
 
     class OptionGraphicsAc : public SaveDataAccessor<OptionGraphicsData> {

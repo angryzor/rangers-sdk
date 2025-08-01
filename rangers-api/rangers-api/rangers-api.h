@@ -852,6 +852,14 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Dv/DvStandardCharacter.h"
 #include "Hedgehog/Dv/DvSceneObjectBase.h"
 
+#include "Hedgehog/NavMesh/NavMeshAgent.h"
+#include "Hedgehog/NavMesh/ResNavMeshConfig.h"
+#include "Hedgehog/NavMesh/ResNavMeshTile.h"
+#include "Hedgehog/NavMesh/NavMeshManagerExtension.h"
+#include "Hedgehog/NavMesh/NavMeshCrowdExtension.h"
+#include "Hedgehog/NavMesh/NavMeshManager.h"
+#include "Hedgehog/NavMesh/GOCNavMeshAgent.h"
+
 // #include "System/Player/PlayerInformation.h"
 // #include "System/Player/Blackboard.h"
 // #include "System/Player/BlackboardBattle.h"
@@ -1088,11 +1096,15 @@ namespace rangerssdk::ucsl {
 #include "Application/Graphics/FxParamManager.h"
 #include "Application/Graphics/FxParamTimeProgressExtension.h"
 #include "Application/Graphics/FxColManager.h"
+#include "Application/Graphics/ModelNodeContainer.h"
 #include "Application/Graphics/MultiNodeContainer.h"
 #include "Application/Graphics/ModelAnimationPlayer.h"
 #include "Application/Graphics/GeometryInstance.h"
 #include "Application/Graphics/GeometryInstanceManager.h"
 #include "Application/Graphics/GOCVisualGeometryInstance.h"
+
+#include "Application/Event/ObjEventExternalBase.h"
+#include "Application/Event/ObjEventExternalSonic.h"
 
 #include "Application/GismoResource.h"
 #include "Application/ObjGismo.h"

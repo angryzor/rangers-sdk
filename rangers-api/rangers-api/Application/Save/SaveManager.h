@@ -44,6 +44,7 @@ namespace app::save {
         void RemoveListener(SaveManagerListener* listener);
 
         GameDataAc GetGameDataAccessor();
+        OptionAc GetOptionAccessor();
 
         GAMESERVICE_CLASS_DECLARATION(SaveManager);
     };
