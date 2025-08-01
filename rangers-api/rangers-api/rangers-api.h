@@ -648,6 +648,8 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Physics/BulletPhysicsModule.h"
 #include "Hedgehog/Physics/Messages.h"
 #include "Hedgehog/Physics/ResPhysicsMesh.h"
+#include "Hedgehog/Physics/ResHeightField.h"
+#include "Hedgehog/Physics/GOCHeightFieldCollider.h"
 
 #include "Hedgehog/Path/ResPathObject.h"
 #include "Hedgehog/Path/PathComponent.h"

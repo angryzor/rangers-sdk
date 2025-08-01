@@ -6,7 +6,7 @@ namespace hh::physics {
         struct SetupInfo : public GOCCollider::SetupInfo {
             hh::fnd::ReferencedObject* meshResource;
 
-            inline SetupInfo() : GOCCollider::SetupInfo(ColliShape::Type::SPHERE) {}
+            inline SetupInfo() : GOCCollider::SetupInfo(ColliShape::Type::MESH) {}
         };
 
         fnd::Reference<hh::fnd::ReferencedObject> meshResource;

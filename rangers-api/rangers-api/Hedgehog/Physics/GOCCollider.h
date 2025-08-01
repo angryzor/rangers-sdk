@@ -2,6 +2,7 @@
 
 namespace hh::physics {
     class PhysicsWorld;
+    class ResHeightField;
 
     struct ColliShape {
         enum Type : uint8_t {
@@ -9,7 +10,9 @@ namespace hh::physics {
             BOX,
             CAPSULE,
             CYLINDER,
-            SKINNED_MESH = 6
+            MESH,
+            HEIGHTFIELD,
+            SKINNED_MESH
         };
 
         struct SphereParameters {
@@ -30,11 +33,16 @@ namespace hh::physics {
             float halfHeight;
         };
 
+        struct HeightFieldParameters {
+            ResHeightField* resource;
+        };
+
         union ColliShapeParameters {
             SphereParameters sphere;
             BoxParameters box;
             CapsuleParameters capsule;
             CylinderParameters cylinder;
+            HeightFieldParameters heightField;
 
             inline ColliShapeParameters& operator=(const ColliShapeParameters& other) {
                 box = other.box;
