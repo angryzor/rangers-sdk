@@ -21,4 +21,11 @@ namespace app::player {
 
         MsgDead() : fnd::AppMessage<MsgDead>{ hh::fnd::MessageID::DEAD } {}
     };
+
+    class MsgTakeNitroBoost : public fnd::AppMessage<MsgTakeNitroBoost> {
+    public:
+        bool canAirBoost{};
+
+        MsgTakeNitroBoost() : fnd::AppMessage<MsgTakeNitroBoost>{ hh::fnd::MessageID::TAKE_NITRO_BOOST } {}
+    };
 }

@@ -9,29 +9,17 @@ namespace app::game {
         , public app::game::TimeServiceListener
     {
     public:
-        struct Unk1 {
-            float unk1;
-            uint32_t unk2;
-            Unk1();
-        };
-
-        enum class WeatherType : uint8_t {
-            UNK0,
-            UNK1,
-            UNK2,
-            UNK3,
-            UNK4,
-        };
-
-        uint64_t unk1;
-        uint64_t unk2;
-        uint64_t unk3;
-        uint32_t unk4;
+        TimeService* timeService;
+        save::SaveManager* saveManager;
+        bool update;
+        uint32_t unk3;
+        save::WeatherData::Type currentWeather;
+        save::WeatherData::Type prevWeather;
         float unk5;
-        Unk1 unk6;
-        WeatherType unk7;
-        Timestamp unk8;
-        WeatherType unk9;
+        app::Timer timer;
+        save::WeatherBlockData::Type weather;
+        Timestamp currentTime;
+        save::WeatherBlockData::Status status;
         Timestamp unk10;
         Timestamp unk11;
         Timestamp unk12;
@@ -49,10 +37,13 @@ namespace app::game {
         virtual void PreStepCallback(hh::game::GameManager* gameManager, const hh::game::GameStepInfo& gameStepInfo) override;
 		virtual void GameServiceAddedCallback(hh::game::GameService* gameService) override;
 		virtual void GameServiceRemovedCallback(hh::game::GameService* gameService) override;
-        virtual void SML_UnkFunc1() override;
+        virtual void OnSave(save::SaveManager* saveMgr) override;
         virtual void TimeChangeCallback(const Timestamp& previousTime, const Timestamp& currentTime) override;
 
-        void SetWeather(WeatherType type, float unkParam);
+        void SetWeather(save::WeatherBlockData::Type type, float length);
+        bool SetWeatherEx(save::WeatherBlockData::Type type, float length);
+        void ForceWeather(save::WeatherBlockData::Type type);
+        void ResetWeather(float length);
 
         GAMESERVICE_CLASS_DECLARATION(WeatherService);
     };

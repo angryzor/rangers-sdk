@@ -5,6 +5,9 @@ namespace hh::dv{
     public:
         csl::ut::MoveArray<DvDirectionalLightParamController*> lightParamControllers;
 
+        void Update();
+        void Update(int currentFrame);
+
         DvParamUpdater(csl::fnd::IAllocator* allocator);
     };
 }

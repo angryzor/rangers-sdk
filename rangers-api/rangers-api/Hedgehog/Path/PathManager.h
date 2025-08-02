@@ -13,6 +13,8 @@ namespace hh::path {
     public:
         struct SetupInfo {
             unsigned int maxPaths;
+
+            SetupInfo();
         };
 
         csl::ut::MoveArray<PathComponent*> pathComponents;

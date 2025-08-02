@@ -56,4 +56,46 @@ namespace app::game {
             strncpy(this->interpolatorId, interpolatorId, sizeof(this->interpolatorId));
         }
     };
+
+    class MsgTransitCyberStage : public app::fnd::AppMessage<MsgTransitCyberStage> {
+    public:
+        const char* stageCode;
+        int64_t unk0{ 0 };
+        char unk1{ 0 };
+        hh::fnd::WorldPosition openZoneSonicPos{};
+        int portalNo{ 0 };
+        char unk2{ 0 };
+
+        MsgTransitCyberStage() : fnd::AppMessage<MsgTransitCyberStage>{ hh::fnd::MessageID::TRANSIT_CYBER_STAGE } {}
+    };
+
+    class MsgTransitIslandStage : public app::fnd::AppMessage<MsgTransitIslandStage> {
+    public:
+        const char* stageCode;
+        int64_t unk0{ 0 };
+        char unk1{ 0 };
+
+        MsgTransitIslandStage() : fnd::AppMessage<MsgTransitIslandStage>{ hh::fnd::MessageID::TRANSIT_ISLAND_STAGE } {}
+    };
+
+    class MsgSetMenuEnabled : public app::fnd::AppMessage<MsgSetMenuEnabled> {
+    public:
+        int unk0{ 0 };
+        int nameHash{ 0 };
+        char unk1{ 0 };
+
+        MsgSetMenuEnabled() : fnd::AppMessage<MsgSetMenuEnabled>{ hh::fnd::MessageID::SET_MENU_ENABLED } {}
+    };
+
+    class MsgSetMenuLimitedEnabled : public app::fnd::AppMessage<MsgSetMenuLimitedEnabled> {
+    public:
+        char unk0{ 0 };
+
+        MsgSetMenuLimitedEnabled() : fnd::AppMessage<MsgSetMenuLimitedEnabled>{ hh::fnd::MessageID::SET_MENU_LIMITED_ENABLED } {}
+    };
+
+    class MsgScriptExit : public app::fnd::AppMessage<MsgScriptExit> {
+    public:
+        MsgScriptExit() : fnd::AppMessage<MsgScriptExit>{ hh::fnd::MessageID::SCRIPT_EXIT } {}
+    };
 }

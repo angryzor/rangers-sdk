@@ -48,7 +48,18 @@ namespace hh::dv{
     class DvPage : public fnd::ReferencedObject{
     public:
         struct Description{
-            int64_t unk0;
+            enum class Flags : unsigned int {
+                UNK0,
+                IGNORE_END,
+                UNK1,
+                UNK2,
+                UNK3,
+                UNK4,
+                IGNORE_TRANSITION,
+            };
+
+            int unk0;
+            csl::ut::Bitset<Flags> flags;
             int start;
             int end;
             int transitionCount;
@@ -67,6 +78,7 @@ namespace hh::dv{
         int unk2;
 
         virtual int GetStart();
+        int GetEnd() const;
 
         DvPage(csl::fnd::IAllocator* allocator);
     };

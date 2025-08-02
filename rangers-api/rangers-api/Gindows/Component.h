@@ -8,8 +8,7 @@ namespace gindows{
         csl::ut::MoveArray<void*> unkArray;
         void* winMgr;
 
-        virtual void* GetInfo() override;
-        virtual Object* UnkFunc(char unk) override;
+        virtual void* GetRuntimeTypeInfo() const override;
         virtual void CompUnkFunc();
 
         Component();

@@ -8,7 +8,7 @@ namespace hh::gfx {
         virtual void UnkFunc1() = 0;
         virtual void UnkFunc2() = 0;
         virtual void UnkFunc3() = 0;
-        virtual int UnkFunc4() = 0;
+        virtual int GetNameHash() = 0;
         virtual const char* GetName() = 0;
     };
 }

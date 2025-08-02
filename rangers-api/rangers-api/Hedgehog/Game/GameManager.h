@@ -298,5 +298,10 @@ namespace hh::game
 		void UpdateGlobalTime(const fnd::SUpdateInfo& updateInfo);
 		void GetViewportData(int viewportId);
 		bool IsWorldFlagSet(int index, int type);
+		bool IsWorldExtraFlagSet(int index, int type);
+		bool SetWorldExtraFlag(int index, int type, bool enabled);
+		bool HasDLCSonicCostume() const;
+		uint8_t GetDLCSonicCostume() const;
+		const char* GetDLCSonicCostumeModelName() const;
 	};
 }

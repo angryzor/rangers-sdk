@@ -78,6 +78,7 @@ namespace app_cmn::camera {
         void AddToBlendTree(CameraController* controller, CameraInterpolator* interpolator);
         void SearchBlendNode(BlendNode* blendNode, CameraController* controller, csl::ut::MoveArray<BlendNode*>* results) const;
         void RemoveBlendNodeHierarchy(BlendNode* blendNode);
+        CameraInterpolator* CreateInterpolator(int type);
 
         GAMEOBJECT_CLASS_DECLARATION(CameraFrame)
     };

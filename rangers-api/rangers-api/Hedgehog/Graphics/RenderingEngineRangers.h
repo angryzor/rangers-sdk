@@ -6,7 +6,7 @@ namespace hh::gfx {
         needle::SupportFXAll supportFX;
         needle::intrusive_ptr<needle::RenderUnit> mainRenderUnit;
         needle::intrusive_ptr<needle::RenderingPipelineRangers> mainRenderingPipeline;
-        uint64_t unk203;
+        TerrainRenderer* terrainRenderer;
 
         RenderingEngineRangers(csl::fnd::IAllocator* allocator);
         

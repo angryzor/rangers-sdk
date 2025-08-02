@@ -23,7 +23,7 @@ namespace hh::hid {
         uint16_t yPos;
         uint16_t unk106a;
         csl::ut::Bitset<Flag> mouseWin32Flags;
-        uint64_t unk108;
+        uint64_t systemMemory;
         HWND hWnd;
         csl::math::Vector4 unk112;
         uint32_t currentFSMState;

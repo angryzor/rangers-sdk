@@ -14,7 +14,7 @@ namespace hh::gfx {
         virtual void Unload() override;
         virtual void Resolve(fnd::ResourceResolver& resolver) override;
         virtual void Reload(void* data, size_t size) override;
-        virtual uint64_t UnkFunc1() override;
+        virtual uint32_t GetNodeCount() override;
         virtual uint64_t UnkFunc2() override;
         virtual uint64_t UnkFunc3() override;
         virtual uint64_t UnkFunc4() override;

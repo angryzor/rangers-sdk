@@ -13,8 +13,7 @@ namespace hh::ui {
         void* qword8C0;
         int64_t qword8C8;
 
-        virtual void* GetInfo() override;
-        virtual Object* UnkFunc(char unk) override;
+        virtual void* GetRuntimeTypeInfo() const override;
 
         virtual void SRVCL_UnkFunc0(void* unk) override;
         virtual void SRVCL_UnkFunc1() override;

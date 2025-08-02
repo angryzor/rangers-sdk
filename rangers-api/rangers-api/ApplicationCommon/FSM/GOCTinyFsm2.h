@@ -59,7 +59,6 @@ namespace app_cmn::fsm {
         typedef typename Fsm_t::State_t State_t;
         typedef typename Fsm_t::Event_t Event_t;
 
-    private:
         T* targetObject;
         Fsm_t fsm;
         State_t* state;
@@ -70,7 +69,6 @@ namespace app_cmn::fsm {
         csl::ut::MoveArray<void*> unk20;
         void* unk21;
         
-    public:
         struct alignas(8) Config {
             State_t initialState;
             bool setFlag3;

@@ -35,7 +35,7 @@ namespace hh::anim {
         float unk6;
         uint8_t unk7;
 
-        static AsmResourceManager* Load(const char* resourceName, const char* name, csl::fnd::IAllocator* allocator);
+        static AsmResourceManager* Load(const char* resourceName, hh::anim::ResSkeleton* skeleton, csl::fnd::IAllocator* allocator);
         static AsmResourceManager* Create(csl::fnd::IAllocator* allocator);
         AsmResourceManager(csl::fnd::IAllocator* allocator);
         void Setup(const BindInfo& bindInfo);

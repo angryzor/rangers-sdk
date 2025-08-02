@@ -4,8 +4,8 @@ namespace hh::dv {
     class DvSceneObjectBase : public fnd::ReferencedObject {
     public:
         fnd::Handle<DvStandardCharacter> dvStandardChar;
-        void* unk0;
-        int visualModelNameHash;
+        void* pose;
+        unsigned int visualModelNameHash;
         int unk2;
 
         virtual void* ReturnA2(void* a2);
@@ -26,11 +26,18 @@ namespace hh::dv {
         virtual bool UnkTransform(void* a2, float a3, char a4, csl::math::Transform* transform);
         virtual void SetAnimatorState(const char* floatVarName, const char* stateName);
         virtual void* GetUnkGOCAnimator0(void* a2, void* a3, void* a4, int a5); // only a5 is used
-        virtual bool SetUnkGOCAnimator1(const char* unkname, int a3);
+        virtual bool SetAnimatorState(const char* stateName, int layer);
         virtual void* GetGOCAnimatorUnk0(void* a2);
         virtual bool VisualModelIsAcceptingMessages();
         virtual void ShowDebugDraw();
         virtual void HideDebugDraw();
+
+        hh::dv::DvStandardCharacter* GetCharacterObject() const;
+        void DeleteCharacterObject(bool killObject);
+        void SetModelNameHash(unsigned int hash);
+        void SetModelNameHash(const char* name);
+        void InitializeObject(anim::ResAnimator* animator, anim::ResSkeleton* skl);
+        void SetPose(anim::ResSkeleton* skl);
 
         DvSceneObjectBase(csl::fnd::IAllocator* allocator, hh::dv::DvStandardCharacter* character);
     };

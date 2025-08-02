@@ -56,6 +56,9 @@ namespace app::trr {
 
             class CreateTerrainDensityPointcloud : public hh::ut::StateBase<TerrainVisualCreator> {
             public:
+                csl::ut::MoveArray<hh::gfx::ResDensityPointCloud*> resources;
+                int currentResource;
+
                 virtual void Enter(TerrainVisualCreator& context, int previousState) override;
                 virtual bool Step(TerrainVisualCreator& context, float deltaTime) override;
             };
@@ -96,10 +99,10 @@ namespace app::trr {
         hh::gfnd::ResTexture* noGIOcclusionTexture;
         uint64_t qwordB8;
         uint64_t qwordC0;
-        uint64_t qwordC8;
+        csl::ut::String* currentLoading0; //uses as a buffer to set what level it's loading at the moment
         uint64_t qwordD0;
         uint64_t qwordD8;
-        uint64_t qwordE0;
+        csl::ut::String* currentLoading1; //uses as a buffer to set what level it's loading at the moment
         uint64_t qwordE8;
         csl::fnd::IAllocator* qwordF0;
 

@@ -8,6 +8,8 @@ namespace hh::ut {
             const char* name;
             void* context;
 
+            inline StateImpl(csl::fnd::IAllocator* allocator) : ReferencedObject{ allocator, true } {}
+
             virtual bool DoInit() = 0;
             virtual void DoEnter(int previousStateId) = 0;
             virtual void DoLeave(int nextStateId) = 0;
@@ -21,6 +23,8 @@ namespace hh::ut {
     template<typename T>
     class StateBase : public internal::StateImpl {
     public:
+        inline StateBase(csl::fnd::IAllocator* allocator) : StateImpl{ allocator } {}
+
         virtual bool DoInit() override;
         virtual void DoEnter(int previousStateId) override;
         virtual void DoLeave(int nextStateId) override;

@@ -1,6 +1,7 @@
 #pragma once
 
 namespace hh::dv{
+    class DvSceneControl;
     class DvSceneNodeTree;
 
     class DvNodeBase : public hh::fnd::ReferencedObject{
@@ -19,6 +20,10 @@ namespace hh::dv{
             MODEL_MOTION = 10,
             MODEL_NODE,
             ELEMENT
+        };
+
+        enum class Flags : uint32_t {
+            INITIALIZED = 29
         };
 
         uint32_t flags; //prolly a bitset
@@ -43,14 +48,25 @@ namespace hh::dv{
         virtual void Update(int currentFrame) {};
         virtual void PreStepUpdate(int currentFrame) {};
         virtual void PostStepUpdate(int currentFrame) {};
-        virtual bool IsUnkFlag0();
+        virtual bool IsInitialized();
         virtual bool UnkFunc3() { return true; }
         virtual void UnkFunc4() {};
         virtual int GetUpdateTiming();
-        virtual void UnkFunc6(void* unk0, void* unk1) {};
+        virtual void UnkUpdate(int currentFrame, csl::math::Transform& transform) {};
 
-        char* GetGUID();
-        void SetTransform(csl::math::Transform* transform);
+        char* GetGUID() const;
+        csl::math::Transform& GetTransform() const;
+        void SetTransform(csl::math::Transform& transform);
+        void SetTransformRecursively(csl::math::Transform& transform);
+        void PreStepUpdateRecursively(unsigned int unk0);
+        void SetInitializedFlag(bool enabled);
+        DvNodeBase* GetParent() const;
+        unsigned long long GetChildrenAmount() const;
+        DvNodeBase* GetElement0ByIdx(unsigned long long idx) const;
+        void UpdateChildren(int arrayIdx, int currentFrame);
+        void PostStepUpdateRecursively(int currentFrame);
+        DvSceneControl* GetDvSceneControl() const;
+        void GetNodes(NodeType type, csl::ut::MoveArray<DvNodeBase*>& retValue);
 
         DvNodeBase(csl::fnd::IAllocator* allocator);
     };

@@ -8,6 +8,9 @@ namespace hh::dv{
 
         virtual void Load(void* data, size_t size) override;
         virtual void Unload() override;
+
+        void ParseData(DvSceneControl* dvSceneControl);
+
         MANAGED_RESOURCE_CLASS_DECLARATION(ResDvScene)
     };
 }

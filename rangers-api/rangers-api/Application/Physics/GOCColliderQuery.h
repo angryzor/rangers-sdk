@@ -3,16 +3,16 @@
 namespace app::physics {
     class GOCColliderQuery : public hh::game::GOComponent, public hh::fnd::HFrameListener, public hh::game::GameStepListener {
     public:
-        uint64_t qword80;
+        hh::physics::PhysicsOverlapJob* physicsJob;
         csl::ut::MoveArray<void*> unk88;
         csl::ut::MoveArray<void*> unkA8;
-        uint64_t qwordC8;
+        hh::fnd::HFrame* hFrame;
         csl::math::Transform localTransform;
         csl::math::Transform worldTransform;
         uint8_t byte140;
         uint32_t qword144;
         uint32_t qword148;
-        uint64_t qword150;
+        hh::physics::PhysicsWorldBullet* physicsWorld;
         uint64_t qword158;
         uint16_t word160;
 

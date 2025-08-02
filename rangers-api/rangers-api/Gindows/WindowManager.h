@@ -1,6 +1,8 @@
 #pragma once
 
 namespace gindows {
+    class Form;
+
     class WindowManager : public hh::fnd::BaseObject {
     public:
         struct UnkStr0 {

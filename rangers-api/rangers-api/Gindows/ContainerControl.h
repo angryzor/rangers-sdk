@@ -5,8 +5,7 @@ namespace gindows{
     public:
         ContainerControl* containerControl798;
 
-        virtual void* GetInfo() override;
-        virtual Object* UnkFunc(char unk) override;
+        virtual void* GetRuntimeTypeInfo() const override;
 
         ContainerControl();
     };

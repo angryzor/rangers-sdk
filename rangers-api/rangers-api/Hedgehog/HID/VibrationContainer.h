@@ -7,8 +7,24 @@ namespace hh::hid{
         public:
         };
 
+        struct VibrationObj{
+            hh::hid::VibrationContainer* container;
+            int handle;
+
+            VibrationObj();
+            void Initialize();
+            bool NotExists();
+            void UnkFunc1();
+        };
+
+        enum class VibrationType : unsigned int {
+            ONESHOT,
+            ALWAYS,
+            AUTO
+        };
+
         GamepadSteam* gamepad;
-        int unk0;
+        int dataContainerAmount;
         short flags;
         csl::ut::MoveArray<VibrationDataContainer*> dataContainers;
         csl::ut::PointerMap<int, VibrationDataContainer*> hashDataContainers;
@@ -18,5 +34,8 @@ namespace hh::hid{
         VibrationMarge* marge;
 
         VibrationContainer(csl::fnd::IAllocator* allocator, Gamepad* gamepad);
+
+        void PlayVibration(const char* vibrationName, VibrationType vibrationType, VibrationContainer::VibrationObj* obj);
+        bool NotExists(int handle);
     };
 }

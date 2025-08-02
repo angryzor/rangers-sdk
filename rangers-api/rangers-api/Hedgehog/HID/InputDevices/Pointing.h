@@ -12,7 +12,7 @@ namespace hh::hid {
         virtual unsigned int UnkFunc10();
         virtual unsigned int UnkFunc11();
         virtual bool UnkFunc12() { return false; }
-        virtual csl::math::Vector2 UnkFunc13();
+        virtual csl::math::Vector2 GetCursorPosition();
         virtual bool UnkFunc14() { return false; }
     };
 }

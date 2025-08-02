@@ -2,6 +2,7 @@
 
 namespace hh::dv{
     class DvParamController : public hh::fnd::ReferencedObject{
-
+    public:
+        virtual void PreStepUpdate() {}
     };
 }

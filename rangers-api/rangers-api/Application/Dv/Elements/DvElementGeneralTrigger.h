@@ -5,7 +5,7 @@ namespace app::dv{
     public:
         struct Description : hh::dv::DvElementBase::Description {
         public:
-            int unk0;
+            int triggerValue;
             char triggerName[64];
         };
 

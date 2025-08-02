@@ -4,6 +4,7 @@ namespace hh::dv{
     class DvDirectionalLightParamController : public DvParamController{
     public:
         char unk0;
+        char unk0b;
         int unk1;
         short unk2;
         int unk3;
@@ -17,6 +18,8 @@ namespace hh::dv{
         int64_t unk11;
         int64_t unk12;
         int64_t unk13;
+
+        virtual void PreStepUpdate() override;
 
         virtual bool Load();
         virtual hh::gfx::RenderingComponent* GetRenderingComponent();

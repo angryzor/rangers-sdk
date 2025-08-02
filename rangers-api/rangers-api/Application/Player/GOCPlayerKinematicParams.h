@@ -16,12 +16,15 @@ namespace app::player {
             uint32_t unk4;
             hh::fnd::Handle<hh::game::GOComponent> unk5;
             int unk6;
-            bool unk7;
+            char unk7;
             csl::ut::Bitset<Flag> flags;
 
             Unk1();
             Unk1(bool unk7Param, uint8_t unk8Param, const csl::math::Vector3& unk1Param, const csl::math::Vector3& unk2Param, uint32_t unk3aParam, uint32_t unk4Param, const hh::fnd::Handle<hh::game::GOComponent>& unk5Param, int unk6Param);
             hh::game::GOComponent* GetUnk5() const;
+
+            bool GetUnkFlag1();
+            bool GetUnk72();
         };
         struct Unk2 {
             uint32_t unk1;

@@ -6,6 +6,8 @@ namespace hh::fmv{
         typedef fnd::HandleManager<MovieHandleObj> HandleManager;
 
         MoviePlayerCri* moviePlayer;
+
+        MovieHandleObj(csl::fnd::IAllocator* allocator, MoviePlayerCri* playerCri);
     };
 
     class MovieManager : public game::GameService, game::GameStepListener {

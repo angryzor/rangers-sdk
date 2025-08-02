@@ -74,7 +74,7 @@ namespace app::save {
 
     class ExtraFlagContainerAc : public SaveDataAccessor<ExtraFlagContainerData> {
     public:
-
+        ExtraFlagAc GetExtraFlagAccessor();
     };
 
     class ExtraIslandStageContainerAc : public SaveDataAccessor<ExtraIslandStageContainerData> {
@@ -87,14 +87,23 @@ namespace app::save {
 
     };
 
-    class GameDataAc : public SaveDataAccessor<GameData> {
+    class WeatherAc : public SaveDataAccessor<WeatherData> {
     public:
-        FlagContainerAc GetFlagContainerAc();
+        void SetData(WeatherData* data);
     };
 
     class GamePlayAc : public SaveDataAccessor<GamePlayData> {
     public:
+        void SetTime(game::Timestamp& time);
+        bool GetTime(game::Timestamp& time);
+    };
 
+    class GameDataAc : public SaveDataAccessor<GameData> {
+    public:
+        FlagContainerAc GetFlagContainerAc();
+        WeatherAc GetWeatherAccessor();
+        GamePlayAc GetGamePlayAccessor();
+        ExtraFlagContainerAc GetExtraFlagContainerAccessor();
     };
 
     class HeaderAc : public SaveDataAccessor<HeaderData> {
@@ -135,7 +144,7 @@ namespace app::save {
 
     class OptionGamePlayAc : public SaveDataAccessor<OptionGamePlayData> {
     public:
-
+        uint8_t GetDLCSonicCostume() const;
     };
 
     class OptionGraphicsAc : public SaveDataAccessor<OptionGraphicsData> {
@@ -153,11 +162,6 @@ namespace app::save {
     };
 
     class PlayLogAc : public SaveDataAccessor<PlayLogData> {
-    public:
-
-    };
-
-    class WeatherAc : public SaveDataAccessor<WeatherData> {
     public:
 
     };

@@ -15,15 +15,16 @@ namespace gindows{
         char byte75A;
         SCUnkStr0 scUnkStr0;
 
-        virtual Object* UnkFunc(char unk) override;
-        virtual void* ContUnkSet0(void* unk) override;
-        virtual void* ContSet1(void* unk) override;
+        virtual void GetDisplayLocation(int* value) override;
+        virtual void GetPreferredClientSize(int* value) override;
         virtual void* ContUnkFunc20() override; // something with qword320
         virtual void* ContUnkFunc21() override; // something with qword320
         virtual void* ContUnkFunc38() override; // something with qword1E0
         virtual void* ContUnkFunc39() override; // something with qword200
         virtual void* ContUnkFunc40() override; // something with qword80
         virtual void* ScolContUnkFunc0(); // something ver2 with qword738;
+
+        void AdjustFormScrollbars();
 
         ScrollableControl();
     };

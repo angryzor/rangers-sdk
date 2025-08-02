@@ -17,6 +17,8 @@ namespace app::trr {
 
         void Setup(const SetupInfo& setupInfo);
 
+        void InitializeLight(int sectorId, hh::gfx::ResMirageLight* lightRes, ucsl::resources::pointcloud::v2::InstanceData& instanceData, hh::gfx::ResAnimLightContainer* lightAnim, hh::fnd::HFrame* hFrame, bool unk1);
+
         GAMEOBJECT_CLASS_DECLARATION(TerrainGround)
     };
 }

@@ -12,7 +12,14 @@ namespace app_cmn::camera {
             unsigned int id;
             csl::ut::Bitset<Flag> flags;
         };
+
+        struct SetupInfo {
+            int controllerUnitAmount;
+        };
+        
         csl::ut::MoveArray<ControllerUnit> controllerUnits;
+
+        void Setup(SetupInfo& setupInfo);
 
         void AddController(CameraController* controller, unsigned int id);
         void DestroyController(unsigned int id, CameraInterpolator* interpolator);

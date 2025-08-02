@@ -92,6 +92,7 @@ namespace app::ui {
         uint64_t unk204;
         uint8_t unk205;
 
+		virtual void* GetRuntimeTypeInfo() const override;
 		virtual void AddCallback(hh::game::GameManager* gameManager) override;
 		virtual void RemoveCallback(hh::game::GameManager* gameManager) override;
 		virtual void Update(hh::fnd::UpdatingPhase phase, const hh::fnd::SUpdateInfo& updateInfo) override;

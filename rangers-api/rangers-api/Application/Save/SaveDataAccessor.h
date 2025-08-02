@@ -9,5 +9,6 @@ namespace app::save {
 
         SaveDataAccessor(hh::game::GameObject* gameObject);
         virtual ~SaveDataAccessor() = default;
+        Data* GetData() const;
     };
 }

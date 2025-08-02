@@ -5,12 +5,13 @@ namespace Cyan::System {
     class ArrayAllocator : public IAllocator {
     public:
         const char* name;
-        void* mem1;
+        void* start;
         size_t size;
-        uint32_t unk0;
+        unsigned int numIndices;
         void* mem2;
-        void* mem3;
-        uint64_t unk1;
+        unsigned int* indices;
+        uint32_t unk1;
+        uint32_t unk2;
 
         virtual void* Alloc(size_t size, size_t alignment) override;
         virtual void* Alloc2(size_t size, size_t alignment) override;

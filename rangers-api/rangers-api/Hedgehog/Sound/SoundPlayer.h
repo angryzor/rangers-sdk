@@ -28,6 +28,24 @@ namespace hh::snd {
 
     class SoundPlayer : public fnd::BaseObject, public csl::fnd::Singleton<SoundPlayer> {
     public:
+        class VibrationHapticListener : public hh::fnd::ReferencedObject, public hh::hid::VibrationHapticPlayerListener {
+        public:
+            class VibHandleObj : public hh::fnd::ReferencedObject{
+            public:
+                int handle;
+            };
+
+            SoundPlayer* soundPlayer;
+
+            virtual bool IsLoop() override;
+            virtual hh::fnd::ReferencedObject* CreateHandle(csl::fnd::IAllocator* allocator) override;
+            virtual bool DestoryHandle(hh::fnd::ReferencedObject* handleObj) override;
+            virtual void PlaySound(hh::fnd::HandleBase* handle, unsigned int category, int unk2, const char* name, float volume, char unk8) override;
+            virtual void StopSound(hh::fnd::HandleBase* handle) override;
+            virtual bool IsSoundPlaying(hh::fnd::HandleBase* handle) override;
+            virtual void PauseSound(hh::fnd::HandleBase* handle, bool paused) override;
+            virtual void SetSoundVolume(hh::fnd::HandleBase* handle, int unk0, float volume) override;
+        };
 
         struct ListenerIdMapArgs {
             unsigned int ids[1]; // size currently unknown
