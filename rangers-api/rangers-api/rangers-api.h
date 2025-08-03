@@ -13,6 +13,8 @@
 
 #ifdef EXPORTING_TYPES
 
+#define BT_SERIALIZER_H
+
 struct SLIST_HEADER_SHIM {
     unsigned long long Alignment;
     unsigned long long Region;
@@ -103,6 +105,17 @@ namespace rangerssdk::ucsl {
 #include "cslib/csl/fnd/Delegate.h"
 #include "cslib/csl/fnd/Function.h"
 #include "cslib/csl/fnd/ThreadSleep.h"
+
+#include <LinearMath/btDefaultMotionState.h>
+#include <BulletCollision/CollisionShapes/btSphereShape.h>
+#include <BulletCollision/CollisionShapes/btBoxShape.h>
+#include <BulletCollision/CollisionShapes/btCylinderShape.h>
+#include <BulletCollision/CollisionShapes/btCapsuleShape.h>
+#include <BulletDynamics/Dynamics/btRigidBody.h>
+#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
+#include <BulletDynamics/ConstraintSolver/btGeneric6DofSpring2Constraint.h>
+#include <BulletSoftBody/btSoftBody.h>
+#include <BulletSoftBody/btSoftRigidDynamicsWorld.h>
 
 #include "Hedgehog/rsdx/rsdx_noncopyable.h"
 #include "Hedgehog/rsdx/core/algo/hhrsdxalgomutex.h"
@@ -606,6 +619,7 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Graphics/VisualManager.h"
 #include "Hedgehog/Graphics/VisibilityManager.h"
 #include "Hedgehog/Graphics/FxParamEditor.h"
+#include "Hedgehog/Graphics/ISkeletalMeshPose.h"
 
 #include "Hedgehog/FMV/MovieRenderObject.h"
 #include "Hedgehog/FMV/MoviePlayer.h"
@@ -666,6 +680,7 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Animation/ResAnimation.h"
 #include "Hedgehog/Animation/ResAnimationPxd.h"
 #include "Hedgehog/Animation/ResAnimator.h"
+#include "Hedgehog/Animation/Pose.h"
 #include "Hedgehog/Animation/AsmResourceManager.h"
 #include "Hedgehog/Animation/AnimationControl.h"
 #include "Hedgehog/Animation/AnimationControlPxd.h"
@@ -691,6 +706,11 @@ namespace rangerssdk::ucsl {
 #include "Hedgehog/Animation/GOCCharacterIk.h"
 #include "Hedgehog/Animation/AnimationManager.h"
 #include "Hedgehog/Animation/AnimationInterface.h"
+
+#include "Hedgehog/PBA/PbaManager.h"
+#include "Hedgehog/PBA/ResPhysicalSkeleton.h"
+#include "Hedgehog/PBA/PhysicalSkeletonBinding.h"
+#include "Hedgehog/PBA/GOCPhysicalAnimation.h"
 
 #include "Hedgehog/Lua/ResLuaData.h"
 #include "Hedgehog/AnimationEffect/ResParticleLocation.h"
@@ -1100,6 +1120,7 @@ namespace rangerssdk::ucsl {
 #include "Application/ObjCameraVolume.h"
 #include "Application/ObjAirFloor.h"
 #include "Application/ObjAirWall.h"
+#include "Application/ObjKnightIncidentFlyerEscapeShot.h"
 #include "Application/MeteorShowerEffect.h"
 
 namespace rangerssdk::ucsl {

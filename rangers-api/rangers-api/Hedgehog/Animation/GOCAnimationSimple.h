@@ -3,6 +3,7 @@
 namespace hh::anim {
     enum class PlayPolicy : unsigned char {
         NORMAL,
+        REPEAT,
     };
 
     struct GOCSimpleAnimationSpawner {
@@ -72,7 +73,7 @@ namespace hh::anim {
         csl::ut::InplaceMoveArray<SimpleAnimationState, 1> animations;
         csl::ut::MoveArray<GOCSimpleAnimationListener*> listeners;
         csl::ut::StringMap<unsigned int> animationIndicesByName;
-        csl::ut::InplaceMoveArray<uint32_t, 2> unk305;
+        csl::ut::InplaceMoveArray<uint32_t, 2> playingAnimations;
         csl::ut::MoveArray<void*> unk306;
         csl::ut::MoveArray<void*> unk307;
 

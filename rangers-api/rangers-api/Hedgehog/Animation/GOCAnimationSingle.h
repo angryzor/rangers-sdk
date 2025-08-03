@@ -1,8 +1,16 @@
 #pragma once
 
 namespace hh::anim {
+    class GOCAnimationSingle;
+    class AnimationEnabledListener {
+    public:
+        virtual void AEL_UnkFunc1() {}
+        virtual void AEL_UnkFunc2(GOCAnimationSingle* gocAnimationSingle, bool enabled) {}
+    };
+
     class AnimationManager;
     class GOCAnimationSingle : public GOCAnimation {
+    public:
         enum class Type : uint8_t {
             UNK0,
             UNK1,
@@ -10,8 +18,8 @@ namespace hh::anim {
         };
         enum class Flag : uint8_t {
             UNK2 = 2,
-            USE_MODEL_SKELETON = 5,
-            CREATE_SKELETAL_MESH_BINDING_ON_MODEL = 6,
+            HAS_SKELETON = 5, // uses model skeleton if not
+            SET_POSE = 6,
         };
 
         Type unk101;
@@ -24,20 +32,20 @@ namespace hh::anim {
         fnd::Reference<ResSkeleton> skeleton;
         fnd::ReferencedObject* unk105;
         void* visualVisibilityHandle;
-        uint64_t unk107;
-        uint64_t unk108;
-        csl::ut::MoveArray<void*> unk109;
+        fnd::Reference<Pose> skeletonPose;
+        fnd::Reference<Pose> pose;
+        csl::ut::MoveArray<AnimationEnabledListener*> animationEnabledListeners;
         uint64_t unk110;
         csl::ut::LinkListNode linkListNode;
-    public:
+
         struct SetupInfo {
-            uint8_t unk1;
-            uint8_t unk1a;
-            bool setUnk6Flag;
-            unsigned int gocVisualModelNameHash;
-            uint32_t nameHash;
-            anim::ResSkeleton* skeleton;
-            fnd::ReferencedObject* unk6;
+            Type type{ Type::UNK0 };
+            uint8_t unk1a{};
+            bool setPose{ false };
+            unsigned int modelComponentName{};
+            unsigned int name{};
+            ResSkeleton* skeleton{};
+            ResSkeleton* pose{};
         };
 
         GOCAnimationSingle(csl::fnd::IAllocator* allocator);
@@ -46,10 +54,17 @@ namespace hh::anim {
 		virtual void OnGOCEvent(GOCEvent event, game::GameObject& ownerGameObject, void* data) override;
         void Setup(const SetupInfo& setupInfo);
         void SetModel(gfx::GOCVisualModel* model);
-        void ReleaseModel();
+        void ClearModel(gfx::GOCVisualModel* model);
         void CreateBlender();
         void DestroyBlender();
         void SetBlenderUpdateFlag(bool enabled);
         void SetStateUpdateFlag(bool enabled);
+        void SetPose(bool enabled);
+        Pose* GetPose() const;
+
+        void AddAnimationEnabledListener(AnimationEnabledListener* listener);
+        void RemoveAnimationEnabledListener(AnimationEnabledListener* listener);
+
+        const csl::math::Transform& GetTransform() const;
     };
 }

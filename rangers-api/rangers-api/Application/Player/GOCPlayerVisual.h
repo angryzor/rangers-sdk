@@ -53,6 +53,9 @@ namespace app::player {
         bool SwitchPlayerVisual(char id, bool unkParam1);
         void TriggerSwitchPlayerVisual(char id, bool unkParam1);
 
+        void AddListener(PlayerVisualListener* listener);
+        void RemoveListener(PlayerVisualListener* listener);
+
         GOCOMPONENT_CLASS_DECLARATION(GOCPlayerVisual)
     };
 }
