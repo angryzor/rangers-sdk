@@ -8,6 +8,7 @@ namespace app::game {
         , public hh::fnd::user::UserInfoEventListener
         , public hh::fw::FrameworkNotificationListener
     {
+    public:
         struct Unk2 {
             char stageName[16];
             int unk2;
@@ -40,7 +41,6 @@ namespace app::game {
         uint16_t unk3;
         uint32_t unk4a;
 
-    public:
         inline static const char name[] = "ApplicationSequenceExtension";
         ApplicationSequenceExtension(csl::fnd::IAllocator* allocator);
         virtual uint64_t GetNameHash() override;

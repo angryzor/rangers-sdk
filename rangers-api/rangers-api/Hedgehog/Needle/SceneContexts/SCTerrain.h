@@ -4,26 +4,24 @@ namespace hh::needle {
     class SCTerrain : public SceneContext {
     public:
         class Impl : public NeedleRefcountObject {
+        public:
             SCTerrain& sceneContext;
-            uint32_t dword18;
+            uint32_t halfSize; //2048
             uint8_t byte1C;
-            uint32_t dword20;
-            float dword24;
-            float dword28;
+            uint32_t heightmapTexelDensity;
+            heur::rfl::StageTerrainPrecisionParameter trrPrecisionParam;
+            float heightScale;
             uint8_t byte2C;
-            float dword30;
-            float dword34;
-            float dword38;
-            float qword3C;
+            heur::rfl::StageTerrainMaterialParameter trrMaterialParam;
             uint32_t qword40;
             uint32_t qword44;
             uint32_t qword48;
             uint32_t dword4C;
-            uint64_t qword50;
-            uint64_t qword58;
-            uint64_t qword60;
-            uint64_t qword68;
-            uint64_t qword70;
+            intrusive_ptr<hh::needle::Texture> unkTexture0;
+            intrusive_ptr<hh::needle::Texture> unkTexture1;
+            intrusive_ptr<hh::needle::Texture> unkTexture2;
+            intrusive_ptr<hh::needle::Texture> unkTexture3;
+            intrusive_ptr<hh::needle::Texture> unkTexture4;
             uint64_t qword78;
             uint64_t qword80;
             uint64_t qword88;
@@ -33,10 +31,9 @@ namespace hh::needle {
             uint64_t qwordF8;
             uint64_t qword100;
             uint64_t qword108;
-            csl::ut::MoveArray<void*> qword110;
-            intrusive_ptr<NeedleRefcountObject> qword130[6];
+            csl::ut::MoveArray<hh::needle::Texture*> brushes;
+            intrusive_ptr<hh::needle::Texture> qword130[6];
 
-        public:
             Impl(SCTerrain& sceneContext);
         };
 

@@ -7,10 +7,16 @@ namespace app::dv{
         public:
             struct Parameters {
             public:
-                float range;
+                float attenuationRadius;
                 float intensity;
-                float falloff;
-                float angle;
+                float radius;
+                float rotationMultiplier;
+            };
+
+            enum class Type : unsigned int {
+                NORMAL,
+                CURVE_CONTROLLED,
+                TIME_CONTROLLED
             };
 
             int unk0;
@@ -20,7 +26,7 @@ namespace app::dv{
             unsigned int finishColor[3];
             Parameters params;
             Parameters finishParams;
-            int unk4;
+            Type type;
             int unk5[10];
             float curveData[128];
         };
@@ -30,7 +36,7 @@ namespace app::dv{
         virtual void Update(int currentFrame, csl::math::Transform& transform) override;
         virtual bool AddCallback(int currentFrame, csl::math::Transform& transform) override;
         virtual void RemoveCallback() override;
-        virtual void UnkFunc6(int currentFrame, csl::math::Transform transform) override;
+        virtual void UnkUpdate(int currentFrame, csl::math::Transform& transform) override;
         virtual void OnDataUpdated() override;
         virtual void OnDataDeleted() override;
 

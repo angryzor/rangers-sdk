@@ -28,7 +28,7 @@ namespace hh::ui {
         GOCOMPONENT_CLASS_DECLARATION(GOCUIComposition);
 
         struct SetupInfo {
-            uint32_t unk1;
+            uint32_t updatePriority;
             uint64_t unk2;
             uint32_t unk3;
         };

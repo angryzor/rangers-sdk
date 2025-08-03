@@ -33,13 +33,21 @@ namespace hh::dv{
         csl::math::Vector3 unk8;
         int unk9;
         int unk10;
-        int64_t unk11;
+        char unk11;
 
         virtual void Setup(DvNodeBase::Description& description) override;
         virtual void Start() override;
         virtual void Update(int currentFrame) override;
         virtual void PostStepUpdate(int currentFrame) override;
         virtual int GetUpdateTiming() override;
+
+        bool Unk3Above0() const;
+        void GetViewportDataByFrame(int currentFrame, hh::gfnd::ViewportData* returnValue);
+        hh::game::CameraComponent* GetCameraComponent() const;
+        void DisableCamera();
+        void EnableCamera();
+        CameraData& GetCameraData() const;
+        void SetNearFar(float nearZ, float farZ);
 
         DV_NODE_DECLARATION_BASE(DvNodeCamera)
     };

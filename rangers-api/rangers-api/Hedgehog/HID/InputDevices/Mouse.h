@@ -44,11 +44,11 @@ namespace hh::hid {
             unsigned short deltaY;
             unsigned short unk1;
             unsigned short unk2;
+            uint8_t unk3;
         };
 
         csl::ut::Bitset<Flag> flags;
         MouseState state;
-        uint8_t unk1;
         csl::ut::InplaceMoveArray<InputId, 13> buttonInputIds;
 
         Mouse(csl::fnd::IAllocator* pAllocator);

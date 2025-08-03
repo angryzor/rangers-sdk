@@ -1,10 +1,13 @@
 #pragma once
 
 namespace hh::hid {
+    class Vibration;
+    class VibrationContainer;
+
     class Gamepad : public InputDevice {
-        csl::ut::MoveArray<void*> unk1;
-        csl::ut::StringMap<void*> unk2;
-        void* unk3;
+        csl::ut::MoveArray<Vibration*> vibrations;
+        csl::ut::StringMap<Vibration*> vibrations1;
+        VibrationContainer* vibrationContainer;
         csl::ut::InplaceMoveArray<uint32_t, 32> unk4;
         char unk5[128];
         uint16_t unk6;
@@ -26,5 +29,7 @@ namespace hh::hid {
         virtual bool UnkFunc12() { return false; }
         virtual bool UnkFunc13() { return false; }
         virtual uint64_t UnkFunc14() = 0;
+
+        VibrationContainer* GetVibrationContainer() const;
     };
 }

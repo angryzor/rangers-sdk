@@ -57,4 +57,67 @@ namespace app {
 
         MsgLossRing() : fnd::AppMessage<MsgLossRing>{ hh::fnd::MessageID::LOSS_RING } {}
     };
+
+    class MsgNotifyStartMeteorShowerEvent : public fnd::AppMessage<MsgNotifyStartMeteorShowerEvent> {
+    public:
+        MsgNotifyStartMeteorShowerEvent() : fnd::AppMessage<MsgNotifyStartMeteorShowerEvent>{ hh::fnd::MessageID::NOTIFY_START_METEOR_SHOWER_EVENT } {}
+    };
+
+    class MsgNotifyEndMeteorShowerEvent : public fnd::AppMessage<MsgNotifyEndMeteorShowerEvent> {
+    public:
+        MsgNotifyEndMeteorShowerEvent() : fnd::AppMessage<MsgNotifyEndMeteorShowerEvent>{ hh::fnd::MessageID::NOTIFY_END_METEOR_SHOWER_EVENT } {}
+    };
+
+    class MsgNotifyEndMeteorShowerWeather : public fnd::AppMessage<MsgNotifyEndMeteorShowerWeather> {
+    public:
+        MsgNotifyEndMeteorShowerWeather() : fnd::AppMessage<MsgNotifyEndMeteorShowerWeather>{ hh::fnd::MessageID::END_METEOR_SHOWER_WEATHER } {}
+    };
+
+    class MsgTakeObject : public fnd::AppMessage<MsgTakeObject> {
+    public:
+        enum class Type : unsigned char {
+            RING,
+            SUPER_RING,
+            RED_RING,
+            EXP,
+            PORTAL_BIT,
+            POWER_SEED,
+            GUARD_SEED,
+            UNK2,
+            MEMORY_TOKEN,
+            ITEMBOX_PARTS,
+            EMERALD_KEY,
+            MUSIC_MEMORY,
+            UNK5,
+            NITRO_BOTTLE,
+            STOP_WATCH,
+            SILVER_MOON_RING,
+            NUMBER_RING
+        };
+
+        Type objectType{ Type::RING };
+        char flags{ 0 };
+        int amount{ 0 };
+        bool showEffect{ true };
+        int islandIndex{ 0 };
+        char expIndex{ 0 };
+
+        MsgTakeObject() : fnd::AppMessage<MsgTakeObject>{ hh::fnd::MessageID::TAKE_OBJECT } {}
+    };
+
+    class MsgGetTargetPosition : public fnd::AppMessage<MsgGetTargetPosition> {
+    public:
+        enum class Position : unsigned char {
+            ROOT,
+            NECK,
+            HEAD,
+            SPINE
+        };
+
+        bool changed;
+        csl::math::Vector3 targetPosition;
+        Position position;
+
+        MsgGetTargetPosition() : fnd::AppMessage<MsgGetTargetPosition>{ hh::fnd::MessageID::GET_TARGET_POSITION } {}
+    };
 }

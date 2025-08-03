@@ -84,10 +84,11 @@ namespace hh::needle {
     };
 
     class Texture : public SurfaceBase {
+    public:
         uint8_t unk101;
         void* view; // Copied ID3D11TextureView @ 0x155C55D2F
         void* viewSynchronizerVfTable; // streaming, see 0x155E91940
-    public:
+
         static size_t constexpr resourceId = NEEDLE_RESOURCE_TEXTURE;
     };
 }

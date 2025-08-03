@@ -21,7 +21,7 @@ namespace hh::gfx {
     public:
         GOCVisualModel* model;
         csl::ut::MoveArray<fnd::Reference<TexSrtControlHH>> animations;
-        uint64_t unk2;
+        void* needleBlender;
 
         virtual void Initialize(TexSrtBlenderDesc& description) override;
         virtual void Deinitialize() override;
