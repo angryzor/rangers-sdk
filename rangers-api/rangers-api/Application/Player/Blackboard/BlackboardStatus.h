@@ -31,10 +31,14 @@ namespace app::player {
 
         enum class CombatFlag : unsigned int
         {
+            JUMP = 0x0,
+            BOOST = 0x03,
             SIDE_STEP = 0x05,
             PARRY = 0x0F,
             PERFECT_PARRY = 0x10,
             AIR_TRICK = 0x1A,
+            CAMERA_MOVEMENT = 0x1F,
+            MOVEMENT = 0x20,
             GRAND_SLAM = 0x22,
             QUICK_CYLOOP = 0x28,
             PHANTOM_RUSH = 0x2A,

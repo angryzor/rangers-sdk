@@ -8,6 +8,10 @@ namespace hh::dv {
             hh::fnd::Handle<DvSceneControl> dvSceneControl;
         };
 
+        struct Description{
+            int64_t unk0; //see 0x1401EE7CD
+        };
+
         csl::ut::MoveArray<ScenePlaybackInfo*> scenePlaybackInfos;
         csl::ut::MoveArray<DvSceneControlListener*> listeners;
         long long unk0;
@@ -24,7 +28,7 @@ namespace hh::dv {
         virtual void OnRemovedFromGame() override;
         virtual void OnCutsceneEnd() override;
 
-        virtual void UnkFunc0(void* unk);
+        virtual void Setup(Description& desc);
         virtual bool UnkFunc1() { return false; }
         virtual bool HasDvSceneControl();
         virtual bool AnyCutscenePlaying();

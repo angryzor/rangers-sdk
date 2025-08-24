@@ -64,5 +64,8 @@ namespace app::trr {
 
         int GetTerrainIndexById(const char* id) const;
         void SetCurrentTerrainById(const char* id);
+        void DeloadByName(const char* stageName);
+
+        static int GetSectorID(const char* pacName);
 	};
 }

@@ -9,7 +9,7 @@ namespace app::dv{
             float unk1;
         };
 
-        int unk0;
+        char unk0;
         int unk1;
         csl::math::Vector4 unk2;
         csl::math::Vector4 unk3;

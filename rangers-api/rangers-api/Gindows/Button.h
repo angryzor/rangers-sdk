@@ -13,17 +13,18 @@ namespace gindows{
         int dword754;
         int64_t qword758;
 
-        virtual void* GetInfo() override;
-        virtual Object* UnkFunc(char unk) override;
-        virtual void* ContUnkFunc9(float unk) override;
-        virtual void* ContUnkFunc11() override;
-        virtual void* ContUnkFunc16() override;
-        virtual void* ContUnkFunc17() override;
+        virtual void* GetRuntimeTypeInfo() const override;
+        virtual int OnExecute(double unk) override;
+        virtual int OnLocationChanged() override;
+        virtual int OnMouseLeave() override;
+        virtual int OnMouseEnter() override;
         virtual char ContUnkFunc18(void* unk) override;
         virtual char ContUnkFunc19(void* unk) override;
         virtual void* ContUnkFunc23() override;
         virtual void* ContUnkFunc32() override;
         virtual void* ContUnkFunc47() override;
+
+        void SetStyle(int64_t style);
 
         Button();
         Button(const char* text);

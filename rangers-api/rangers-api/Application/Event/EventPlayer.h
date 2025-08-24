@@ -5,7 +5,7 @@ namespace app::evt {
     public:
         virtual void EPL_UnkFunc1() {}
         virtual void EPL_UnkFunc2() {}
-        virtual void EPL_UnkFunc3() {}
+        virtual void CutsceneStart(const char* cutsceneName) {}
         virtual void EPL_UnkFunc4() {}
         virtual void EPL_UnkFunc5() {}
         virtual void EPL_UnkFunc6() {}
@@ -39,6 +39,7 @@ namespace app::evt {
         struct UnkStr1 {
         public:
             long long unk7;
+            char unk8;
         };
 
         enum class PlayFlag : unsigned int {
@@ -66,30 +67,28 @@ namespace app::evt {
         float speed;
         csl::ut::Bitset<PlayFlag> playFlags;
         UnkStr unkStr;
-        long long unk4;
-        char unk5;
-        hh::fnd::ReferencedObject* owner0;
         hh::fnd::WorldPosition playerWorldPos;
         csl::ut::Bitset<PlayerFlag> playerFlags;
         char flags2;
-        hh::fnd::ReferencedObject* owner1;
+        int64_t unk3;
         UnkStr1 unkStr1;
+        csl::math::Vector4 unk4;
 
         void Setup(const char* cutsceneName);
-        static void SetName(char* name, const char* nameValue, long long unk);
-        void SetCutsceneName(const char* name, long long unk){
-            SetName(cutsceneName, name, unk);
+        inline void SetCutsceneName(const char* name){
+            strcpy(cutsceneName, name);
         }
-        void SetSoundName(const char* name, long long unk){
-            SetName(soundName, name, unk);
+        inline void SetSoundName(const char* name){
+            strcpy(soundName, name);
         }
-        void SetTransform(csl::math::Vector4* transform);
+        void SetTransform(csl::math::Transform& transform);
     };
 
     class EventScene : public hh::fnd::BaseObject, hh::dv::DvSceneControlListener {
     public:
-        enum class Flags : int {
-            UNK0 = 0x20000
+        enum class Flags : unsigned int {
+            UNK0 = 0x11,
+            MOVIE_PLAYING = 0x12
         };
 
         EventPlayer* evtPlayer;
@@ -97,14 +96,18 @@ namespace app::evt {
         hh::dv::DiEventManager* diEvtMgr;
         EventSetupData setupData;
         void* resourceCollection;
-        bool update;
-        bool unkBool0;
-        bool play;
-        char unkFlags0;
+        hh::fnd::Handle<hh::fmv::MovieHandleObj> movieHandle;
         bool unkBool1;
         long long unk2;
         float unk3;
         csl::ut::Bitset<Flags> flags;
+
+        EventScene(csl::fnd::IAllocator* allocator, const char* cutsceneName);
+
+        EventSetupData& GetSetupData() const;
+        void SetEventPlayer(EventPlayer* evtPlayer);
+        void SetMovie(bool playing);
+        void SetPlayScene(bool play);
     };
 
     class EventSceneManager : public hh::fnd::BaseObject {
@@ -112,6 +115,10 @@ namespace app::evt {
         EventPlayer* evtPlayer;
         csl::ut::MoveArray<EventScene*> evtScenes;
         csl::ut::MoveArray<csl::ut::VariableString> cutsceneNames;
+
+        EventScene* GetEventScene(const char* cutsceneName);
+        bool HasCutscene(const char* cutsceneName);
+        void AddCutscene(const char* cutsceneName, bool addCutsceneName);
     };
 
     class EventEnvironmentContext;
@@ -149,14 +156,17 @@ namespace app::evt {
         app_cmn::camera::CameraParameter camParam;
         bool isPlaying;
 
-        EventSetupData* GetSetupData();
-        hh::game::GameManager* GetGameManager();
+        EventSetupData& GetSetupData() const;
+        hh::game::GameManager* GetGameManager() const;
     };
 
     class EventEnvironmentManager : public hh::fnd::BaseObject {
     public:
         EventEnvironmentContext* evtEnvCtx;
         csl::ut::MoveArray<EventEnvironment*> evtEnvs;
+
+        EventEnvironment* GetEnvironmentByHash(unsigned int nameHash) const;
+        void AddEnvironment(EventEnvironment* env);
     };
 
     class EventPlayer : public hh::game::GameService, hh::game::GameStepListener, hh::game::GameManagerListener, hh::dv::DvSceneControlListener {
@@ -207,10 +217,12 @@ namespace app::evt {
 
         void AddListener(EventPlayerListener* listener);
         void RemoveListener(EventPlayerListener* listener);
-        void PlayEvent(EventSetupData* setupData);
+        void PlayEvent(EventSetupData& setupData);
         bool IsPlaying();
         bool IsntPlaying();
         bool UnkFadeObjectFSM();
+        void HideObject(hh::fnd::Handle<hh::game::GameObject>& object);
+        void SetMovie(const char* movieName, bool playing);
 
         virtual void* GetRuntimeTypeInfo() const override;
         virtual bool ProcessMessage(hh::fnd::Message& message) override;
@@ -220,7 +232,7 @@ namespace app::evt {
         virtual void PostStepCallback(hh::game::GameManager* gameManager, const hh::game::GameStepInfo& gameStepInfo) override;
         virtual void GameServiceAddedCallback(hh::game::GameService* gameService) override;
         virtual void GameServiceRemovedCallback(hh::game::GameService* gameService) override;
-        virtual bool DSCL_UnkFunc1(void* unk0, void* unk1) override;
+        virtual bool DSCL_UnkFunc1(UnkFunc1Info& info, void** retElement) override;
         virtual bool DSCL_UnkFunc2(void* unk0, void* unk1) override;
         virtual bool DSCL_UnkFunc3() override;
         virtual void OnCutsceneEnd() override;
@@ -229,6 +241,9 @@ namespace app::evt {
 
         bool PauseCutscene();
         bool UnPauseCutscene();
+        void SetPlayScene(const char* sceneName, bool play);
+
+        static const void*** appDvElementCreateFuncs[44];
 
         GAMESERVICE_CLASS_DECLARATION(EventPlayer)
     };

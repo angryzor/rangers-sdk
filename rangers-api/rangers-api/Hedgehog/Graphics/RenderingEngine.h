@@ -15,5 +15,7 @@ namespace hh::gfx {
         virtual uint64_t Startup() = 0;
         virtual uint64_t Shutdown() = 0;
         virtual void RunComponents();
+
+        RenderingComponent* GetComponentByHash(int nameHash);
     };
 }

@@ -5,7 +5,7 @@ namespace app::dv{
     public:
         struct Description : hh::dv::DvElementBase::Description {};
 
-        hh::fnd::Reference<hh::game::GameObject> handle;
+        hh::fnd::Reference<ui::UIOpeningLogo> objectHandle;
 
         virtual bool AddCallback(int currentFrame, csl::math::Transform& transform) override;
         virtual void RemoveCallback() override;

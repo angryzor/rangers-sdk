@@ -90,5 +90,6 @@ namespace SurfRide {
 		Transform(Layer* layer);
 		void Initialize2D(SRS_TRS2D* cell, Cast* cast);
 		void Initialize3D(SRS_TRS3D* cell, Cast* cast);
+		void SetMaterialColor(const Color& color);
 	};
 }

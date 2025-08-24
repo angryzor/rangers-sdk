@@ -19,8 +19,16 @@ namespace hh::game {
         , public hh::fw::FrameworkFrameListener
     {
     public:
+        struct Description {
+            csl::fnd::IAllocator* levelAllocator;
+            const char* levelsFilepath;
+            char unk0;
+
+            Description();
+        };
+
         csl::fnd::IAllocator* levelAllocator;
-        uint64_t unk101;
+        hh::fnd::ResourceLoader* resLoader;
         csl::ut::MoveArray<hh::game::MasterLevel*> masterLevels;
         csl::ut::InplaceMoveArray<LevelManagerListener*, 1> listeners;
         bool unk104;
@@ -37,6 +45,7 @@ namespace hh::game {
         void LoadLevel(const char* name);
         void LoadLevel(const char* name, const Level::LoadInfo& loadInfo);
         void UnloadLevel(const char* name);
+        void Setup(Description& desc);
 
         GAMESERVICE_CLASS_DECLARATION(LevelManager);
     };

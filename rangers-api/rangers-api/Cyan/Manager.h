@@ -168,6 +168,11 @@ namespace Cyan {
 
     class ManagerImpl : public Manager {
     public:
+        struct UnkFuncStr{
+            void* func;
+            void* unkArray;
+        };
+
         unsigned int dword8;
         Scene* scenes;
         unsigned int numRenderables;
@@ -190,10 +195,10 @@ namespace Cyan {
         uint64_t qword98;
         uint64_t qwordA0;
         uint64_t qwordA8;
-        uint64_t qwordB0;
-        uint32_t dwordB8;
+        Effect* effects;
+        unsigned int numEffects;
         uint32_t gapBC;
-        uint32_t dwordC0;
+        float deltaTime;
         uint32_t dwordC4;
         float floatC8[32];
         float worldScale;
@@ -203,7 +208,9 @@ namespace Cyan {
         uint8_t byte874;
         Graphics::DeviceContainer deviceContainer;
         System::RandomTable randomTable;
-        uint8_t gap8B0[0x60];
+        EmissionGpuBase* emissionPrimitives[9];
+        int64_t qword8f8;
+        hh::needle::ImplDX11::ShaderMaterialContainerDX11Impl* unkShaderMatContainer[2];
         System::FreeListAllocator renderAllocator;
         System::FreeListAllocator systemAllocator;
         System::ArrayAllocator<16> tagAllocator;
@@ -212,37 +219,18 @@ namespace Cyan {
         System::ArrayAllocator<1888> elementAllocator;
         System::ArrayAllocator<1184> animationAllocator;
         csl::fnd::Mutex mutex1;
-        uint8_t gap1150[872];
+        System::FreeListAllocator unkFreeListAllocator;
         uint64_t qword14B8;
         void* meshMemoryPtr;
         size_t meshMemorySize;
-        uint64_t qword14C8;
-        uint64_t qword14D0;
-        uint64_t qword14D8;
-        uint64_t qword14E0;
-        uint64_t qword14E8;
-        uint64_t qword14F0;
-        uint64_t qword14F8;
-        uint64_t qword1500;
-        uint64_t qword1508;
-        uint64_t qword1510;
-        uint64_t qword1518;
-        uint64_t qword1520;
-        uint64_t qword1528;
-        uint64_t qword1530;
-        uint64_t qword1538;
-        uint64_t qword1540;
-        uint64_t qword1548;
-        uint64_t qword1550;
-        uint64_t qword1558;
-        uint64_t qword1560;
-        uint64_t qword1568;
-        uint64_t qword1570;
-        uint32_t dword1578;
-        uint8_t gap157C[5764];
-        uint64_t qword2C00;
-        uint64_t qword2C08;
-        uint64_t qword2C10;
+        UnkFuncStr unkFuncStrs[11];
+        unsigned int numActiveUnkFuncStr;
+        csl::math::Matrix34 cameraProjMatrix;
+        csl::math::Vector3 cameraForward;
+        float cameraValues[1425];
+        uint32_t dword2C00;
+        uint32_t dword2C04;
+        UnkFuncStr unkFuncStr2c08;
         csl::fnd::Mutex mutex2;
 
         struct Config {

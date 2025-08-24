@@ -6,7 +6,7 @@ namespace hh::dv{
     struct Description : DvElementBase::Description {
         public:
             enum class Flags : unsigned int {
-                IGNORE_END = 2
+                IGNORE_END = 1
             };
 
             csl::ut::Bitset<Flags> flags;
@@ -17,8 +17,7 @@ namespace hh::dv{
         };
 
         Description binaryData;
-        hh::hid::VibrationContainer* vibrationContainer;
-        void* unk1;
+        hh::hid::VibrationContainer::VibrationObj* vibrationObj;
         void* unk2;
 
         virtual bool AddCallback(int currentFrame, csl::math::Transform& transform) override;

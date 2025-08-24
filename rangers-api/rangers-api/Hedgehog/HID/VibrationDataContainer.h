@@ -4,31 +4,51 @@
 namespace hh::hid{
     class VibrationData : public fnd::ReferencedObject {
     public:
-        int unk0;
-        int unk1;
-        int unk2;
+        int dataIdx;
+        int idx; //unsure @ 0x140F27686
+        char vibrationDataId;
         int unk3;
         float unk4;
         int unk5;
-        int64_t unk6;
+        VibrationHapticPlayer* vibHapticPlayer;
     };
 
     class VibrationDataContainer : public fnd::ReferencedObject{
     public:
-        ucsl::resources::vibration::v21::Vibration* vibrationData;
-        int unk1;
+        struct Description{
+            ucsl::resources::vibration::v21::Vibration* vibData;
+            int dataIdx;
+            bool looping;
+            bool unk1;
+            hh::hid::VibrationWin32* vibration;
+            int gamepadUnk102;
+        };
+
+        enum class Flags : unsigned char{
+            UNK0,
+            UNK1,
+            LOOPING,
+            UNK2,
+            UNK3,
+            HAS_AUDIO
+        };
+
+        ucsl::resources::vibration::v21::Vibration* vibData;
+        int dataIdx;
         float unk2;
-        float unk3;
+        float maxPositionX;
         int unk4;
-        csl::ut::MoveArray<void*> unk5;
+        csl::ut::MoveArray<VibrationData*> vibrationDatas;
         int unk6;
         int unk7;
-        int unk8;
+        csl::ut::Bitset<Flags> flags;
         int unk9;
         float unk10;
         int unk11;
-        int64_t unk12;
+        VibrationData* vibrationDataType4;
 
         VibrationDataContainer(csl::fnd::IAllocator* allocator);
+
+        void Initialize(Description& desc);
     };
 }

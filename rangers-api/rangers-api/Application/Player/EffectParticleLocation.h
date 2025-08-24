@@ -9,8 +9,8 @@ namespace app::player {
         uint8_t flags;
 
         CREATE_FUNC(EffectParticleLocation, hh::game::GameObject* playerObject, PlayerVisual* playerVisual);
-        virtual uint64_t UnkFunc1() override;
-        virtual void UnkFunc2() override;
+        virtual unsigned long long GetNameHash() const override;
+        virtual void Update(int64_t a2, float deltaTime) override;
         virtual void PreCreateParticle(hh::animeff::GOCParticleLocator* gocParticleLocator, PreCreateParticleInfo& preCreateParticleInfo) override;
     };
 }

@@ -16,5 +16,7 @@ namespace hh::anim {
         virtual uint64_t UnkFunc16() = 0;
         virtual uint64_t UnkFunc17() = 0;
         virtual uint64_t UnkFunc18() = 0;
+
+        void GetBoneTransforms(csl::ut::MoveArray<csl::math::Transform>& transform);
     };
 }

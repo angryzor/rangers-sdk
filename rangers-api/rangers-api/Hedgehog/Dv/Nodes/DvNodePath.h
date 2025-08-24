@@ -18,6 +18,9 @@ namespace hh::dv{
         virtual void Update(int currentFrame) override;
         virtual int GetUpdateTiming() override;
 
+        csl::math::Matrix44& GetWorldMatrix() const;
+        void SetWorldMatrix(csl::math::Matrix44& mat);
+
         DV_NODE_DECLARATION_BASE(DvNodePath)
     };
 }

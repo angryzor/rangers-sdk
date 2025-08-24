@@ -22,15 +22,15 @@ namespace hh::anim {
             SET_POSE = 6,
         };
 
-        Type unk101;
+        Type type;
         uint8_t unk101a;
         csl::ut::Bitset<Flag> flags;
-        unsigned int gocVisualModelNameHash;
+        unsigned int modelComponentName;
         AnimationManager* animationManager;
         fnd::Reference<SkeletonBlender> skeletonBlender;
         gfx::GOCVisualModel* visualModel;
         fnd::Reference<ResSkeleton> skeleton;
-        fnd::ReferencedObject* unk105;
+        fnd::Reference<ResSkeleton> poseResource;
         void* visualVisibilityHandle;
         fnd::Reference<Pose> skeletonPose;
         fnd::Reference<Pose> pose;

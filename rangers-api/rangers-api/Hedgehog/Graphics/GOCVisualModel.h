@@ -32,8 +32,8 @@ namespace hh::gfx {
         int skeletalAnimationRelatedUnk2;
         uint32_t unk321;
         uint32_t unk322;
-        int unk323;
-        uint64_t unk324;
+        gfnd::ResTexture* giTexture;
+        gfnd::ResTexture* giOcclusionTexture;
         fnd::ManagedResource* unk325;
         bool isSky;
         bool isOccluder;
